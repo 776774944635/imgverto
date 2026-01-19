@@ -69,7 +69,7 @@ export default function RootLayout({
       <head>
         {/* Placeholder for AdSense Auto Ads */}
         {<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2853615275823577"
-          crossorigin="anonymous"></script>}
+          crossOrigin="anonymous"></script>}
       </head>
       <body suppressHydrationWarning className={cn(
         "min-h-screen font-sans antialiased",
