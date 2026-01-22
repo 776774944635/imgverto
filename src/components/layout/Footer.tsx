@@ -10,7 +10,7 @@ export default function Footer() {
         <footer className="bg-white border-t py-20">
             <div className="container mx-auto px-4 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
-                    <div className="col-span-1 md:col-span-1 space-y-6">
+                    <div className="md:col-span-1 space-y-6">
                         <Link href="/" className="flex items-center space-x-3">
                             <div className="relative w-20 h-20">
                                 <Image
@@ -43,7 +43,22 @@ export default function Footer() {
                             <li><Link href="/compress-image" className="hover:text-primary transition-colors">Compress Image</Link></li>
                             <li><Link href="/resize-image" className="hover:text-primary transition-colors">Resize Image</Link></li>
                             <li><Link href="/image-to-pdf" className="hover:text-primary transition-colors">Image to PDF</Link></li>
+                            <li><Link href="/image-upscaler" className="hover:text-primary transition-colors">Image Upscaler</Link></li>
+                            <li><Link href="/background-remover" className="hover:text-primary transition-colors">Background Remover</Link></li>
+                            <li><Link href="/jpg-to-png" className="hover:text-primary transition-colors">JPG to PNG</Link></li>
+                            <li><Link href="/png-to-jpg" className="hover:text-primary transition-colors">PNG to JPG</Link></li>
                             <li><Link href="/pdf-compressor" className="hover:text-primary transition-colors">Compress PDF</Link></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="font-outfit font-black text-foreground uppercase tracking-widest text-[11px] mb-6">Guides</h4>
+                        <ul className="space-y-4 text-sm font-bold text-muted-foreground">
+                            <li><Link href="/blog/how-to-compress-images-for-web" className="hover:text-primary transition-colors">Compress Images</Link></li>
+                            <li><Link href="/blog/how-to-merge-pdf-files-online" className="hover:text-primary transition-colors">Merge PDFs</Link></li>
+                            <li><Link href="/blog/how-to-upscale-images-without-losing-quality" className="hover:text-primary transition-colors">Upscale Images</Link></li>
+                            <li><Link href="/blog/how-to-remove-background-from-images-online" className="hover:text-primary transition-colors">Remove Backgrounds</Link></li>
+                            <li><Link href="/blog/jpg-vs-png-which-is-better" className="hover:text-primary transition-colors">JPG vs PNG</Link></li>
                         </ul>
                     </div>
 
@@ -52,22 +67,14 @@ export default function Footer() {
                         <ul className="space-y-4 text-sm font-bold text-muted-foreground">
                             <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
                             <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
-                            <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="font-outfit font-black text-foreground uppercase tracking-widest text-[11px] mb-6">Legal</h4>
-                        <ul className="space-y-4 text-sm font-bold text-muted-foreground">
                             <li><Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
                             <li><Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
-                            <li><Link href="/cookies" className="hover:text-primary transition-colors">Cookie Settings</Link></li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-black uppercase tracking-[0.2em] text-muted-foreground/50">
-                    <p>© {currentYear} {siteConfig.name}. All rights reserved.</p>
+                    <p>&copy; {currentYear} {siteConfig.name}. All rights reserved.</p>
                     <div className="flex items-center gap-6">
                         <Link href="#" className="hover:text-primary transition-colors uppercase tracking-widest">Status</Link>
                         <Link href="#" className="hover:text-primary transition-colors uppercase tracking-widest">Help Center</Link>

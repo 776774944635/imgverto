@@ -1,11 +1,14 @@
 import Link from "next/link";
 import {
-    ImageIcon,
     FileText,
     Combine,
     Files,
     Minimize2,
-    ArrowRight
+    ArrowRight,
+    Sparkles,
+    Eraser,
+    FileType,
+    Image as ImageIcon
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -23,6 +26,27 @@ const allTools = [
         icon: ImageIcon,
         description: "Change dimensions",
         gradient: "from-purple-600 to-pink-500",
+    },
+    {
+        title: "Remove BG",
+        path: "/background-remover",
+        icon: Eraser,
+        description: "Transparent BG",
+        gradient: "from-pink-600 to-rose-500",
+    },
+    {
+        title: "JPG to PNG",
+        path: "/jpg-to-png",
+        icon: FileType,
+        description: "Convert to PNG",
+        gradient: "from-blue-600 to-cyan-500",
+    },
+    {
+        title: "PNG to JPG",
+        path: "/png-to-jpg",
+        icon: ImageIcon,
+        description: "Convert to JPG",
+        gradient: "from-orange-600 to-amber-500",
     },
     {
         title: "Image to PDF",
@@ -51,6 +75,27 @@ const allTools = [
         icon: Files,
         description: "Extract images",
         gradient: "from-amber-600 to-yellow-500",
+    },
+    {
+        title: "Image Upscaler",
+        path: "/image-upscaler",
+        icon: Sparkles,
+        description: "Increase resolution",
+        gradient: "from-violet-600 to-fuchsia-500",
+    },
+    {
+        title: "JPG to PNG",
+        path: "/jpg-to-png",
+        icon: ImageIcon,
+        description: "Convert to PNG",
+        gradient: "from-blue-600 to-indigo-500",
+    },
+    {
+        title: "PNG to JPG",
+        path: "/png-to-jpg",
+        icon: ImageIcon,
+        description: "Convert to JPG",
+        gradient: "from-cyan-600 to-teal-500",
     }
 ];
 

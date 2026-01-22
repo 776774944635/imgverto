@@ -3,7 +3,6 @@
 import Link from "next/link";
 import {
   FileText,
-  FileType,
   Combine,
   ArrowRight,
   Minimize2,
@@ -13,7 +12,9 @@ import {
   Sparkles,
   ShieldIcon,
   ZapIcon,
-  GlobeIcon
+  GlobeIcon,
+  Eraser,
+  FileType
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -75,6 +76,42 @@ export default function Home() {
       color: "bg-amber-500",
       lightColor: "bg-amber-50",
       textColor: "text-amber-600"
+    },
+    {
+      title: "Image Upscaler",
+      description: "Increase resolution by 2x or 4x online using AI without losing quality.",
+      href: "/image-upscaler",
+      icon: <Sparkles className="w-6 h-6" />,
+      color: "bg-violet-500",
+      lightColor: "bg-violet-50",
+      textColor: "text-violet-600"
+    },
+    {
+      title: "Remove Background",
+      description: "Instantly create transparent backgrounds for your images using AI.",
+      href: "/background-remover",
+      icon: <Eraser className="w-6 h-6" />,
+      color: "bg-pink-500",
+      lightColor: "bg-pink-50",
+      textColor: "text-pink-600"
+    },
+    {
+      title: "JPG to PNG",
+      description: "Convert JPG to high-quality PNG format instantly without losing quality.",
+      href: "/jpg-to-png",
+      icon: <FileType className="w-6 h-6" />,
+      color: "bg-blue-500",
+      lightColor: "bg-blue-50",
+      textColor: "text-blue-600"
+    },
+    {
+      title: "PNG to JPG",
+      description: "Convert PNG to JPG format online. Adjustable compression for smaller file sizes.",
+      href: "/png-to-jpg",
+      icon: <ImageIcon className="w-6 h-6" />,
+      color: "bg-orange-500",
+      lightColor: "bg-orange-50",
+      textColor: "text-orange-600"
     },
   ];
 
