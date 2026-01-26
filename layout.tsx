@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Inter, Outfit } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/providers'
@@ -53,9 +54,6 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
     creator: "@imgverto",
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
   metadataBase: new URL(siteConfig.url),
 }
 
@@ -67,9 +65,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Placeholder for AdSense Auto Ads */}
-        {<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2853615275823577"
-          crossOrigin="anonymous"></script>}
+        {/* AdSense Auto Ads */}
+        <Script
+          id="adsbygoogle-init"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2853615275823577"
+        />
       </head>
       <body suppressHydrationWarning className={cn(
         "min-h-screen font-sans antialiased",
