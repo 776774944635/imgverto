@@ -96,6 +96,27 @@ const allTools = [
         icon: ImageIcon,
         description: "Convert to JPG",
         gradient: "from-cyan-600 to-teal-500",
+    },
+    {
+        title: "Resume Builder",
+        path: "/resume-builder",
+        icon: FileText,
+        description: "Create Resume",
+        gradient: "from-slate-700 to-slate-500",
+    },
+    {
+        title: "Cover Letter",
+        path: "/cover-letter-generator",
+        icon: FileText,
+        description: "Write Cover Letter",
+        gradient: "from-indigo-600 to-blue-500",
+    },
+    {
+        title: "Letter Gen",
+        path: "/letter-generator",
+        icon: FileText,
+        description: "Personal Letters",
+        gradient: "from-amber-600 to-orange-500",
     }
 ];
 
