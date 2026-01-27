@@ -54,6 +54,9 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
     creator: "@imgverto",
   },
+  icons: {
+    icon: "/icon.jpg",
+  },
   metadataBase: new URL(siteConfig.url),
 }
 
