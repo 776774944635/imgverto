@@ -56,6 +56,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+    apple: "/icon.jpg",
   },
   metadataBase: new URL(siteConfig.url),
 }
