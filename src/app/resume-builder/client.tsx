@@ -10,6 +10,10 @@ import { cn } from "@/lib/utils";
 
 // --- Types ---
 
+import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from '@dnd-kit/core';
+import { arrayMove, SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy, useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+
 interface Education {
     id: string;
     school: string;
@@ -48,6 +52,7 @@ interface ResumeData {
     phone: string;
     location: string;
     linkedin: string;
+    github: string;
     portfolio: string;
     summary: string;
     skills: string;
@@ -55,6 +60,7 @@ interface ResumeData {
     experience: Experience[];
     projects: Project[];
     certifications: Certification[];
+    sectionOrder: string[];
 }
 
 const initialData: ResumeData = {
@@ -63,13 +69,15 @@ const initialData: ResumeData = {
     phone: "",
     location: "",
     linkedin: "",
+    github: "",
     portfolio: "",
     summary: "",
     skills: "",
     education: [],
     experience: [],
     projects: [],
-    certifications: []
+    certifications: [],
+    sectionOrder: ['experience', 'education', 'projects', 'skills', 'certifications']
 };
 
 // --- Steps Configuration ---
@@ -79,9 +87,37 @@ const STEPS = [
     { id: 2, title: "Education", icon: GraduationCap },
     { id: 3, title: "Experience", icon: Briefcase },
     { id: 4, title: "Skills", icon: Monitor },
+    { id: 4, title: "Skills", icon: Monitor },
     { id: 5, title: "Projects", icon: FileText },
-    { id: 6, title: "Finish", icon: Award },
+    { id: 6, title: "Certifications", icon: Award },
+    { id: 7, title: "Customize", icon: Monitor },
+    { id: 8, title: "Finish", icon: Award },
 ];
+
+function SortableItem(props: any) {
+    const {
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
+    } = useSortable({ id: props.id });
+
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition,
+    };
+
+    return (
+        <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="p-4 bg-white rounded-xl border shadow-sm mb-3 flex items-center justify-between cursor-grab active:cursor-grabbing hover:border-primary/50 transition-colors">
+            <span className="font-semibold capitalize text-foreground/80 flex items-center gap-3">
+                <div className="p-2 bg-muted rounded-lg"><props.icon className="w-4 h-4" /></div>
+                {props.id}
+            </span>
+            <div className="text-xs text-muted-foreground px-2 py-1 bg-muted rounded">Drag to move</div>
+        </div>
+    );
+}
 
 const InputGroup = ({ label, value, onChange, placeholder, type = "text", textarea = false }: any) => (
     <div className="space-y-2">
@@ -109,6 +145,29 @@ export function ResumeBuilderClient() {
     const [activeStep, setActiveStep] = useState(1);
     const [data, setData] = useState<ResumeData>(initialData);
     const resumeRef = useRef<HTMLDivElement>(null);
+
+    const sensors = useSensors(
+        useSensor(PointerSensor),
+        useSensor(KeyboardSensor, {
+            coordinateGetter: sortableKeyboardCoordinates,
+        })
+    );
+
+    const handleDragEnd = (event: DragEndEvent) => {
+        const { active, over } = event;
+
+        if (active.id !== over?.id) {
+            setData((prev) => {
+                const oldIndex = prev.sectionOrder.indexOf(active.id as string);
+                const newIndex = prev.sectionOrder.indexOf(over?.id as string);
+
+                return {
+                    ...prev,
+                    sectionOrder: arrayMove(prev.sectionOrder, oldIndex, newIndex),
+                };
+            });
+        }
+    };
 
     // --- Handlers ---
 
@@ -247,6 +306,7 @@ export function ResumeBuilderClient() {
                                     <InputGroup label="Phone" value={data.phone} onChange={(v: string) => handleInputChange('phone', v)} placeholder="+1 234 567 890" />
                                     <InputGroup label="Location" value={data.location} onChange={(v: string) => handleInputChange('location', v)} placeholder="New York, NY" />
                                     <InputGroup label="LinkedIn" value={data.linkedin} onChange={(v: string) => handleInputChange('linkedin', v)} placeholder="linkedin.com/in/johndoe" />
+                                    <InputGroup label="GitHub" value={data.github} onChange={(v: string) => handleInputChange('github', v)} placeholder="github.com/johndoe" />
                                     <div className="md:col-span-2">
                                         <InputGroup label="Portfolio / Website" value={data.portfolio} onChange={(v: string) => handleInputChange('portfolio', v)} placeholder="johndoe.com" />
                                     </div>
@@ -321,6 +381,52 @@ export function ResumeBuilderClient() {
                             )}
 
                             {activeStep === 6 && (
+                                <div className="space-y-6">
+                                    {data.certifications.map((cert, idx) => (
+                                        <div key={cert.id} className="p-4 rounded-2xl bg-muted/30 border relative group">
+                                            <button onClick={() => removeItem('certifications', cert.id)} className="absolute top-4 right-4 p-2 text-red-500 hover:bg-red-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"><Trash2 className="w-4 h-4" /></button>
+                                            <h3 className="font-bold mb-4 text-primary">Certification #{idx + 1}</h3>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <InputGroup label="Certification Name" value={cert.name} onChange={(v: string) => handleArrayChange('certifications', cert.id, 'name', v)} />
+                                                <InputGroup label="Issuer" value={cert.issuer} onChange={(v: string) => handleArrayChange('certifications', cert.id, 'issuer', v)} />
+                                                <InputGroup label="Date" value={cert.date} onChange={(v: string) => handleArrayChange('certifications', cert.id, 'date', v)} placeholder="YYYY" />
+                                            </div>
+                                        </div>
+                                    ))}
+                                    <button onClick={() => addItem('certifications')} className="w-full py-4 border-2 border-dashed border-primary/20 rounded-2xl flex items-center justify-center gap-2 text-primary font-bold hover:bg-primary/5 transition-colors">
+                                        <Plus className="w-5 h-5" /> Add Certification
+                                    </button>
+                                </div>
+                            )}
+
+                            {activeStep === 7 && (
+                                <div className="space-y-6">
+                                    <p className="text-muted-foreground mb-4">Drag and drop sections to rearrange them on your resume.</p>
+                                    <DndContext
+                                        sensors={sensors}
+                                        collisionDetection={closestCenter}
+                                        onDragEnd={handleDragEnd}
+                                    >
+                                        <SortableContext
+                                            items={data.sectionOrder}
+                                            strategy={verticalListSortingStrategy}
+                                        >
+                                            {data.sectionOrder.map((section) => (
+                                                <SortableItem key={section} id={section} icon={
+                                                    section === 'experience' ? Briefcase :
+                                                        section === 'education' ? GraduationCap :
+                                                            section === 'projects' ? FileText :
+                                                                section === 'skills' ? Monitor :
+                                                                    section === 'certifications' ? Award :
+                                                                        User
+                                                } />
+                                            ))}
+                                        </SortableContext>
+                                    </DndContext>
+                                </div>
+                            )}
+
+                            {activeStep === 8 && (
                                 <div className="flex flex-col items-center justify-center h-full space-y-6 py-12">
                                     <div className="w-20 h-20 rounded-full bg-green-100 text-green-600 flex items-center justify-center mb-4">
                                         <Download className="w-10 h-10" />
@@ -349,7 +455,6 @@ export function ResumeBuilderClient() {
                         ref={resumeRef}
                         id="resume-preview"
                         className="bg-white mx-auto shadow-2xl print:shadow-none aspect-[210/297] w-full max-w-[210mm] min-h-[297mm] p-[10mm] md:p-[20mm] text-slate-800 text-sm leading-relaxed"
-                        style={{ fontFamily: 'Times New Roman, serif' }}
                     >
                         {/* Header */}
                         <div className="border-b-2 border-slate-800 pb-6 mb-6">
@@ -358,76 +463,96 @@ export function ResumeBuilderClient() {
                             </h1>
                             <div className="text-lg font-medium text-slate-600 mb-4">{data.summary || "Professional Title"}</div>
                             <div className="flex flex-wrap gap-x-4 gap-y-1 text-slate-500 text-xs">
-                                {data.email && <span>{data.email}</span>}
-                                {data.phone && <span>• {data.phone}</span>}
+                                {data.email && <a href={`mailto:${data.email}`} className="hover:text-primary hover:underline">{data.email}</a>}
+                                {data.phone && <a href={`tel:${data.phone}`} className="hover:text-primary hover:underline">• {data.phone}</a>}
                                 {data.location && <span>• {data.location}</span>}
-                                {data.linkedin && <span>• {data.linkedin}</span>}
-                                {data.portfolio && <span>• {data.portfolio}</span>}
+                                {data.linkedin && <a href={data.linkedin.startsWith('http') ? data.linkedin : `https://${data.linkedin}`} target="_blank" rel="noreferrer" className="hover:text-primary hover:underline">• LinkedIn</a>}
+                                {data.github && <a href={data.github.startsWith('http') ? data.github : `https://${data.github}`} target="_blank" rel="noreferrer" className="hover:text-primary hover:underline">• GitHub</a>}
+                                {data.portfolio && <a href={data.portfolio.startsWith('http') ? data.portfolio : `https://${data.portfolio}`} target="_blank" rel="noreferrer" className="hover:text-primary hover:underline">• Portfolio</a>}
                             </div>
                         </div>
 
                         {/* Content Grid */}
                         <div className="space-y-6">
-
-                            {/* Experience */}
-                            {data.experience.length > 0 && (
-                                <section>
-                                    <h2 className="text-sm font-bold uppercase tracking-widest border-b border-slate-300 pb-1 mb-3 text-slate-800">Experience</h2>
-                                    <div className="space-y-4">
-                                        {data.experience.map((exp) => (
-                                            <div key={exp.id}>
-                                                <div className="flex justify-between items-baseline mb-1">
-                                                    <h3 className="font-bold text-base">{exp.position}</h3>
-                                                    <span className="text-slate-500 italic whitespace-nowrap">{exp.startDate} – {exp.endDate}</span>
+                            {data.sectionOrder.map((section) => {
+                                switch (section) {
+                                    case 'experience':
+                                        return data.experience.length > 0 && (
+                                            <section key="experience">
+                                                <h2 className="text-sm font-bold uppercase tracking-widest border-b border-slate-300 pb-1 mb-3 text-slate-800">Professional Experience</h2>
+                                                <div className="space-y-4">
+                                                    {data.experience.map((exp) => (
+                                                        <div key={exp.id}>
+                                                            <div className="flex justify-between items-baseline mb-1">
+                                                                <h3 className="font-bold text-base">{exp.position}</h3>
+                                                                <span className="text-slate-500 italic whitespace-nowrap">{exp.startDate} – {exp.endDate}</span>
+                                                            </div>
+                                                            <div className="font-semibold text-slate-700 mb-2">{exp.company}</div>
+                                                            <p className="whitespace-pre-line text-slate-600">{exp.description}</p>
+                                                        </div>
+                                                    ))}
                                                 </div>
-                                                <div className="font-semibold text-slate-700 mb-2">{exp.company}</div>
-                                                <p className="whitespace-pre-line text-slate-600">{exp.description}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </section>
-                            )}
-
-                            {/* Education */}
-                            {data.education.length > 0 && (
-                                <section>
-                                    <h2 className="text-sm font-bold uppercase tracking-widest border-b border-slate-300 pb-1 mb-3 text-slate-800">Education</h2>
-                                    <div className="space-y-3">
-                                        {data.education.map((edu) => (
-                                            <div key={edu.id}>
-                                                <div className="flex justify-between items-baseline">
-                                                    <h3 className="font-bold">{edu.school}</h3>
-                                                    <span className="text-slate-500 italic">{edu.startDate} – {edu.endDate}</span>
+                                            </section>
+                                        );
+                                    case 'education':
+                                        return data.education.length > 0 && (
+                                            <section key="education">
+                                                <h2 className="text-sm font-bold uppercase tracking-widest border-b border-slate-300 pb-1 mb-3 text-slate-800">Education</h2>
+                                                <div className="space-y-3">
+                                                    {data.education.map((edu) => (
+                                                        <div key={edu.id}>
+                                                            <div className="flex justify-between items-baseline">
+                                                                <h3 className="font-bold">{edu.school}</h3>
+                                                                <span className="text-slate-500 italic">{edu.startDate} – {edu.endDate}</span>
+                                                            </div>
+                                                            <div>{edu.degree}</div>
+                                                        </div>
+                                                    ))}
                                                 </div>
-                                                <div>{edu.degree}</div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </section>
-                            )}
-
-                            {/* Projects */}
-                            {data.projects.length > 0 && (
-                                <section>
-                                    <h2 className="text-sm font-bold uppercase tracking-widest border-b border-slate-300 pb-1 mb-3 text-slate-800">Projects</h2>
-                                    <div className="space-y-3">
-                                        {data.projects.map((proj) => (
-                                            <div key={proj.id}>
-                                                <h3 className="font-bold">{proj.name}</h3>
-                                                <p className="text-slate-600">{proj.description}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </section>
-                            )}
-
-                            {/* Skills */}
-                            {data.skills && (
-                                <section>
-                                    <h2 className="text-sm font-bold uppercase tracking-widest border-b border-slate-300 pb-1 mb-3 text-slate-800">Skills</h2>
-                                    <p className="text-slate-700 leading-normal">{data.skills}</p>
-                                </section>
-                            )}
+                                            </section>
+                                        );
+                                    case 'projects':
+                                        return data.projects.length > 0 && (
+                                            <section key="projects">
+                                                <h2 className="text-sm font-bold uppercase tracking-widest border-b border-slate-300 pb-1 mb-3 text-slate-800">Projects</h2>
+                                                <div className="space-y-3">
+                                                    {data.projects.map((proj) => (
+                                                        <div key={proj.id}>
+                                                            <div className="flex justify-between items-baseline">
+                                                                <h3 className="font-bold">{proj.name}</h3>
+                                                                {proj.link && <a href={proj.link.startsWith('http') ? proj.link : `https://${proj.link}`} target="_blank" rel="noreferrer" className="text-xs text-primary underline">Link</a>}
+                                                            </div>
+                                                            <p className="text-slate-600">{proj.description}</p>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </section>
+                                        );
+                                    case 'skills':
+                                        return data.skills && (
+                                            <section key="skills">
+                                                <h2 className="text-sm font-bold uppercase tracking-widest border-b border-slate-300 pb-1 mb-3 text-slate-800">Skills</h2>
+                                                <p className="text-slate-700 leading-normal">{data.skills}</p>
+                                            </section>
+                                        );
+                                    case 'certifications':
+                                        return data.certifications.length > 0 && (
+                                            <section key="certifications">
+                                                <h2 className="text-sm font-bold uppercase tracking-widest border-b border-slate-300 pb-1 mb-3 text-slate-800">Certifications</h2>
+                                                <div className="space-y-2">
+                                                    {data.certifications.map((cert) => (
+                                                        <div key={cert.id} className="flex justify-between items-baseline">
+                                                            <div className="font-bold text-slate-700">{cert.name} <span className="font-normal text-slate-500">- {cert.issuer}</span></div>
+                                                            <span className="text-slate-500 italic text-xs">{cert.date}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </section>
+                                        );
+                                    default:
+                                        return null;
+                                }
+                            })}
                         </div>
                     </div>
                 </div>
