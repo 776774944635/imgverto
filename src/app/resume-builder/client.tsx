@@ -83,6 +83,28 @@ const STEPS = [
     { id: 6, title: "Finish", icon: Award },
 ];
 
+const InputGroup = ({ label, value, onChange, placeholder, type = "text", textarea = false }: any) => (
+    <div className="space-y-2">
+        <label className="text-sm font-semibold text-foreground/80">{label}</label>
+        {textarea ? (
+            <textarea
+                value={value}
+                onChange={(e) => onChange(e.target.value)}
+                placeholder={placeholder}
+                className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none min-h-[100px]"
+            />
+        ) : (
+            <input
+                type={type}
+                value={value}
+                onChange={(e) => onChange(e.target.value)}
+                placeholder={placeholder}
+                className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none"
+            />
+        )}
+    </div>
+);
+
 export function ResumeBuilderClient() {
     const [activeStep, setActiveStep] = useState(1);
     const [data, setData] = useState<ResumeData>(initialData);
@@ -136,27 +158,9 @@ export function ResumeBuilderClient() {
 
     // --- Render Helpers ---
 
-    const InputGroup = ({ label, value, onChange, placeholder, type = "text", textarea = false }: any) => (
-        <div className="space-y-2">
-            <label className="text-sm font-semibold text-foreground/80">{label}</label>
-            {textarea ? (
-                <textarea
-                    value={value}
-                    onChange={(e) => onChange(e.target.value)}
-                    placeholder={placeholder}
-                    className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none min-h-[100px]"
-                />
-            ) : (
-                <input
-                    type={type}
-                    value={value}
-                    onChange={(e) => onChange(e.target.value)}
-                    placeholder={placeholder}
-                    className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none"
-                />
-            )}
-        </div>
-    );
+    // --- Render Helpers ---
+
+
 
     return (
         <Section className="min-h-screen flex flex-col items-center print:p-0 print:block">
