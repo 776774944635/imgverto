@@ -109,12 +109,12 @@ const STEPS = [
 ];
 
 const COLORS = [
-    { id: 'slate', name: 'Slate', value: '#334155', class: 'text-slate-900 border-slate-900 bg-slate-900' },
-    { id: 'blue', name: 'Blue', value: '#2563eb', class: 'text-blue-600 border-blue-600 bg-blue-600' },
-    { id: 'emerald', name: 'Emerald', value: '#059669', class: 'text-emerald-600 border-emerald-600 bg-emerald-600' },
-    { id: 'rose', name: 'Rose', value: '#e11d48', class: 'text-rose-600 border-rose-600 bg-rose-600' },
-    { id: 'amber', name: 'Amber', value: '#d97706', class: 'text-amber-600 border-amber-600 bg-amber-600' },
-    { id: 'violet', name: 'Violet', value: '#7c3aed', class: 'text-violet-600 border-violet-600 bg-violet-600' },
+    { id: 'slate', name: 'Slate', value: '#334155', class: 'text-slate-900 border-slate-900 bg-slate-900', text: 'text-slate-900', border: 'border-slate-900', bg: 'bg-slate-900' },
+    { id: 'blue', name: 'Blue', value: '#2563eb', class: 'text-blue-600 border-blue-600 bg-blue-600', text: 'text-blue-600', border: 'border-blue-600', bg: 'bg-blue-600' },
+    { id: 'emerald', name: 'Emerald', value: '#059669', class: 'text-emerald-600 border-emerald-600 bg-emerald-600', text: 'text-emerald-600', border: 'border-emerald-600', bg: 'bg-emerald-600' },
+    { id: 'rose', name: 'Rose', value: '#e11d48', class: 'text-rose-600 border-rose-600 bg-rose-600', text: 'text-rose-600', border: 'border-rose-600', bg: 'bg-rose-600' },
+    { id: 'amber', name: 'Amber', value: '#d97706', class: 'text-amber-600 border-amber-600 bg-amber-600', text: 'text-amber-600', border: 'border-amber-600', bg: 'bg-amber-600' },
+    { id: 'violet', name: 'Violet', value: '#7c3aed', class: 'text-violet-600 border-violet-600 bg-violet-600', text: 'text-violet-600', border: 'border-violet-600', bg: 'bg-violet-600' },
 ];
 
 const FONTS = [
@@ -408,10 +408,10 @@ export function ResumeBuilderClient() {
         setData(prev => ({ ...prev, [field]: value }));
     };
 
-    const handleArrayChange = (section: any, id: string, field: string, value: string) => {
+    const handleArrayChange = (section: 'education' | 'experience' | 'projects' | 'certifications', id: string, field: string, value: string) => {
         setData(prev => ({
             ...prev,
-            [section]: prev[section as keyof ResumeData].map((item: any) =>
+            [section]: (prev[section] as any[]).map((item: any) =>
                 item.id === id ? { ...item, [field]: value } : item
             )
         }));
@@ -428,8 +428,8 @@ export function ResumeBuilderClient() {
         setData(prev => ({ ...prev, [section]: [...prev[section], newItems[section]] }));
     };
 
-    const removeItem = (section: any, id: string) => {
-        setData(prev => ({ ...prev, [section]: prev[section as keyof ResumeData].filter((item: any) => item.id !== id) }));
+    const removeItem = (section: 'education' | 'experience' | 'projects' | 'certifications', id: string) => {
+        setData(prev => ({ ...prev, [section]: (prev[section] as any[]).filter((item: any) => item.id !== id) }));
     };
 
     const updateTheme = (field: keyof ResumeTheme, value: string) => {
@@ -444,9 +444,9 @@ export function ResumeBuilderClient() {
     return (
         <Section className="min-h-screen flex flex-col items-center print:p-0 print:block bg-slate-50/50">
             <div className="print:hidden w-full flex flex-col items-center">
-                <ToolHeader//
-                    title="Professional Resume Builder"//
-                    description="Create a stunning, ATS-friendly resume in minutes. Choose from premium templates and customize to match your style."//
+                <ToolHeader
+                    title="Professional Resume Builder"
+                    description="Create a stunning, ATS-friendly resume in minutes. Choose from premium templates and customize to match your style."
                 />
             </div>
 
