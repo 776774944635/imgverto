@@ -41,7 +41,8 @@ export function BackgroundRemoverClient() {
 
         try {
             // Dynamically import the library to avoid build-time errors
-            const { default: imglyRemoveBackground } = (await import("@imgly/background-removal")) as any;
+            const { removeBackground } = (await import("@imgly/background-removal")) as any;
+            const imglyRemoveBackground = removeBackground;
 
             // Processing
             const blob = await imglyRemoveBackground(previewUrl, {
