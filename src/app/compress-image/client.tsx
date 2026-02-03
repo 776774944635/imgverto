@@ -7,6 +7,7 @@ import { FAQSection } from "@/components/tools/FAQSection";
 import { Section } from "@/components/shared/Section";
 import { RelatedTools } from "@/components/tools/RelatedTools";
 import { Download, RefreshCw } from "lucide-react";
+import { ToolExtraContent } from "@/components/tools/ToolExtraContent";
 
 function formatBytes(bytes: number, decimals = 2) {
     if (!+bytes) return '0 Bytes';
@@ -129,26 +130,70 @@ export function CompressImageClient() {
                 )}
             </div>
 
-            <div className="w-full max-w-3xl prose prose-slate dark:prose-invert mb-12">
-                <h2>Optimize Images for Web & Speed</h2>
-                <p>
-                    Large images can slow down your website and consume mobile data. Our <strong>online image compressor</strong> allows you to shrink file sizes up to 80% with minimal visual difference.
-                    Target <strong>JPEG, PNG, and WebP</strong> formats easily and for free. Secure, fast, and no signup needed.
-                </p>
-                <h3>Why use Imgverto Compressor?</h3>
-                <ul>
-                    <li><strong>Lossless & Lossy:</strong> Smart balance between file size and quality.</li>
-                    <li><strong>Bulk Friendly:</strong> Coming soon, but fast individual processing now.</li>
-                    <li><strong>Privacy First:</strong> No files are stored permanently.</li>
-                </ul>
-            </div>
+            <ToolExtraContent
+                whatDoesItDo={{
+                    title: "What this Image Compressor Tool Does",
+                    content: `Imgverto's Image Compressor is a powerful tool designed to reduce the digital footprint of your photos without sacrificing their visual integrity. Every image file contains a vast amount of data, some of which is essential for what you see, and some of which is redundant or invisible to the naked eye. Our compressor uses advanced algorithms to perform both lossy and lossless compression. 
 
-            <FAQSection items={[
-                { question: "Is it really free?", answer: "Yes, our image compressor is 100% free to use." },
-                { question: "Which formats are supported?", answer: "We support JPG, PNG, and WebP files." },
-                { question: "Will my images lose quality?", answer: "Our algorithm is optimized to maintain high visual fidelity even at lower quality settings." },
-                { question: "What is the maximum file size?", answer: "You can upload images up to 10MB each." }
-            ]} />
+Lossless compression works by removing metadata and finding more efficient ways to store pixel data without losing a single bit of information. Lossy compression, on the other hand, strategically discards data that the human eye is less likely to notice, allowing for much more significant reductions in file size. By adjusting the quality slider, you can control this balance, finding the perfect 'sweet spot' for your specific needs. This process is essential for modern web development, where fast loading times are a critical factor in user experience and search engine optimization (SEO).
+
+The tool handles the three most popular web formats: JPEG, PNG, and WebP. For JPEG files, it optimizes the quantization tables; for PNG, it reduces the color palette and optimizes the compression blocks; and for WebP, it leverages Google's advanced predictive coding. Unlike many other services, Imgverto processes these files quickly and securely, providing you with a download link the moment the compression is finished.`
+                }}
+                whoIsItFor={{
+                    title: "Who Should Use This Tool",
+                    content: `The Image Compressor is a must-have for web developers and designers who are obsessed with PageSpeed Insights scores and Core Web Vitals. Large images are the leading cause of slow websites, and this tool helps eliminate that bottleneck. Bloggers and content creators using platforms like WordPress or Shopify will find it invaluable for keeping their page weights down, ensuring that their readers have a smooth experience even on slow mobile connections.
+
+Social media managers also benefit greatly from compression. Many platforms have strict file size limits for uploads, and our tool allows you to stay under those limits while maintaining professional-looking visuals. Even casual users who are running out of storage space on their cloud drives (like Google Drive or iCloud) or who want to send multiple photos via email can use Imgverto to shrink their files before sending or archiving. If you work with images in any professional or personal capacity, our compressor will save you bandwidth and storage space every single day.`
+                }}
+                howToUse={{
+                    title: "How to Use the Free Image Compressor",
+                    steps: [
+                        "Click the 'Upload' button or drag and drop your JPG, PNG, or WebP files into the uploader box. You can see the original file size immediately.",
+                        "Adjust the 'Quality' slider. We recommend 80% for the best balance of size and visual fidelity, but you can go lower for even smaller files.",
+                        "Click the 'Compress Image Now' button. Our server-side processing handles the heavy lifting in just a second or two.",
+                        "Once finished, you will see a comparison showing your original size, the new compressed size, and the percentage of space saved.",
+                        "Click the 'Download Compressed Image' button to save your newly optimized file. It's now ready for use on your website or social media."
+                    ]
+                }}
+                benefits={{
+                    title: "Benefits of Using Imgverto",
+                    items: [
+                        "Boost Website Speed: Smaller images load faster, leading to lower bounce rates and higher user engagement.",
+                        "Improved SEO: Search engines like Google prioritize fast-loading websites in their search results.",
+                        "Save Storage Space: Dramatically reduce the space occupied by your photo library on your phone or computer.",
+                        "Faster Transfers: Smaller files mean faster uploads to social media and quicker email attachments.",
+                        "Optimize for Mobile: Help your mobile visitors save data and load your content faster on 3G and 4G networks.",
+                        "100% Secure: We use SSL encryption to handle your files, and they are automatically deleted shortly after processing.",
+                        "No Limits: Compress as many images as you want for free, with no daily limits or watermarks."
+                    ]
+                }}
+                faqs={[
+                    {
+                        question: "Will my images look blurry after compression?",
+                        answer: "Not if you choose the right settings. At 80% quality, most users cannot distinguish between the original and the compressed version. If you go very low (below 30%), you might start to see 'artifacts', but for most web uses, a significant reduction is possible without visible loss."
+                    },
+                    {
+                        question: "What is the difference between lossy and lossless compression?",
+                        answer: "Lossless compression reduces file size without losing any data (perfect for logos/text). Lossy compression discards some data to achieve much smaller sizes (perfect for photographs). Our tool uses a smart hybrid approach to give you the best results."
+                    },
+                    {
+                        question: "Is there a maximum file size limit for uploads?",
+                        answer: "Currently, Imgverto supports files up to 10MB each. This covers 99% of standard digital photos and web graphics. If you have a larger file, we recommend resizing it first using our resize tool."
+                    },
+                    {
+                        question: "Does Imgverto keep a copy of my images?",
+                        answer: "No. Your privacy is a priority. Files are processed and held in a temporary secured folder only for as long as needed for you to download them. They are automatically cleared from our system regularly."
+                    },
+                    {
+                        question: "Can I compress PNG files with transparency?",
+                        answer: "Yes, our tool fully supports PNG transparency (alpha channels). The compression will reduce the file size while keeping the transparent background perfectly intact."
+                    },
+                    {
+                        question: "Why should I compress WebP if it's already a modern format?",
+                        answer: "While WebP is very efficient, many export tools don't optimize it to the fullest. Our compressor can often find another 10-20% of savings even on WebP files by applying more aggressive compression blocks."
+                    }
+                ]}
+            />
 
             <RelatedTools currentPath="/compress-image" />
         </Section>

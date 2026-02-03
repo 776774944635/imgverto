@@ -3,8 +3,11 @@ import { ImageToPdfClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
 
 export const metadata: Metadata = {
-    title: "Image to PDF Converter Free | Convert JPG to PDF Online",
-    description: "Use our free Image to PDF converter to turn your photos into documents. Convert JPG to PDF online securely without watermarks.",
+    title: 'Image to PDF Converter | Convert Photos to PDF Online Free | Imgverto',
+    description: 'Turn your JPG, PNG, and WebP images into professional PDF documents for free with Imgverto. Our online converter is fast, secure, and preserves image quality flawlessly.',
+    alternates: {
+        canonical: '/image-to-pdf',
+    },
     keywords: ["image to pdf converter free", "jpg to pdf online", "convert image to pdf", "png to pdf", "imgverto"]
 };
 

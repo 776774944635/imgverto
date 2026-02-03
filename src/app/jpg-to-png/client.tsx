@@ -8,6 +8,7 @@ import { Section } from "@/components/shared/Section";
 import { RelatedTools } from "@/components/tools/RelatedTools";
 import { Download, Scan, Zap, Image as ImageIcon, FileType } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ToolExtraContent } from "@/components/tools/ToolExtraContent";
 
 function formatBytes(bytes: number, decimals = 2) {
     if (!+bytes) return '0 Bytes';
@@ -187,43 +188,68 @@ export function JpgToPngClient() {
                 )}
             </div>
 
-            <div className="w-full max-w-3xl prose prose-slate prose-lg dark:prose-invert mb-16">
-                <h2>Why convert JPG to PNG?</h2>
-                <p>
-                    While JPG (JPEG) is excellent for photography due to its small size, it uses "lossy" compression which can create artifacts.
-                    <strong>PNG (Portable Network Graphics)</strong> is a lossless format, meaning it preserves all image quality.
-                    It is also the standard format for web graphics that require transparency and sharp text.
-                </p>
+            <ToolExtraContent
+                whatDoesItDo={{
+                    title: "What this JPG to PNG Converter Does",
+                    content: `Imgverto's JPG to PNG Converter is a precision utility designed to transition your images from the ubiquitous but 'lossy' JPEG format to the robust, 'lossless' PNG (Portable Network Graphics) format. While JPG is the world's go-to for photographs due to its incredible compression ratios, every time a JPG is saved, it lose a bit of its soul—tiny details are discarded, and sharp edges can become 'noisy' or 'blocky.' PNG, on the other hand, prioritizes visual perfection. By converting to PNG, you ensure that no further data is lost during subsequent edits or saves.
 
-                <h3>Benefits of PNG Format</h3>
-                <ul>
-                    <li><strong>Lossless Quality:</strong> No compression artifacts, ensuring crisp edges and details.</li>
-                    <li><strong>Web Standard:</strong> Supported by all browsers and perfect for logos, screenshots, and diagrams.</li>
-                    <li><strong>Stability:</strong> Saving a PNG repeatedly doesn't degrade its quality like JPG does.</li>
-                </ul>
+Beyond simple quality preservation, this converter serves as the first step for many design projects. Although the source JPG doesn't support transparency, the resulting PNG container does. This means that once your file is in PNG format, you can easily use other tools—like our Background Remover—to create the transparent layers needed for professional graphic design. Our converter uses a high-fidelity rendering engine that maps every pixel from the source file into the destination container with 1:1 accuracy, ensuring that the colors and clarity you start with are exactly what you get in the output.`
+                }}
+                whoIsItFor={{
+                    title: "Who Should Use This Tool",
+                    content: `This tool is an essential part of the toolkit for web developers, UI/UX designers, and digital artists. If you have a logo or a high-contrast graphic that was unfortunately saved as a JPG, converting it to PNG is crucial before integrating it into a website, as PNGs handle the sharp lines and text of UI elements much better than JPEGs. It's also vital for anyone who plans to perform multi-stage editing on a photo; by switching to PNG early in the process, you prevent the 'generational loss' that occurs when saving a JPG multiple times.
 
-                <div className="p-6 bg-slate-50 border border-slate-200 rounded-2xl my-8">
-                    <p className="text-slate-800 m-0 font-medium">
-                        <strong>Did you know?</strong> Converting JPG to PNG won't magically improve a blurry photo (you can't add data that isn't there),
-                        but it <em>will</em> prevent any further quality loss when you edit or save it again.
-                    </p>
-                </div>
-
-                <h3>How to use Imgverto JPG to PNG Converter?</h3>
-                <ol>
-                    <li>Click <strong>Upload Image</strong> or drag your JPG file onto the box.</li>
-                    <li>Press the <strong>Convert to PNG</strong> button.</li>
-                    <li>Our engine processes the image instantly in your browser.</li>
-                    <li>Download your new high-quality PNG file.</li>
-                </ol>
-            </div>
-
-            <FAQSection items={[
-                { question: "Is this converter free?", answer: "Yes, Imgverto is 100% free to use." },
-                { question: "Is it safe?", answer: "Yes! Your images are processed locally in your browser and are never uploaded to our servers." },
-                { question: "Will I lose quality?", answer: "No. The conversion to PNG is lossless, so the visual quality remains exactly the same as the original JPG." },
-                { question: "Can I convert multiple files?", answer: "Currently, we support converting one high-quality image at a time for maximum performance." }
-            ]} />
+Marketing professionals and social media managers also find this tool useful for ensuring their brand assets remain crisp across different platforms. Many modern apps and CMS platforms prefer PNG for thumbnails and profile pictures because of their superior clarity. Whether you're a professional designer preparing assets for a high-end application or a student wanting to make sure your presentation graphics look their best, Imgverto's converter provides the stability and quality you need without the overhead of heavy software.`
+                }}
+                howToUse={{
+                    title: "How to Use the Free JPG to PNG Converter",
+                    steps: [
+                        "Click 'Upload Image' or drag your JPG/JPEG file into the workspace. Our uploader will immediately verify the file format and size.",
+                        "Press the 'Convert to PNG' button. Our browser-side engine will immediately begin re-encoding the image data into the PNG format.",
+                        "Wait just a moment as the progress bar completes. For most standard images, this conversion is near-instant.",
+                        "Compare the Input (JPG) and Output (PNG) in our preview windows. You'll see that the visual quality remains identical to the original.",
+                        "Click 'Download PNG File' to save your new lossless asset. It's now ready for professional design, printing, or web deployment."
+                    ]
+                }}
+                benefits={{
+                    title: "Benefits of Using Imgverto",
+                    items: [
+                        "Lossless Conversion: We guarantee that not a single pixel of quality is lost during the transition from JPG to PNG.",
+                        "Total Privacy: Unlike cloud-based converters, we process your image entirely in your browser. Your files never touch our servers.",
+                        "High-Speed Output: No server queues or upload delays. Our converter leverages your device's power for instant results.",
+                        "No Daily Limits: Convert as many JPGs as you need for your projects without hitting paywalls or daily conversion caps.",
+                        "Format Stability: PNG files don't degrade over time or through repeated saves, making them perfect for master assets.",
+                        "Completely Free: Enjoy professional-grade file conversion without subscriptions, hidden fees, or annoying watermarks.",
+                        "Mobile Compatible: Our responsive design allows you to convert file formats on the go, directly from your smartphone or tablet."
+                    ]
+                }}
+                faqs={[
+                    {
+                        question: "Will converting a JPG to PNG improve the image quality?",
+                        answer: "No, converting to PNG cannot 'add' detail that was already lost in the original JPG. However, it prevents any *further* quality loss if you plan to edit the image or save it multiple times in the future."
+                    },
+                    {
+                        question: "Does the output PNG support transparency?",
+                        answer: "Yes. While the source JPG lacks transparency, the file we generate is a true PNG-24 with alpha channel support. You can then use background removal tools on this file to create transparent areas."
+                    },
+                    {
+                        question: "Is there a limit to the resolution of the converter?",
+                        answer: "Imgverto's converter can handle high-resolution photos up to standard DSLR qualities. For extremely large files (above 10-15MB), performance may depend on your device's available memory, as processing happens locally."
+                    },
+                    {
+                        question: "How does Imgverto protect my privacy?",
+                        answer: "We use a 'client-side' processing model. This means the heavy lifting of converting pixels happens in your own browser's memory. Your image is never sent across the internet to our servers, keeping your data 100% private."
+                    },
+                    {
+                        question: "Can I use the converted PNGs for professional printing?",
+                        answer: "Absolutely. PNG is an excellent format for high-quality printing because of its lossless nature. Since we preserve the original resolution, your converted files are perfect for brochures, business cards, and more."
+                    },
+                    {
+                        question: "Why do PNG files often have a larger file size than JPGs?",
+                        answer: "PNG is a lossless format, so it stores every single bit of information for every pixel. JPGs are smaller because they use 'smart' math to throw away data. For logos and text, the size difference is worth the quality gain."
+                    }
+                ]}
+            />
 
             <RelatedTools currentPath="/jpg-to-png" />
         </Section>

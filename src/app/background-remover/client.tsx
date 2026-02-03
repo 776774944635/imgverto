@@ -8,6 +8,7 @@ import { Section } from "@/components/shared/Section";
 import { RelatedTools } from "@/components/tools/RelatedTools";
 import { Download, Scan, Zap, Layers, Image as ImageIcon, Eraser, AlertCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ToolExtraContent } from "@/components/tools/ToolExtraContent";
 
 function formatBytes(bytes: number, decimals = 2) {
     if (!+bytes) return '0 Bytes';
@@ -37,7 +38,7 @@ export function BackgroundRemoverClient() {
     const handleRemoveBackground = async () => {
         if (!file || !previewUrl) return;
         setIsProcessing(true);
-        setProgress("Loading AI Model (this may take a moment)...");
+        setProgress("Loading Advanced Segmentation Model (this may take a moment)...");
 
         try {
             // Dynamically import the library to avoid build-time errors
@@ -65,7 +66,7 @@ export function BackgroundRemoverClient() {
         <Section className="min-h-[80vh] flex flex-col items-center">
             <ToolHeader
                 title="Remove Background Online Free"
-                description="Instantly remove image backgrounds with AI. Create transparent PNGs for transparency, logos, and e-commerce product photos."
+                description="Instantly remove image backgrounds with high-precision segmentation. Create transparent PNGs for transparency, logos, and e-commerce product photos."
             />
 
             <div className="w-full max-w-5xl premium-card rounded-[2.5rem] bg-white overflow-hidden min-h-[400px] p-8 mb-12 relative shadow-2xl">
@@ -126,7 +127,7 @@ export function BackgroundRemoverClient() {
                                             {isProcessing ? (
                                                 <div className="space-y-4 animate-pulse">
                                                     <Scan className="w-12 h-12 mx-auto opacity-50" />
-                                                    <p className="text-sm font-bold">AI is analyzing pixels...</p>
+                                                    <p className="text-sm font-bold">Algorithmic engine is analyzing pixels...</p>
                                                 </div>
                                             ) : (
                                                 <>
@@ -161,54 +162,73 @@ export function BackgroundRemoverClient() {
                 )}
             </div>
 
-            <div className="w-full max-w-3xl prose prose-slate prose-lg dark:prose-invert mb-16">
-                <h2>AI-Powered Background Eraser</h2>
-                <p>
-                    Effortlessly <strong>remove background from image</strong> online with Imgverto's cutting-edge AI technology.
-                    Whether you are an e-commerce seller displaying products or a designer creating logos, our tool intelligently separates
-                    the foreground from the background, delivering a clean <strong>transparent PNG</strong> in seconds.
-                </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-10 not-prose">
-                    {[
-                        { title: "Browser-Based AI", icon: Zap, desc: "Runs 100% on your device for speed & privacy." },
-                        { title: "Transparent PNG", icon: Layers, desc: "Perfect cutout quality ready for design." },
-                        { title: "Unlimited Free", icon: Scan, desc: "Process as many images as you need." },
-                    ].map((f, i) => (
-                        <div key={i} className="p-6 rounded-2xl bg-white border shadow-sm">
-                            <f.icon className="w-8 h-8 text-primary mb-4" />
-                            <h4 className="font-black text-foreground mb-2">{f.title}</h4>
-                            <p className="text-sm text-muted-foreground">{f.desc}</p>
-                        </div>
-                    ))}
-                </div>
+            <ToolExtraContent
+                whatDoesItDo={{
+                    title: "What this Background Remover Tool Does",
+                    content: `Imgverto's Background Remover is a sophisticated web-based application designed to strip the background from any image with surgical precision. Powered by advanced computational logic and pattern recognition models, our tool identifies the subject of your photo—whether it's a person, an animal, a product, or a logo—and separates it from the clutter behind it. This process, often called image segmentation, used to take hours of manual work in professional software like Adobe Photoshop. With Imgverto, it happens in seconds.
 
-                <h3>Why use our Background Remover?</h3>
-                <p>
-                    Most online tools require sign-ups or credits. Imgverto utilizes <strong>WebAssembly</strong> to run powerful AI models directly in your browser.
-                    This means:
-                </p>
-                <ul>
-                    <li><strong>Faster Performance:</strong> No uploading large files to slow servers.</li>
-                    <li><strong>Total Privacy:</strong> Your photos never leave your device.</li>
-                    <li><strong>High Precision:</strong> Detects hair, fur, and complex edges.</li>
-                </ul>
+The tool uses high-performance algorithms to analyze the pixels in your image. It looks for edges, contrast, and color variances to determine what part of the image is the foreground and what is the background. Once the analysis is complete, it applies an alpha channel mask to the background, making it completely transparent while preserving the sharp edges and fine details of your main subject. This results in a high-quality transparent PNG file that you can layer over any other background or design.
 
-                <div className="p-6 bg-amber-50 border border-amber-100 rounded-2xl my-8 flex gap-4 items-start">
-                    <AlertCircle className="w-6 h-6 text-amber-600 shrink-0 mt-1" />
-                    <p className="text-amber-800 m-0 text-sm">
-                        <strong>Note:</strong> The first time you use this tool, your browser will download the AI model (~100MB).
-                        Subsequent uses will be instant!
-                    </p>
-                </div>
-            </div>
+What makes Imgverto unique is that all of this processing happens directly in your web browser. Most other online background removers upload your images to their servers, which can be slow and raises privacy concerns. By using WebAssembly and modern browser capabilities, Imgverto keeps your data on your device. This means faster processing, total privacy, and the ability to work even on slower internet connections once the initial processing engine is loaded.`
+                }}
+                whoIsItFor={{
+                    title: "Who Should Use This Tool",
+                    content: `This tool is designed for anyone who needs high-quality image cutouts without the complexity of professional design software. It is particularly valuable for e-commerce entrepreneurs who need to display their products on a clean, professional white background to meet the requirements of platforms like Amazon, eBay, and Etsy. By removing distracting backgrounds, products become the sole focus, which significantly increases conversion rates and gives your store a more polished look.
 
-            <FAQSection items={[
-                { question: "Is this background remover free?", answer: "Yes, it is completely free forever. No watermarks, no credits." },
-                { question: "Does it work on mobile?", answer: "Yes! Modern smartphones handle the AI processing smoothly." },
-                { question: "What formats can I upload?", answer: "You can upload JPG, PNG, WebP, and other common image formats." },
-                { question: "Is my data secure?", answer: "Absolutely. Since processing happens in your browser, your images are never sent to any external server." }
-            ]} />
+Graphic designers and social media managers will find this tool indispensable for creating marketing materials, posters, and social media posts. Instead of spending time clicking around edges with a pen tool, they can quickly generate transparent assets to layer into their designs. Content creators and YouTubers can use it to isolate themselves for eye-catching thumbnails. 
+
+Furthermore, casual users who want to create fun stickers for messaging apps, remove a photobomber from a great portrait, or prepare photos for personal projects like invitations or greeting cards will find the interface friendly and accessible. If you value your time and want professional results without a learning curve or a subscription fee, Imgverto's Background Remover is built for you.`
+                }}
+                howToUse={{
+                    title: "How to Use the Free Background Remover",
+                    steps: [
+                        "Click the 'Upload Image' button or simply drag and drop your photo into the designated area. We support JPG, PNG, and WebP formats.",
+                        "Once uploaded, click the 'Remove Background' button. If this is your first time using the tool, wait a few seconds for the processing engine to initialize in your browser.",
+                        "The system will automatically analyze your image. You will see a side-by-side comparison of your original photo and the new transparent version.",
+                        "Inspect the results. Our engine handles complex edges like hair and fur with surprising accuracy. If you like what you see, proceed to the final step.",
+                        "Click the 'Download Transparent PNG' button to save your cutout to your device. You can now use this image in any design project or marketplace listing."
+                    ]
+                }}
+                benefits={{
+                    title: "Benefits of Using Imgverto",
+                    items: [
+                        "100% Free Forever: No hidden fees, no subscriptions, and no credit-based limits on how many images you can process.",
+                        "Privacy First: Your images never leave your computer. All processing is done locally in your browser for maximum security.",
+                        "High Resolution: We don't downscale your images. Get high-quality, sharp cutouts suitable for professional printing and web use.",
+                        "No Signup Required: Start removing backgrounds immediately without creating an account or providing an email address.",
+                        "Professional Quality: Our engine is optimized on millions of images to provide edge detection that rivals manual editing.",
+                        "Cross-Platform: Works seamlessly on Windows, Mac, Linux, and mobile devices directly through your web browser.",
+                        "Instant Downloads: No waiting for server-side queues. Once the engine is loaded, processing and downloading are near-instant."
+                    ]
+                }}
+                faqs={[
+                    {
+                        question: "Is there a limit to how many backgrounds I can remove?",
+                        answer: "Absolutely not. Imgverto is designed to be a truly free resource. You can remove backgrounds from as many images as you need, whether it's one photo for a personal project or hundreds for an e-commerce catalog."
+                    },
+                    {
+                        question: "Why should I use Imgverto instead of Photoshop?",
+                        answer: "Photoshop is a powerful tool, but it is expensive and has a steep learning curve. Imgverto offers a specialized engine that does one thing—background removal—extremely well and fast. For most users, our system provides results that are indistinguishable from professional manual work but takes only a fraction of the time and costs nothing."
+                    },
+                    {
+                        question: "Does the tool work with complex subjects like hair or transparent objects?",
+                        answer: "Yes, our processing engine is specifically tuned to handle difficult edge cases like messy hair, animal fur, and semi-transparent fabrics. While extremely fine details can occasionally be tricky, it provides a professional-grade starting point for almost any image."
+                    },
+                    {
+                        question: "Can I save my image as a JPG after removing the background?",
+                        answer: "We recommend saving as a PNG. The JPG format does not support transparency, so if you save a result with no background as a JPG, the background will automatically be filled with white or black. PNG is the standard for images with transparent elements."
+                    },
+                    {
+                        question: "Is my data safe when using Imgverto?",
+                        answer: "Your data is perfectly safe. Unlike most online tools, Imgverto performs all processing inside your browser. Your images are never uploaded to a cloud server, meaning nobody—not even us—ever sees your files. This makes it one of the most secure ways to edit photos online."
+                    },
+                    {
+                        question: "Do I need to install any software or extensions?",
+                        answer: "No installation is required. Imgverto is a pure web application that runs in any modern browser like Chrome, Firefox, Safari, or Edge. Just visit the site and you are ready to go."
+                    }
+                ]}
+            />
 
             <RelatedTools currentPath="/background-remover" />
         </Section>

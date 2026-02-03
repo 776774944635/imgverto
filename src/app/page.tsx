@@ -79,7 +79,7 @@ export default function Home() {
     },
     {
       title: "Image Upscaler",
-      description: "Increase resolution by 2x or 4x online using AI without losing quality.",
+      description: "Increase resolution by 2x or 4x online using high-fidelity resampling without losing quality.",
       href: "/image-upscaler",
       icon: <Sparkles className="w-6 h-6" />,
       color: "bg-violet-500",
@@ -88,7 +88,7 @@ export default function Home() {
     },
     {
       title: "Remove Background",
-      description: "Instantly create transparent backgrounds for your images using AI.",
+      description: "Instantly create transparent backgrounds for your images using advanced segmentation.",
       href: "/background-remover",
       icon: <Eraser className="w-6 h-6" />,
       color: "bg-pink-500",

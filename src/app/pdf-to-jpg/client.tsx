@@ -7,6 +7,7 @@ import { FAQSection } from "@/components/tools/FAQSection";
 import { Section } from "@/components/shared/Section";
 import { RelatedTools } from "@/components/tools/RelatedTools";
 import { Download, FileImage } from "lucide-react";
+import { ToolExtraContent } from "@/components/tools/ToolExtraContent";
 
 export function PdfToJpgClient() {
     const [file, setFile] = useState<File | null>(null);
@@ -92,31 +93,68 @@ export function PdfToJpgClient() {
                 )}
             </div>
 
-            <div className="w-full max-w-3xl prose prose-slate dark:prose-invert mb-12">
-                <h2>Why convert PDF to JPG?</h2>
-                <p>
-                    Converting a <strong>PDF to image</strong> format like JPG is essential for displaying document pages on websites, social media, or anywhere that doesn&apos;t support the PDF format directly.
-                    Our <strong>PDF to JPG converter online</strong> is designed to be fast, preserving the original resolution of each page while packaging them into a convenient ZIP archive.
-                </p>
-                <h3>How to Convert PDF to JPG for Free?</h3>
-                <ol>
-                    <li>Upload your PDF document to the box above.</li>
-                    <li>Click &quot;Convert to JPG&quot; to begin processing.</li>
-                    <li>Download the ZIP file containing high-quality images of your document pages.</li>
-                </ol>
-                <h3>Safe & Secure Image Extraction</h3>
-                <p>
-                    Your security is our priority. When you <strong>convert PDF to JPG</strong> with Imgverto, your files are processed in a secure session and deleted automatically.
-                    No permanent storage, no data sharing.
-                </p>
-            </div>
+            <ToolExtraContent
+                whatDoesItDo={{
+                    title: "What this PDF to JPG Converter Does",
+                    content: `Imgverto's PDF to JPG Converter is a high-fidelity rasterization engine that transforms your static PDF documents into vibrant, high-resolution JPEG images. Unlike traditional screen capture methods, which are limited by your monitor's resolution, our converter processes the internal vector data of the PDF to render each page at professional-level DPI. This means that fine text remains sharp, and embedded graphics maintain their color accuracy.
 
-            <FAQSection items={[
-                { question: "Is this PDF to JPG converter free?", answer: "Yes, Imgverto offers a completely free way to turn your PDF pages into JPEG images." },
-                { question: "What is the quality of the output JPGs?", answer: "We extract pages at high resolution to ensure your images are crisp and readable." },
-                { question: "Can I convert multiple pages?", answer: "Yes, our tool converts every page of your PDF into an individual JPG image." },
-                { question: "Do you store my files?", answer: "No, files are processed for conversion and promptly removed from our system." }
-            ]} />
+The tool handles multi-page documents with ease. Each individual page of your PDF is converted into its own dedicated JPG file. Once the conversion engine has processed every page, it neatly packages them into a single, downloadable ZIP archive. This ensures you don't have to download twenty separate images manually; you get everything in one organized folder, ready for immediate use in presentations, on social media, or within your design software.`
+                }}
+                whoIsItFor={{
+                    title: "Who Should Use This Tool",
+                    content: `This utility is a favorite among social media coordinators and digital marketers who frequently need to share snippets of reports, whitepapers, or infographics on platforms like LinkedIn or Instagram, where PDF support is limited or non-existent. By converting these pages to high-quality JPGs, they can easily create carousel posts or eye-catching thumbnails.
+
+Graphic designers also use the PDF to JPG converter as a quick extraction tool. If you have a multi-page brand guide or a portfolio in PDF format but need individual image versions for a project, Imgverto provides them instantly. Furthermore, educators and researchers find it useful for creating presentation slides from PDF textbooks. It's built for anyone who needs to bridge the gap between 'document-style' data and 'image-style' sharing.`
+                }}
+                howToUse={{
+                    title: "How to Use the Free Online PDF to JPG Converter",
+                    steps: [
+                        "Click 'Upload' or drag your PDF file into the primary tool area. We support documents from single-page flyers to multi-page reports.",
+                        "Press the 'Convert PDF to JPG Now' button. Our rendering engine will begin the rasterization of each individual document page.",
+                        "Wait for the progress verification. Our system ensures that every page is clearly rendered before finalizing the package.",
+                        "Review the 'Conversion Complete' status. We create a high-quality ZIP archive containing all your new JPEG images.",
+                        "Click the 'Download ZIP' button to save the assets to your device. Simply extract the ZIP to access each page as an individual image file."
+                    ]
+                }}
+                benefits={{
+                    title: "Benefits of Using Imgverto",
+                    items: [
+                        "DPI Preservation: We extract pages at high resolution, ensuring that even small text remains perfectly legible after conversion.",
+                        "Batch Page Processing: Instantly convert every page of a long document without having to process them one by one.",
+                        "Convenient ZIP Output: Get all your converted images in a single, organized archive for easy file management.",
+                        "Privacy Protected: We use secure, ephemeral sessions. Your PDF data is processed for your eyes only and never stored.",
+                        "Universal Integration: Converted JPGs are 100% compatible with social media, CMS platforms, and presentation software.",
+                        "No Daily Caps: Process as many PDF documents as you need without hitting usage limits or paying for 'pro' time.",
+                        "Zero Branding: We never add watermarks or overlay logos on your images. The output is clean and professional."
+                    ]
+                }}
+                faqs={[
+                    {
+                        question: "Will the text in the resulting JPGs be readable?",
+                        answer: "Yes. Our conversion engine renders the text in your PDF with high precision. As long as the original PDF isn't blurry, the resulting JPG pages will be crisp and easy to read even on mobile screens."
+                    },
+                    {
+                        question: "How do I see the images after downloading the ZIP?",
+                        answer: "Once you download the ZIP file, simply right-click it and select 'Extract All' (on Windows) or double-click it (on Mac). A folder will be created containing all your converted page images as individual files."
+                    },
+                    {
+                        question: "What happens if my PDF has 50 pages?",
+                        answer: "Imgverto's engine will process all 50 pages and package them into the ZIP. For very long documents, the processing might take a few extra seconds, but the tool is designed to handle multi-page files without crashing."
+                    },
+                    {
+                        question: "Does the converter support password-protected PDFs?",
+                        answer: "For your security and ours, we cannot process encrypted files. If your PDF is password-protected, you'll need to save an unprotected copy before uploading it for conversion."
+                    },
+                    {
+                        question: "Are the colors in the JPG the same as the original PDF?",
+                        answer: "Yes. We maintain the original color profiles of the PDF document during the rasterization process, ensuring consistent branding and visual fidelity for your images."
+                    },
+                    {
+                        question: "Is there a limit to the file size I can upload?",
+                        answer: "We support PDF uploads up to 20MB. This covers the vast majority of standard documents, brochures, and reports likely to be used for social media or web extraction."
+                    }
+                ]}
+            />
 
             <RelatedTools currentPath="/pdf-to-jpg" />
         </Section>

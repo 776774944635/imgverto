@@ -3,8 +3,11 @@ import { PdfCompressorClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
 
 export const metadata: Metadata = {
-    title: "Compress PDF Online Free | Reduce PDF Size Securely",
-    description: "Compress PDF online for free with Imgverto. Reduce PDF file size without losing quality using our fast and secure PDF compressor tool.",
+    title: 'Compress PDF Online | Reduce PDF Size for Free | Imgverto',
+    description: 'Shrink your PDF files without losing quality with Imgverto. Our free online PDF compressor optimizes your documents for faster sharing and easier uploads. Secure and private.',
+    alternates: {
+        canonical: '/pdf-compressor',
+    },
     keywords: ["compress pdf online free", "reduce pdf size", "pdf compressor", "shrink pdf", "imgverto"]
 };
 

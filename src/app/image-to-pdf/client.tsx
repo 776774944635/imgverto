@@ -8,6 +8,7 @@ import { FAQSection } from "@/components/tools/FAQSection";
 import { Section } from "@/components/shared/Section";
 import { RelatedTools } from "@/components/tools/RelatedTools";
 import { ArrowRight } from "lucide-react";
+import { ToolExtraContent } from "@/components/tools/ToolExtraContent";
 
 const generateId = () => Math.random().toString(36).substring(2, 9);
 
@@ -93,33 +94,68 @@ export function ImageToPdfClient() {
                 )}
             </div>
 
-            <div className="w-full max-w-3xl prose prose-slate dark:prose-invert mb-12">
-                <h2>Why use our Image to PDF Converter?</h2>
-                <p>
-                    Imgverto offers a <strong>completely free image to pdf converter</strong> that works entirely in your browser.
-                    Unlike other tools, we don&apos;t upload your sensitive documents to a permanent server.
-                    Everything handles nicely for those looking to <strong>convert image to PDF</strong> quickly and securely.
-                </p>
-                <h3>Features</h3>
-                <ul>
-                    <li><strong>Free Online Tool:</strong> No hidden costs or watermarks.</li>
-                    <li><strong>Privacy Focused:</strong> Files are processed securely.</li>
-                    <li><strong>Universal Support:</strong> Works with JPG, PNG, WebP, and more.</li>
-                </ul>
-                <h3>How to Convert Image to PDF Online?</h3>
-                <ol>
-                    <li>Upload your images (JPG, PNG, etc.) using the box above.</li>
-                    <li>Drag and drop to reorder the pages as needed.</li>
-                    <li>Click &quot;Convert to PDF&quot; to instantly download your document.</li>
-                </ol>
-            </div>
+            <ToolExtraContent
+                whatDoesItDo={{
+                    title: "What this Image to PDF Converter Does",
+                    content: `Imgverto's Image to PDF Converter is a powerful document assembler that takes your disparate image files—whether they be JPEGs, PNGs, or WebPs—and neatly packages them into a single, professional PDF document. Unlike simple format converters, this tool allows for 'multi-image merging.' This means you can upload a series of scanned pages, receipts, or portfolio pieces and combine them into one sequential file.
 
-            <FAQSection items={[
-                { question: "Is this Image to PDF converter free?", answer: "Yes, Imgverto is 100% free to use for turning images into PDFs." },
-                { question: "How to rearrange pages?", answer: "After uploading, simply drag and drop the thumbnails to change their order." },
-                { question: "Can I convert JPG to PDF?", answer: "Yes, this tool supports JPG, PNG, and WebP conversion seamlessly." },
-                { question: "Is there a file limit?", answer: "You can upload up to 20 images at once for free." }
-            ]} />
+The process involves embedding the raw image data into the PDF's vector-based container. This ensures that the original resolution and color quality of your photos are preserved, while also making the content much easier to share, print, and archive. Our tool also provides a dynamic 'sorting' interface, allowing you to drag and drop your uploaded images to establish the exact page order for your final document. It's more than just a converter; it's a lightweight document preparation suite that runs entirely in your web browser.`
+                }}
+                whoIsItFor={{
+                    title: "Who Should Use This Tool",
+                    content: `This tool is an essential asset for students and educators who need to compile handwritten notes or scanned book pages into a single, readable study guide. Remote workers and business professionals frequently use it to merge multiple photos of paper receipts, contracts, or identification documents into one PDF for easy submission to accounting or legal departments.
+
+Creative professionals, such as photographers and designers, find the Image to PDF converter useful for creating quick, high-quality digital portfolios or 'contact sheets' to share with clients. It's also perfect for anyone who needs to send multiple images via email; instead of attaching twenty separate files, you can send one organized PDF. If you've ever had a folder full of images that needed to be more organized and professional, this tool was built with you in mind.`
+                }}
+                howToUse={{
+                    title: "How to Use the Free Image to PDF Converter",
+                    steps: [
+                        "Click 'Upload' or drag your images (JPG, PNG, JPEG, WebP) into the upload area. You can select multiple files at once.",
+                        "Once uploaded, you'll see thumbnails of each page. Use our drag-and-drop interface to reorder them in your desired sequence.",
+                        "Remove any unwanted pages by clicking the delete icon on individual thumbnails, or use 'Clear All' to start over.",
+                        "Click the 'Convert to PDF Now' button. Our engine will intelligently merge the files into a single document container.",
+                        "Your browser will automatically download the finished PDF. Open it to verify the order and quality—it's ready for any professional use."
+                    ]
+                }}
+                benefits={{
+                    title: "Benefits of Using Imgverto",
+                    items: [
+                        "Pro Merging: Combine dozens of images into a single, organized PDF file with just a few clicks.",
+                        "Dynamic Page Reordering: Total control over the final sequence with our intuitive drag-and-drop sorting tool.",
+                        "Universal Page Sizing: We automatically normalize image dimensions to fit standard PDF page layouts for professional results.",
+                        "No Privacy Risks: Your files stay on your machine. We use client-side libraries to build the PDF within your own browser.",
+                        "Zero Watermarks: Unlike 'freemium' tools, Imgverto never adds branding or watermarks to your personal documents.",
+                        "High Resolution Retention: We don't over-compress your images, ensuring that text and fine details remain legible in the PDF.",
+                        "Multi-Format Support: Mix and match JPG, PNG, and WebP files in the same PDF document without any compatibility issues."
+                    ]
+                }}
+                faqs={[
+                    {
+                        question: "How many images can I convert into a single PDF?",
+                        answer: "You can upload and merge up to 20 images at a time. This limit ensures that the conversion remains fast and doesn't overwhelm your browser's memory, providing a smooth experience for every user."
+                    },
+                    {
+                        question: "Will the quality of my photos decrease in the PDF?",
+                        answer: "No. Imgverto embeds the images at their original resolution. While some PDF readers might apply their own viewing compression, the actual file keeps the detail levels of your source images."
+                    },
+                    {
+                        question: "Can I reorder the pages after I upload them?",
+                        answer: "Absolutely! Our tool is designed for organization. Once your images are uploaded, simply click and drag the thumbnails to move them into the correct page order before you hit convert."
+                    },
+                    {
+                        question: "Does this tool work on mobile devices?",
+                        answer: "Yes. You can take photos of documents with your phone's camera and immediately upload and merge them into a PDF using the Imgverto web app. No app installation is required."
+                    },
+                    {
+                        question: "Is there a file size limit for the images?",
+                        answer: "Individual images can be up to 10MB each. For the best performance, especially when merging many pages, we recommend using images that are already optimized for web or document sharing."
+                    },
+                    {
+                        question: "Why is PDF a better format for images than sending JPEGs?",
+                        answer: "PDF is a 'read-only' standard that looks the same on every device. It's much easier for recipients to scroll through a single document than to open multiple individual image files, making it the preferred choice for business and education."
+                    }
+                ]}
+            />
 
             <RelatedTools currentPath="/image-to-pdf" />
         </Section>

@@ -7,6 +7,7 @@ import { FAQSection } from "@/components/tools/FAQSection";
 import { Section } from "@/components/shared/Section";
 import { RelatedTools } from "@/components/tools/RelatedTools";
 import { Download, Archive } from "lucide-react";
+import { ToolExtraContent } from "@/components/tools/ToolExtraContent";
 
 function formatBytes(bytes: number) {
     if (bytes === 0) return '0 Bytes';
@@ -112,33 +113,68 @@ export function PdfCompressorClient() {
                 )}
             </div>
 
-            <div className="w-full max-w-3xl prose prose-slate dark:prose-invert mb-12">
-                <h2>Why Compress PDF Files Online?</h2>
-                <p>
-                    Large PDF documents can be difficult to share via email or upload to web portals.
-                    Our tool allows you to <strong>reduce PDF size</strong> quickly while maintaining the integrity of your text and images.
-                    It is a <strong>free PDF compressor</strong> that works directly in your browser, ensuring your files remain private.
-                </p>
-                <h3>Top Benefits</h3>
-                <ul>
-                    <li><strong>Online & Free:</strong> No software installation or registration required.</li>
-                    <li><strong>Efficient Size Reduction:</strong> Significant reduction for web-ready files.</li>
-                    <li><strong>Privacy Guaranteed:</strong> Files are processed securely.</li>
-                </ul>
-                <h3>How to Compress PDF Online Free?</h3>
-                <ol>
-                    <li>Upload your PDF file using the tool above.</li>
-                    <li>Wait for our engine to handle the optimization.</li>
-                    <li>Download your significantly smaller PDF file instantly.</li>
-                </ol>
-            </div>
+            <ToolExtraContent
+                whatDoesItDo={{
+                    title: "What this PDF Compressor Tool Does",
+                    content: `Imgverto's PDF Compressor is a sophisticated optimization engine designed to shrink the digital footprint of your documents without sacrificing their professional appearance. PDF files often become 'bloated' due to high-resolution embedded images, redundant font information, and excess metadata that isn't necessary for viewing or printing. Our tool performs a deep audit of the PDF's internal structure to identify these inefficiencies.
 
-            <FAQSection items={[
-                { question: "Is this PDF compressor free?", answer: "Yes, Imgverto provides a completely free tool to compress PDF files online." },
-                { question: "How does it work?", answer: "We optimize the internal structure of the PDF file to remove redundant data while keeping visual quality high." },
-                { question: "Will quality be affected?", answer: "Our compressor uses smart optimization techniques to reduce size with minimal impact on readability and image quality." },
-                { question: "Is it secure?", answer: "Absolutely. We don't store your files on our servers permanently; processing happens securely." }
-            ]} />
+Specifically, the compressor uses intelligent downsampling to reduce the DPI (dots per inch) of large images to a web-standard resolution (typically 150-720 DPI). It also streamlines the document's resource dictionary—consolidating duplicate font data and removing non-essential document history. The result is a 'lean' version of your file that looks almost identical to the original but occupies significantly less storage space, making it perfect for rapid sharing and archival.`
+                }}
+                whoIsItFor={{
+                    title: "Who Should Use This Tool",
+                    content: `This tool is a lifesaver for job seekers and college applicants who are frequently faced with strict 2MB or 5MB file size limits on upload portals. If your beautifully designed resume or portfolio is just a few megabytes too large, Imgverto can bring it under the limit in seconds. Business professionals also use the compressor to prepare large slide decks and reports for email distribution, ensuring that their messages don't bounce back due to 'attachment size' restrictions.
+
+Public sector workers and legal clerks use the tool to optimize massive case files for digital filing systems, saving gigabytes of server space over time. Even for individual users, compressing a library of PDF ebooks or scanned manuals can free up valuable space on tablets and e-readers. If you've ever been frustrated by slow document loading times or storage limits, our compressor is the remedy.`
+                }}
+                howToUse={{
+                    title: "How to Use the Free Online PDF Compressor",
+                    steps: [
+                        "Click the 'Upload' button or drag your PDF file into the interface. Our tool will immediately display the original starting file size.",
+                        "Click the 'Compress PDF Now' button. Our automated engine will begin analyzing the document's images and data structures.",
+                        "Watch the progress bar as our optimization algorithms perform deep-level data reduction on your file.",
+                        "Review the final statistics. We'll show you exactly how many megabytes were saved and the percentage of reduction achieved.",
+                        "Click the 'Download' button to claim your optimized PDF. Your new, smaller file is now ready for email, upload, or storage."
+                    ]
+                }}
+                benefits={{
+                    title: "Benefits of Using Imgverto",
+                    items: [
+                        "Smart Image Downsampling: Reduce the weight of photos within your PDF while maintaining sharp, legible text.",
+                        "Meet Upload Limits: Easily satisfy the 'Maximum File Size' requirements of government, university, and job portals.",
+                        "Improved Load Times: Optimized PDFs open faster on mobile devices and slow internet connections.",
+                        "Privacy-First Processing: We prioritize your data security. Files are processed through secure channels and aren't permanently stored.",
+                        "No Quality Sacrifice: Our 'Sweet Spot' compression ensures that your documents still look high-quality when printed.",
+                        "100% Free Service: Use our professional-grade compression tools without any subscriptions or daily limits.",
+                        "Cross-Platform Ready: Works perfectly on any device with a browser—no need to install complex PDF utility software."
+                    ]
+                }}
+                faqs={[
+                    {
+                        question: "How much will my PDF be reduced in size?",
+                        answer: "The reduction depends on the original content. Documents with many high-res images can often be shrunken by 70-90%. Files that are primarily text will see a smaller reduction, typically around 10-30%, as text is already highly efficient."
+                    },
+                    {
+                        question: "Will the text in my PDF become blurry?",
+                        answer: "No. Our compression algorithms are designed to protect text and vector elements (like logos). We primarily focus on optimizing the heavy image data, so your document remains perfectly readable."
+                    },
+                    {
+                        question: "Can I choose the level of compression?",
+                        answer: "To keep the experience fast and simple, we apply a 'Universal Optimization' profile that balances size and quality perfectly for 99% of users. This eliminates the guesswork of choosing complex technical settings."
+                    },
+                    {
+                        question: "Is there a limit to the size of the PDF I can upload?",
+                        answer: "You can upload PDFs up to 50MB for free. For files larger than this, we recommend merging or splitting files first to maintain optimal processing speed."
+                    },
+                    {
+                        question: "Does the PDF Compressor work on scanned documents?",
+                        answer: "Yes! Scanned documents are often the largest files because they are essentially just large images in a PDF wrapper. Imgverto is extremely effective at reducing the size of these types of files."
+                    },
+                    {
+                        question: "Will my PDF's layout or fonts change?",
+                        answer: "No. The structural integrity of the pages, the layout of the text, and the font embedding remain exactly as they were. We only optimize how the data is stored, not the document's visual design."
+                    }
+                ]}
+            />
 
             <RelatedTools currentPath="/pdf-compressor" />
         </Section>

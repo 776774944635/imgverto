@@ -8,6 +8,7 @@ import { Section } from "@/components/shared/Section";
 import { RelatedTools } from "@/components/tools/RelatedTools";
 import { Download, Scan, Zap, Image as ImageIcon, FileType, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ToolExtraContent } from "@/components/tools/ToolExtraContent";
 
 function formatBytes(bytes: number, decimals = 2) {
     if (!+bytes) return '0 Bytes';
@@ -180,35 +181,68 @@ export function PngToJpgClient() {
                 )}
             </div>
 
-            <div className="w-full max-w-3xl prose prose-slate prose-lg dark:prose-invert mb-16">
-                <h2>Fast PNG to JPG Conversion</h2>
-                <p>
-                    Convert your <strong>PNG images to JPG</strong> format instantly with Imgverto.
-                    Whether you need to reduce file size for a website or ensure compatibility with legacy software,
-                    our tool makes it simple.
-                </p>
+            <ToolExtraContent
+                whatDoesItDo={{
+                    title: "What this PNG to JPG Converter Does",
+                    content: `Imgverto's PNG to JPG Converter is a high-speed formatting tool that transforms your 'heavier' Portable Network Graphics (PNG) files into the universally recognized and highly compressed JPEG (JPG) format. PNG files are fantastic for design because they are lossless and support transparency, but these features come at the cost of significantly larger file sizes. Our converter bridges this gap by re-encoding your image data using the JPEG standard.
 
-                <h3>When to use JPG instead of PNG?</h3>
-                <ul>
-                    <li><strong>Photography:</strong> JPG is optimized for real-world photos with complex colors.</li>
-                    <li><strong>Email & Web:</strong> JPG files are significantly smaller, making them load faster.</li>
-                    <li><strong>Compatibility:</strong> JPG is the most widely supported image format in existence.</li>
-                </ul>
+The conversion process involves complex mathematical transforms that prioritize efficiency. Since JPG does not support alpha channels (transparency), our tool intelligently applies a solid white background to any transparent areas of your PNG, ensuring the final image looks clean and professional. You also have full control over the compression 'Quality' slider. By adjusting this, you can decide exactly how much data should be discarded in exchange for a smaller file size, allowing you to optimize your images specifically for their intended use case.`
+                }}
+                whoIsItFor={{
+                    title: "Who Should Use This Tool",
+                    content: `This tool is a favorite among SEO specialists and web performance engineers who are focused on reducing page load times. Since JPGs are typically 5 to 10 times smaller than PNGs for photographic content, converting PNGs to JPGs can shave seconds off a website's render time. It is also an essential tool for digital marketers who need to adhere to strict file size limits for email attachments or display ads.
 
-                <div className="p-6 bg-blue-50 border border-blue-100 rounded-2xl my-8">
-                    <p className="text-blue-800 m-0 font-medium">
-                        <strong>Quality Control:</strong> Use the slider above to balance quality vs file size.
-                        A quality of <strong>80%</strong> is usually the sweet spot for web use!
-                    </p>
-                </div>
-            </div>
-
-            <FAQSection items={[
-                { question: "Is this converter free?", answer: "Yes, Imgverto provides unlimited free conversions." },
-                { question: "What happens to transparency?", answer: "JPG does not support transparency. Transparent areas will turn white." },
-                { question: "Can I use this on my phone?", answer: "Absolutely! Our tool works perfectly on iOS and Android browsers." },
-                { question: "Is my data private?", answer: "Yes. All conversion happens locally in your browser. No files are uploaded." }
-            ]} />
+Social media managers often use this converter to prepare photos for platforms like Instagram or LinkedIn, where the massive size of a PNG provides no visual benefit but can make uploads much slower. Additionally, amateur photographers who have saved their work in PNG format to preserve quality will find this tool useful for creating 'web-ready' versions of their portfolio. If you need a file that is small enough to share instantly but high-quality enough to look great on a screen, this converter is designed for you.`
+                }}
+                howToUse={{
+                    title: "How to Use the Free PNG to JPG Converter",
+                    steps: [
+                        "Click the 'Upload' button or drag your PNG file into the workspace. Our tool will immediately display the original file size.",
+                        "Use the 'Quality' slider to set your desired compression level. 90% is excellent for quality, while 70-80% is the 'sweet spot' for web performance.",
+                        "Watch as the conversion happens in real-time. Our automated engine updates the output JPG file every time you adjust the quality slider.",
+                        "Compare the original PNG with the preview of the new JPG. Check for any 'artifacts' in the high-contrast areas to ensure you're happy with the result.",
+                        "Click 'Download JPG File' to save the optimized image. The file is now ready for email, social media, or website integration."
+                    ]
+                }}
+                benefits={{
+                    title: "Benefits of Using Imgverto",
+                    items: [
+                        "Massive Size Reduction: Cut your image file sizes by up to 90%, freeing up significant storage and bandwidth.",
+                        "Real-Time Previews: See exactly how your JPG will look as you adjust the quality settings—before you download.",
+                        "Auto-Transparency Handling: We automatically apply a clean white background to transparent PNGs for a seamless transition.",
+                        "Unrivaled Compatibility: JPG is supported by 100% of modern software and devices, from smart TVs to legacy office apps.",
+                        "Full Quality Control: You decide the balance between file size and visual fidelity with our granular quality slider.",
+                        "Zero Cost: Convert an unlimited number of PNGs to JPGs without ever paying a cent or watching an ad.",
+                        "Browser-Based Security: Your data is never uploaded to a server. All conversion logic runs locally on your own hardware."
+                    ]
+                }}
+                faqs={[
+                    {
+                        question: "Why should I convert my PNG to JPG?",
+                        answer: "The main reason is file size. PNGs are lossless and large, while JPGs use lossy compression to stay small. If your image doesn't need transparency and you want it to load fast on a website or in an email, JPG is the better choice."
+                    },
+                    {
+                        question: "What happens to the transparent parts of my PNG?",
+                        answer: "Because the JPG format does not support transparency, we automatically fill those areas with white. This is the industry standard for format conversion and ensures your subject remains clearly visible."
+                    },
+                    {
+                        question: "Will I lose a lot of quality during the conversion?",
+                        answer: "If you keep the quality slider at 80% or higher, the visual difference is virtually unnoticeable on most screens. Quality only drops significantly if you choose a very low setting (under 50%) to achieve an extremely small file size."
+                    },
+                    {
+                        question: "Is there a limit to how many files I can convert?",
+                        answer: "No. Imgverto is a community resource. You are free to convert one file, or one hundred files. We do not impose daily limits or 'premium' tiers for our conversion tools."
+                    },
+                    {
+                        question: "Can I convert the JPG back to PNG later?",
+                        answer: "Yes, you can, but note that the quality lost during the initial conversion to JPG cannot be recovered. Converting back to PNG will simply stop further quality loss; it won't restore the original lossless data."
+                    },
+                    {
+                        question: "Do you keep a copy of my converted images?",
+                        answer: "Never. Because the conversion happens entirely within your web browser using JavaScript and Canvas API, your images never even reach our servers. You have total privacy throughout the process."
+                    }
+                ]}
+            />
 
             <RelatedTools currentPath="/png-to-jpg" />
         </Section>

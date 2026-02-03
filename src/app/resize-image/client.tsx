@@ -8,6 +8,7 @@ import { Section } from "@/components/shared/Section";
 import { RelatedTools } from "@/components/tools/RelatedTools";
 import { Download, Lock, Unlock } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ToolExtraContent } from "@/components/tools/ToolExtraContent";
 
 function formatBytes(bytes: number, decimals = 2) {
     if (!+bytes) return '0 Bytes';
@@ -178,26 +179,68 @@ export function ResizeImageClient() {
                 )}
             </div>
 
-            <div className="w-full max-w-3xl prose prose-slate dark:prose-invert mb-12">
-                <h2>Why use our Online Image Resizer?</h2>
-                <p>
-                    Whether you need to <strong>resize image for instagram</strong>, optimize photos for your blog, or change dimensions for a passport photo, our tool makes it effortless.
-                    You can <strong>change photo dimensions</strong> while locking the aspect ratio to prevent distortion. Everything works directly in your browser, keeping your data secure.
-                </p>
-                <h3>Features</h3>
-                <ul>
-                    <li><strong>Pixel-Perfect:</strong> Enter exact width and height.</li>
-                    <li><strong>Aspect Ratio Lock:</strong> Keep your photos looking natural.</li>
-                    <li><strong>No Quality Loss:</strong> Uses high-quality resampling filters.</li>
-                </ul>
-            </div>
+            <ToolExtraContent
+                whatDoesItDo={{
+                    title: "What this Image Resizer Tool Does",
+                    content: `Imgverto's Image Resizer is a versatile digital workbench that allows you to change the physical dimensions of your photos with precision. In the digital world, an image's size is measured in pixels—individual dots of color. Sometimes an image is too large for its intended purpose, like an email attachment or a website header, and other times you need a specific pixel count for a social media post or an official document. Our tool gives you direct control over these variables.
 
-            <FAQSection items={[
-                { question: "Is this image resizer free?", answer: "Yes, it is completely free to use without limits." },
-                { question: "How do I keep the image from looking stretched?", answer: "Enable the 'Lock Aspect Ratio' button. This automatically updates one dimension when you change the other." },
-                { question: "Can I resize PNGs?", answer: "Yes, we support JPG, PNG, and WebP." },
-                { question: "What is the best size for Instagram?", answer: "For posts, 1080x1080 (square) or 1080x1350 (portrait) is recommended." }
-            ]} />
+The core of our resizer is its intelligent aspect ratio management. When you change the width, the tool can automatically calculate the corresponding height to ensure your image doesn't look stretched or squashed. It uses modern resampling filters to recalculate the color values as pixels are added or removed, ensuring the results remain sharp and professional. Whether you are dealing with a ultra-high resolution DSLR photo or a small web icon, Imgverto scales the image smoothly while maintaining the integrity of the original file's metadata and color depth.`
+                }}
+                whoIsItFor={{
+                    title: "Who Should Use This Tool",
+                    content: `This tool is indispensable for web content managers and bloggers who need to ensure every image on their site fits a specific layout or container. By resizing images to the exact size they appear on screen, you improve site speed and browsing performance. Social media coordinators also love this tool for quickly optimizing content for different platform requirements—like 1080x1080 for Instagram squares or 1200x630 for Facebook shared links.
+
+Additionally, job seekers and students frequently use our resizer for official document preparation. Many application portals for passports, visas, or university admissions have strict pixel requirements for headshots; Imgverto makes meeting these standards a matter of a few clicks. Even for casual users, it's a great way to prepare photos for digital picture frames or to shrink large photo libraries before moving them to a cloud backup service. If you've ever been told an image is 'too big' or 'wrong size,' this tool is for you.`
+                }}
+                howToUse={{
+                    title: "How to Use the Free Online Image Resizer",
+                    steps: [
+                        "Click 'Upload' or drag your JPG, PNG, or WebP file into the tool. You'll immediately see the current dimensions below the preview.",
+                        "Decide whether you want to 'Lock Aspect Ratio.' Keep it locked to prevent distortion, or unlock it if you need specific, non-proportional sizes.",
+                        "Enter your desired Width or Height in the boxes. If locked, the other dimension will update automatically to match the original proportions.",
+                        "Click the 'Resize Image Now' button. Our engine will quickly generate a new version of your photo at the exact specifications you requested.",
+                        "Check the preview and final pixel count. If everything looks perfect, click 'Download Resized Image' to save the file to your device."
+                    ]
+                }}
+                benefits={{
+                    title: "Benefits of Using Imgverto",
+                    items: [
+                        "Proportional Perfection: Our aspect ratio lock ensures your subjects never look unnaturally thin or wide during resizing.",
+                        "Custom Pixel Control: Input exact values for width and height to meet any technical requirement for web or print.",
+                        "High-Fidelity Resampling: We use advanced bilinear filters to ensure your resized images stay sharp and free of jagged edges.",
+                        "Privacy by Design: Your images never touch our servers. All resizing logic happens locally in your browser's private memory.",
+                        "Unlimited Usage: Resize as many photos as you need, from one single profile picture to an entire album, all for free.",
+                        "Support for All Formats: Works seamlessly with common image extensions including JPG, JPEG, PNG, and WebP.",
+                        "Zero Setup: No software to download, no accounts to create, and no email addresses required. Just visit and resize."
+                    ]
+                }}
+                faqs={[
+                    {
+                        question: "What is aspect ratio, and why should I lock it?",
+                        answer: "Aspect ratio is the proportional relationship between width and height. Locking it ensures that when you change one dimension, the other adjusts automatically. This prevents your image from looking distorted or 'squeezed'."
+                    },
+                    {
+                        question: "Will my image lose quality if I make it smaller?",
+                        answer: "No, making an image smaller actually tends to make it look sharper. However, making an image significantly *larger* than its original size can lead to blurriness. For enlarging, we recommend our specialized Image Upscaler tool."
+                    },
+                    {
+                        question: "What is the ideal image size for social media?",
+                        answer: "Platforms change their rules often, but 1080x1080 is safe for most posts. For landscape headers, 1200-1500px wide is common. Our tool allows you to input these specific numbers easily."
+                    },
+                    {
+                        question: "Is there a limit on the file size I can upload?",
+                        answer: "Imgverto supports large photos up to 10-15MB. Because resizing happens on your device, the limit is more about your browser's memory than our server's capacity."
+                    },
+                    {
+                        question: "Can I resize a transparent PNG with this tool?",
+                        answer: "Yes, our resizer fully supports PNG transparency. Your resized output will maintain its transparent background perfectly, making it ready for design work."
+                    },
+                    {
+                        question: "Why should I resize images before uploading to my website?",
+                        answer: "Oversized images are the #1 reason for slow websites. By resizing your image to the exact width needed for your layout, you can reduce file size by 70-80%, hugely improving your SEO and user experience."
+                    }
+                ]}
+            />
 
             <RelatedTools currentPath="/resize-image" />
         </Section>

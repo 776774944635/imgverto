@@ -3,8 +3,11 @@ import { PdfToJpgClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
 
 export const metadata: Metadata = {
-    title: "PDF to JPG Converter Online | Convert PDF to Image Free",
-    description: "Convert PDF to JPG online for free. Imgverto allows you to extract pages from your PDF as high-quality JPEG images instantly and securely.",
+    title: 'PDF to JPG Converter | Convert PDF Pages to Images for Free | Imgverto',
+    description: 'Instantly transform your PDF document pages into high-resolution JPG images with Imgverto. Our free online converter is perfect for social media sharing and design work.',
+    alternates: {
+        canonical: '/pdf-to-jpg',
+    },
     keywords: ["pdf to jpg converter online", "pdf to image", "convert pdf to jpg", "pdf to jpeg", "imgverto"]
 };
 

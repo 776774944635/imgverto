@@ -8,6 +8,7 @@ import { Section } from "@/components/shared/Section";
 import { RelatedTools } from "@/components/tools/RelatedTools";
 import { Download, Scan, Zap, Layers, Image as ImageIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ToolExtraContent } from "@/components/tools/ToolExtraContent";
 import Image from "next/image";
 
 function formatBytes(bytes: number, decimals = 2) {
@@ -89,7 +90,7 @@ export function ImageUpscalerClient() {
         <Section className="min-h-[80vh] flex flex-col items-center">
             <ToolHeader
                 title="Image Upscaler Online"
-                description="Increase image resolution by 2x or 4x instantly using AI-powered resizing. Enhance quality without blur."
+                description="Increase image resolution by 2x or 4x instantly using high-precision resampling algorithms. Enhance quality without blur."
             />
 
             <div className="w-full max-w-4xl premium-card rounded-[2.5rem] bg-white overflow-hidden min-h-[400px] p-8 mb-12 relative shadow-2xl">
@@ -192,50 +193,70 @@ export function ImageUpscalerClient() {
                 )}
             </div>
 
-            <div className="w-full max-w-3xl prose prose-slate prose-lg dark:prose-invert mb-16">
-                <h2>Increase Image Resolution without Quality Loss</h2>
-                <p>
-                    Imgverto's <strong>AI Image Upscaler</strong> allows you to enlarge your photos by 200% or 400% while maintaining sharpness.
-                    Unlike traditional resizing which just stretches pixels, our smart algorithm (Lanczos3 resampling) intelligently fills in details
-                    to create a crisp, high-resolution result.
-                </p>
+            <ToolExtraContent
+                whatDoesItDo={{
+                    title: "What this Image Upscaler Tool Does",
+                    content: `Imgverto's Image Upscaler is an advanced digital laboratory for your low-resolution photos. Traditionally, enlarging an image meant stretching the existing pixels, which inevitably led to a blurry, pixelated, or 'blocky' mess. Our tool bypasses these limitations by using sophisticated interpolation and resampling algorithms, such as Lanczos3. Instead of simply making pixels bigger, it mathematically analyzes the relationship between neighboring pixels to calculate what the intermediate data should look like, effectively 'filling in the blanks' with high precision.
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-10 not-prose">
-                    {[
-                        { title: "Smart Upsaling", icon: Layers, desc: "Uses advanced resampling for crisp edges." },
-                        { title: "2x & 4x Mode", icon: Scan, desc: "Choose the resolution boost you need." },
-                        { title: "Instant Download", icon: Download, desc: "No watermarks. No waiting." },
-                    ].map((f, i) => (
-                        <div key={i} className="p-6 rounded-2xl bg-white border shadow-sm">
-                            <f.icon className="w-8 h-8 text-primary mb-4" />
-                            <h4 className="font-black text-foreground mb-2">{f.title}</h4>
-                            <p className="text-sm text-muted-foreground">{f.desc}</p>
-                        </div>
-                    ))}
-                </div>
+This process significantly increases the pixel density and overall resolution of your image. Whether you need to double the size (2x) or quadruple it (4x), the tool works to maintain sharp edges, preserve textures, and minimize the digital noise that often occurs during resizing. For photographers, this means being able to crop a small portion of a photo and upscaling it back to a usable size. For designers, it means taking small web assets and turning them into high-quality elements suitable for larger layouts or even physical printing.
 
-                <h3>How to upscale an image?</h3>
-                <ol>
-                    <li>Upload your image (JPG, PNG, or WebP).</li>
-                    <li>Select your desired upscale factor: <strong>2x</strong> or <strong>4x</strong>.</li>
-                    <li>Click "Upscale Image" and wait a few seconds.</li>
-                    <li>Download your high-resolution photo instantly.</li>
-                </ol>
+Every processed image is carefully handled by our backend servers to ensure the highest mathematical accuracy during the resampling process. The result is a crisp, clean version of your original file that looks like it was captured at a higher resolution from the start. We support the core web formats—JPEG, PNG, and WebP—ensuring that whatever your source material is, you can give it the resolution boost it deserves.`
+                }}
+                whoIsItFor={{
+                    title: "Who Should Use This Tool",
+                    content: `The Image Upscaler is a lifesaver for professional photographers and digital artists who need to prepare their work for large-format printing. If you have a beautiful shot that just doesn't have enough megapixels for a high-quality poster or canvas, this tool provides the necessary resolution boost. It's also an essential asset for e-commerce store owners who might receive low-quality product shots from suppliers and need to make them look sharp and professional on high-resolution Retina displays.
 
-                <div className="p-6 bg-blue-50 border border-blue-100 rounded-2xl my-8">
-                    <p className="text-blue-800 m-0 font-medium">
-                        <strong>Pro Tip:</strong> This tool is perfect for fixing pixelated logos, enhancing old photos for print, or improving
-                        low-resolution images for e-commerce listings.
-                    </p>
-                </div>
-            </div>
-
-            <FAQSection items={[
-                { question: "Does upscaling reduce quality?", answer: "No, our upscaler creates new pixels based on the original data (resampling), preventing the blurry 'stretched' look of standard resizing." },
-                { question: "Is this tool free?", answer: "Yes, Imgverto Image Upscaler is 100% free with no hidden costs." },
-                { question: "What formats are supported?", answer: "We support the most common web formats: JPG, PNG, and WebP." },
-                { question: "Can I upscale 4K images?", answer: "To ensure server performance, we limit extremely large inputs, but you can easily upscale standard HD images to 4K or higher." }
-            ]} />
+History enthusiasts and families looking to digitize and restore old photographs will also find great value here. Often, older digital cameras or scanned physical photos lack the resolution needed for modern screen standards. By upscaling these memories, you give them a new life in the digital age. Furthermore, logo designers who need to extract a high-res version of a small icon or web developers who want to optimize their site for users with high-density screens will find this tool to be a permanent fixture in their workflow. It's built for anyone who refuses to settle for pixelated results.`
+                }}
+                howToUse={{
+                    title: "How to Use the Free Image Upscaler",
+                    steps: [
+                        "Upload your image by clicking the 'Upload' button or dragging a JPG, PNG, or WebP file into the tool. You'll see your current resolution instantly.",
+                        "Choose your upscale factor. Select '2x' to double both width and height, or '4x' to increase the total number of pixels by sixteen times.",
+                        "Click the 'Upscale Image' button. Our advanced processing engine will begin the high-precision resampling of your file.",
+                        "Review the 'Upscaled Result' preview window. You can compare the sharpness of the original versus the new high-resolution output.",
+                        "Click the 'Download Image' button to save the final product. Your new high-res image is now ready for print, web use, or archival storage."
+                    ]
+                }}
+                benefits={{
+                    title: "Benefits of Using Imgverto",
+                    items: [
+                        "Crisp Edge Preservation: Our Lanczos3 algorithm prevents the blurriness associated with standard bilinear or bicubic resizing.",
+                        "Print-Ready Results: Easily convert web-sized images into resolutions suitable for high-quality physical printing.",
+                        "Support for Large Scales: Upscale up to 4x your original resolution, giving even tiny icons massive visual clarity.",
+                        "No Data Loss: We prioritize maintaining the original color profile and dynamic range of your photos during processing.",
+                        "Privacy Protected: Files are processed securely and deleted from our temporary storage shortly after your session ends.",
+                        "Fast Algorithmic Resampling: Get high-resolution results in seconds, not minutes, thanks to our optimized backend infrastructure.",
+                        "Completely Free: No hidden fees, no subscriptions, and absolutely no watermarks on your enhanced images."
+                    ]
+                }}
+                faqs={[
+                    {
+                        question: "How is upscaling different from regular resizing?",
+                        answer: "Standard resizing simply stretches pixels, making the image look blurry. Upscaling with Imgverto uses mathematical resampling to calculate new pixel values, maintaining sharp edges and finer details for a more professional look."
+                    },
+                    {
+                        question: "Can I upscale a very small thumbnail into a 4K image?",
+                        answer: "While you can, the results depend on the quality of the source. Our tool works wonders on average-sized photos, but upscaling a tiny 50px icon to 4K will still have limitations. It works best when the original has some discernible detail."
+                    },
+                    {
+                        question: "Does the tool add watermarks to my upscaled photos?",
+                        answer: "No. Imgverto believes in providing clean, professional tools. All upscaled images are your property and come with no watermarks or branding, making them ready for immediate commercial or personal use."
+                    },
+                    {
+                        question: "Which file formats are best for upscaling?",
+                        answer: "PNG and WebP typically yield the best results because they are less 'noisy' than JPEGs. However, our tool handles JPEGs extremely well, helping to smooth out compression artifacts during the enlargement process."
+                    },
+                    {
+                        question: "Is there a limit to how many images I can upscale per day?",
+                        answer: "There are no daily limits. You are free to upscale as many images as your project requires. We are committed to keeping this tool accessible to everyone without frustrating restrictions."
+                    },
+                    {
+                        question: "Can I use the upscaled images for commercial purposes?",
+                        answer: "Absolutely. Since we don't add watermarks and you provide the original source, you are free to use the high-resolution output for ads, product listings, brochures, or any other commercial venture."
+                    }
+                ]}
+            />
 
             <RelatedTools currentPath="/image-upscaler" />
         </Section>

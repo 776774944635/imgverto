@@ -3,14 +3,14 @@ import { ImageUpscalerClient } from './client';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-    title: 'Image Upscaler Online – Increase Image Resolution Free',
-    description: 'Upscale images online for free using Imgverto. Increase image resolution by 2x or 4x without losing quality instantly.',
+    title: "High-Resolution Image Upscaler Online | Increase Resolution Free | Imgverto",
+    description: "Enlarge your images by 2x or 4x online for free with Imgverto Advanced Image Upscaler. Increase resolution and enhance quality without losing sharpness or clarity.",
     alternates: {
-        canonical: '/image-upscaler',
+        canonical: "/image-upscaler",
     },
     openGraph: {
-        title: 'Image Upscaler Online – Increase Image Resolution Free | Imgverto',
-        description: 'Upscale images online for free using Imgverto. Increase image resolution by 2x or 4x without losing quality instantly.',
+        title: "High-Resolution Image Upscaler Online | Increase Resolution Free | Imgverto",
+        description: "Increase image resolution by 2x or 4x instantly using high-precision resampling. Enhance quality without blur.",
         url: `${siteConfig.url}/image-upscaler`,
     },
 };

@@ -178,7 +178,7 @@ export function LetterGeneratorClient() {
     return (
         <Section className="min-h-screen flex flex-col items-center">
             <ToolHeader
-                title="AI Letter Generator"
+                title="Professional Letter Generator"
                 description="Create professional formal and informal letters instantly with our free online tool."
             />
 
