@@ -20,7 +20,7 @@ export function Header() {
                                 className="object-contain"
                             />
                         </div>
-                        <span className="font-outfit text-2xl font-black tracking-tighter text-foreground uppercase italic hidden sm:block">
+                        <span className="font-outfit text-xl sm:text-2xl font-black tracking-tighter text-foreground uppercase italic">
                             {siteConfig.name}
                         </span>
                     </Link>
