@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import {
   FileText,
@@ -22,98 +23,101 @@ import { fadeIn, scaleUp } from "@/lib/motion";
 import { siteConfig } from "@/lib/site-config";
 
 export default function Home() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const categories = ["All", "Optimize", "Create", "Edit", "Convert", "Security"];
+
   const tools = [
     {
-      title: "Compress Image",
-      description: "Reduce image file size while maintaining the best quality and optimization.",
+      title: "Compress IMAGE",
+      description: "Compress JPG, PNG, SVG, and GIFs while saving space and maintaining quality.",
       href: "/compress-image",
-      icon: <Minimize2 className="w-6 h-6" />,
-      color: "bg-blue-500",
-      lightColor: "bg-blue-50",
-      textColor: "text-blue-600"
+      icon: <Minimize2 className="w-8 h-8" />,
+      category: "Optimize",
+      color: "text-blue-500",
+      lightColor: "bg-blue-50"
     },
     {
-      title: "Resize Image",
-      description: "Change image dimensions by defining new height and width in pixels.",
+      title: "Resize IMAGE",
+      description: "Define your dimensions, by percent or pixel, and resize your JPG, PNG, SVG, and GIF images.",
       href: "/resize-image",
-      icon: <ImageIcon className="w-6 h-6" />,
-      color: "bg-teal-500",
-      lightColor: "bg-teal-50",
-      textColor: "text-teal-600"
+      icon: <ImageIcon className="w-8 h-8" />,
+      category: "Edit",
+      color: "text-teal-500",
+      lightColor: "bg-teal-50"
     },
     {
-      title: "Image to PDF",
-      description: "Convert JPG, PNG, and WebP images to PDF documents in seconds.",
+      title: "Crop IMAGE",
+      description: "Crop JPG, PNG, or GIFs with ease; Choose pixels to define your rectangle or use our visual editor.",
+      href: "/crop-image",
+      icon: <Eraser className="w-8 h-8" />,
+      category: "Edit",
+      color: "text-emerald-500",
+      lightColor: "bg-emerald-50"
+    },
+    {
+      title: "Convert to JPG",
+      description: "Turn PNG, GIF, TIF, PSD, SVG, WEBP, HEIC, or RAW format images to JPG in bulk with ease.",
       href: "/image-to-pdf",
-      icon: <FileText className="w-6 h-6" />,
-      color: "bg-orange-500",
-      lightColor: "bg-orange-50",
-      textColor: "text-orange-600"
+      icon: <FileType className="w-8 h-8" />,
+      category: "Convert",
+      color: "text-orange-500",
+      lightColor: "bg-orange-50"
+    },
+    {
+      title: "Convert from JPG",
+      description: "Turn JPG images to PNG and GIF. Choose several JPGs to create an animated GIF in seconds!",
+      href: "/jpg-to-png",
+      icon: <ImageIcon className="w-8 h-8" />,
+      category: "Convert",
+      color: "text-amber-500",
+      lightColor: "bg-amber-50"
+    },
+    {
+      title: "Upscale Image",
+      description: "Enlarge your images with high resolution. Easily increase resolution while maintaining visual quality.",
+      href: "/image-upscaler",
+      icon: <Sparkles className="w-8 h-8" />,
+      category: "Edit",
+      isNew: true,
+      color: "text-violet-500",
+      lightColor: "bg-violet-50"
+    },
+    {
+      title: "Remove background",
+      description: "Quickly remove image backgrounds with high accuracy. Instantly detect objects and cut out backgrounds.",
+      href: "/background-remover",
+      icon: <Eraser className="w-8 h-8" />,
+      category: "Create",
+      isNew: true,
+      color: "text-pink-500",
+      lightColor: "bg-pink-50"
     },
     {
       title: "Merge PDF",
       description: "Combine multiple PDF files into one single PDF document easily.",
       href: "/merge-pdf",
-      icon: <Combine className="w-6 h-6" />,
-      color: "bg-emerald-500",
-      lightColor: "bg-emerald-50",
-      textColor: "text-emerald-600"
+      icon: <Combine className="w-8 h-8" />,
+      category: "Edit",
+      color: "text-indigo-500",
+      lightColor: "bg-indigo-50"
     },
     {
       title: "Compress PDF",
       description: "Reduce PDF file size for easy sharing and storage without losing quality.",
       href: "/pdf-compressor",
-      icon: <Zap className="w-6 h-6" />,
-      color: "bg-indigo-500",
-      lightColor: "bg-indigo-50",
-      textColor: "text-indigo-600"
-    },
-    {
-      title: "PDF to JPG",
-      description: "Extract all pages from a PDF or convert each PDF page to a JPG image.",
-      href: "/pdf-to-jpg",
-      icon: <FileType className="w-6 h-6" />,
-      color: "bg-amber-500",
-      lightColor: "bg-amber-50",
-      textColor: "text-amber-600"
-    },
-    {
-      title: "Image Upscaler",
-      description: "Increase resolution by 2x or 4x online using high-fidelity resampling without losing quality.",
-      href: "/image-upscaler",
-      icon: <Sparkles className="w-6 h-6" />,
-      color: "bg-violet-500",
-      lightColor: "bg-violet-50",
-      textColor: "text-violet-600"
-    },
-    {
-      title: "Remove Background",
-      description: "Instantly create transparent backgrounds for your images using advanced segmentation.",
-      href: "/background-remover",
-      icon: <Eraser className="w-6 h-6" />,
-      color: "bg-pink-500",
-      lightColor: "bg-pink-50",
-      textColor: "text-pink-600"
-    },
-    {
-      title: "JPG to PNG",
-      description: "Convert JPG to high-quality PNG format instantly without losing quality.",
-      href: "/jpg-to-png",
-      icon: <FileType className="w-6 h-6" />,
-      color: "bg-blue-500",
-      lightColor: "bg-blue-50",
-      textColor: "text-blue-600"
-    },
-    {
-      title: "PNG to JPG",
-      description: "Convert PNG to JPG format online. Adjustable compression for smaller file sizes.",
-      href: "/png-to-jpg",
-      icon: <ImageIcon className="w-6 h-6" />,
-      color: "bg-orange-500",
-      lightColor: "bg-orange-50",
-      textColor: "text-orange-600"
-    },
+      icon: <Zap className="w-8 h-8" />,
+      category: "Optimize",
+      color: "text-blue-600",
+      lightColor: "bg-blue-50"
+    }
   ];
+
+
+  const filteredTools = activeCategory === "All"
+    ? tools
+    : tools.filter(tool => tool.category === activeCategory);
+
 
   return (
     <div className="relative min-h-screen bg-background overflow-x-hidden">
@@ -125,64 +129,40 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-32">
+      <section className="relative pt-12 md:pt-16 pb-16 md:pb-20">
         <div className="container mx-auto px-4 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-[13px] font-black uppercase tracking-widest mb-10 border border-primary/20 shadow-[0_0_20px_rgba(var(--primary),0.1)]">
-              <Sparkles className="w-4 h-4" /> The Next-Gen Image Cloud
-            </div>
-            <h1 className="font-outfit text-6xl md:text-8xl font-black tracking-tight text-foreground mb-10 leading-[0.95]">
-              Superior tools for <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-primary via-purple-500 to-indigo-600 bg-clip-text text-transparent italic">creative workflow</span>
-            </h1>
-            <p className="max-w-2xl mx-auto text-xl md:text-2xl text-muted-foreground font-medium mb-14 leading-relaxed opacity-80 uppercase tracking-tight">
-              Professional, high-performance utilities to transform your media instantly.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link
-                href="#tools"
-                className="w-full sm:w-auto px-12 py-5 rounded-full bg-primary text-primary-foreground font-black text-xl shadow-[0_20px_40px_-10px_rgba(37,99,235,0.4)] hover:shadow-[0_25px_50px_-12px_rgba(37,99,235,0.5)] hover:-translate-y-1 active:scale-95 transition-all"
+          <h1 className="font-outfit text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-foreground mb-4 md:mb-6 leading-tight md:leading-[1.2]">
+            Complete Toolkit for Unified Image Processing
+          </h1>
+          <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-muted-foreground font-medium mb-8 md:mb-12 px-4 sm:px-0">
+            Professional-grade utilities for effortless media management.
+          </p>
+
+          {/* Category Filters - Now scrollable on mobile */}
+          <div className="flex items-center justify-start md:justify-center gap-3 mb-10 overflow-x-auto pb-4 md:pb-0 hide-scrollbar px-4 sm:px-0">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={cn(
+                  "px-6 md:px-7 py-2 rounded-xl text-[12px] md:text-[13px] font-black uppercase tracking-widest transition-all border-2 whitespace-nowrap",
+                  activeCategory === cat
+                    ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20 scale-105"
+                    : "bg-white text-muted-foreground border-transparent hover:border-gray-200 hover:text-foreground"
+                )}
               >
-                Launch Utilities
-              </Link>
-              <Link
-                href="/about"
-                className="w-full sm:w-auto px-12 py-5 rounded-full bg-white text-foreground font-black text-xl border-2 hover:bg-muted/30 transition-all"
-              >
-                Our Security
-              </Link>
-            </div>
-          </motion.div>
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Tools Grid */}
-      <section id="tools" className="py-32 relative">
+      <section id="tools" className="pb-24 relative">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-            <div className="max-w-xl text-left">
-              <div className="h-1.5 w-20 bg-primary rounded-full mb-6" />
-              <h2 className="font-outfit text-4xl md:text-5xl font-black tracking-tighter text-foreground mb-6 uppercase italic">
-                Cloud Processing Engine
-              </h2>
-              <p className="text-xl text-muted-foreground font-medium leading-relaxed">
-                Zero-wait infrastructure. Your data is processed locally and never stored.
-              </p>
-            </div>
-            <div className="flex items-center gap-4 px-6 py-3 rounded-2xl bg-muted/50 border border-border/50">
-              <Zap className="w-5 h-5 text-primary animate-pulse" />
-              <span className="text-[13px] font-black uppercase tracking-widest text-foreground">
-                Ultra Fast Node
-              </span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {tools.map((tool, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+            {filteredTools.map((tool, idx) => (
               <motion.div
                 key={tool.href}
                 variants={scaleUp}
@@ -193,35 +173,35 @@ export default function Home() {
               >
                 <Link
                   href={tool.href}
-                  className="group relative flex flex-col premium-card rounded-[3rem] p-10 h-full bg-white/80 backdrop-blur-sm border-2 overflow-hidden"
+                  className="group relative flex flex-col bg-white border-2 border-transparent rounded-[2rem] p-8 h-full shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:border-primary/10 hover:-translate-y-1.5 transition-all duration-500 overflow-hidden"
                 >
+                  {tool.isNew && (
+                    <div className="absolute top-5 right-5 bg-primary/10 text-primary text-[10px] font-black px-3 py-1 rounded-full border border-primary/20 uppercase tracking-tighter">
+                      New
+                    </div>
+                  )}
+
                   <div className={cn(
-                    "w-16 h-16 rounded-[1.5rem] flex items-center justify-center mb-8 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg",
+                    "w-14 h-14 rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-sm",
                     tool.lightColor,
-                    tool.textColor,
-                    "border border-current/10"
+                    tool.color
                   )}>
                     {tool.icon}
                   </div>
 
-                  <div className="relative z-10">
-                    <h3 className="font-outfit text-2xl md:text-3xl font-black text-foreground mb-4 flex items-center justify-between">
+                  <div className="relative z-10 flex flex-col h-full">
+                    <h3 className="font-outfit text-xl font-black text-foreground mb-4 group-hover:text-primary transition-colors">
                       {tool.title}
-                      <ArrowRight className="w-6 h-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-primary" />
                     </h3>
-                    <p className="text-muted-foreground font-medium text-lg leading-relaxed">
+                    <p className="text-muted-foreground text-[15px] font-medium leading-relaxed mb-4 line-clamp-3">
                       {tool.description}
                     </p>
                   </div>
 
-                  {/* Enhanced Hover Accent */}
+                  {/* Subtle Hover Accent */}
                   <div className={cn(
-                    "absolute top-0 right-0 w-32 h-32 blur-[60px] opacity-0 group-hover:opacity-20 transition-opacity pointer-events-none",
-                    tool.color
-                  )} />
-                  <div className={cn(
-                    "absolute bottom-0 left-0 right-0 h-1.5 transition-all opacity-0 group-hover:opacity-100 group-hover:h-2",
-                    tool.color
+                    "absolute -bottom-2 -right-2 w-24 h-24 blur-[40px] opacity-0 group-hover:opacity-20 transition-opacity pointer-events-none",
+                    tool.color.replace('text-', 'bg-')
                   )} />
                 </Link>
               </motion.div>
@@ -231,7 +211,7 @@ export default function Home() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-32 bg-muted/20 border-y">
+      < section className="py-32 bg-muted/20 border-y" >
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             {[
@@ -255,13 +235,13 @@ export default function Home() {
                 <div className="w-20 h-20 rounded-3xl bg-white border-2 flex items-center justify-center mb-8 shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all">
                   {feature.icon}
                 </div>
-                <h4 className="font-outfit text-2xl font-black text-foreground mb-4 uppercase tracking-tight">{feature.title}</h4>
-                <p className="text-muted-foreground font-medium text-lg leading-relaxed">{feature.desc}</p>
+                <h4 className="font-outfit text-xl font-bold text-foreground mb-3 tracking-tight">{feature.title}</h4>
+                <p className="text-muted-foreground font-medium text-base leading-relaxed">{feature.desc}</p>
               </div>
             ))}
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 }
