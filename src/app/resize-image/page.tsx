@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { ResizeImageClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata: Metadata = {
     title: "Resize Image Online - Change Photo Dimensions for Exam Forms",
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
 
 export default function ResizeImagePage() {
     return (
-        <>
+        <div className="container mx-auto px-4 py-8">
+            <Breadcrumbs />
             <SchemaMarkup
                 type="SoftwareApplication"
                 name="Resize Image Online Free"
@@ -22,6 +24,6 @@ export default function ResizeImagePage() {
                 operatingSystem="Universal"
             />
             <ResizeImageClient />
-        </>
+        </div>
     );
 }

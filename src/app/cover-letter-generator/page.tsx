@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { CoverLetterClient } from './client';
 import { siteConfig } from '@/lib/site-config';
+import { SchemaMarkup } from '@/components/shared/SchemaMarkup';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 
 export const metadata: Metadata = {
     title: 'Free Cover Letter Generator Online | Imgverto',
@@ -16,5 +18,17 @@ export const metadata: Metadata = {
 };
 
 export default function CoverLetterPage() {
-    return <CoverLetterClient />;
+    return (
+        <div className="container mx-auto px-4 py-8">
+            <Breadcrumbs />
+            <SchemaMarkup
+                type="SoftwareApplication"
+                name="Free Cover Letter Generator Online"
+                description="Generate customized professional cover letters for job applications instantly."
+                applicationCategory="BusinessApplication"
+                operatingSystem="Universal"
+            />
+            <CoverLetterClient />
+        </div>
+    );
 }

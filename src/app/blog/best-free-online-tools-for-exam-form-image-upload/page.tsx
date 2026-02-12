@@ -1,14 +1,26 @@
-export const metadata = {
+import { Metadata } from 'next';
+export const metadata: Metadata = {
     title: "7 Best Free Online Tools for Exam Form Image Upload (2025 Edition)",
     description: "Discover the best free online tools for resizing, compressing, and converting images for NEET, JEE, and UPSC forms. Save time and avoid rejections.",
+    alternates: {
+        canonical: '/blog/best-free-online-tools-for-exam-form-image-upload',
+    },
     keywords: ["best tools for exam form photo", "free online image resizer for neet", "photo compressor for government jobs", "online tools for ssc form", "imgverto vs other tools"]
 };
 
 import { Section } from "@/components/shared/Section";
+import { BlogSchema } from "@/components/shared/BlogSchema";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export default function BestToolsList() {
     return (
         <Section className="py-20 max-w-4xl mx-auto prose prose-slate lg:prose-lg prose-headings:font-black prose-headings:text-slate-900 prose-p:text-slate-600 prose-strong:text-slate-900 prose-ul:text-slate-600">
+            <BlogSchema
+                title="7 Best Free Online Tools for Exam Form Image Upload"
+                description="Discover the best free online tools for resizing, compressing, and converting images for NEET, JEE, and UPSC forms."
+                url="/blog/best-free-online-tools-for-exam-form-image-upload"
+            />
+            <Breadcrumbs />
             <h1>7 Best Free Online Tools for Exam Form Image Upload (2025 Edition)</h1>
 
             <p>

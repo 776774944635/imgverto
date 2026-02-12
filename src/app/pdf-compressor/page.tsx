@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PdfCompressorClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata: Metadata = {
     title: "Compress PDF Online - Reduce PDF Size for Exam Forms",
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
 
 export default function PdfCompressorPage() {
     return (
-        <>
+        <div className="container mx-auto px-4 py-8">
+            <Breadcrumbs />
             <SchemaMarkup
                 type="SoftwareApplication"
                 name="Compress PDF Online Free"
@@ -22,6 +24,6 @@ export default function PdfCompressorPage() {
                 operatingSystem="Universal"
             />
             <PdfCompressorClient />
-        </>
+        </div>
     );
 }

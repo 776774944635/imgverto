@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { ImageToPdfClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata: Metadata = {
     title: 'Image to PDF Converter | Convert Photos to PDF Online Free | Imgverto',
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
 
 export default function ImageToPdfPage() {
     return (
-        <>
+        <div className="container mx-auto px-4 py-8">
+            <Breadcrumbs />
             <SchemaMarkup
                 type="SoftwareApplication"
                 name="Image to PDF Converter Free"
@@ -22,6 +24,6 @@ export default function ImageToPdfPage() {
                 operatingSystem="Universal"
             />
             <ImageToPdfClient />
-        </>
+        </div>
     );
 }

@@ -4,6 +4,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
 
 interface FAQItem {
     question: string;
@@ -15,8 +16,20 @@ interface FAQSectionProps {
 }
 
 export function FAQSection({ items }: FAQSectionProps) {
+    const faqSchemaData = {
+        "mainEntity": items.map(item => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer
+            }
+        }))
+    };
+
     return (
         <section className="py-12 max-w-3xl mx-auto w-full">
+            <SchemaMarkup type="FAQPage" data={faqSchemaData} />
             <h2 className="text-3xl font-bold text-center mb-8">
                 Frequently Asked Questions
             </h2>

@@ -18,9 +18,18 @@ export const metadata: Metadata = {
     },
 };
 
+import { BlogSchema } from '@/components/shared/BlogSchema';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+
 export default function BlogPost() {
     return (
         <Section className="min-h-screen py-20">
+            <BlogSchema
+                title="JPG vs PNG: Which Image Format is Better? (2025 Comparison)"
+                description="Understand the key differences between JPG and PNG. Learn which format to use for websites, photography, and logos to optimize quality and speed."
+                url="/blog/jpg-vs-png-which-is-better"
+            />
+            <Breadcrumbs />
             <article className="max-w-3xl mx-auto">
                 <header className="mb-12 text-center">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">

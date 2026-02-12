@@ -1,14 +1,26 @@
-export const metadata = {
+import { Metadata } from 'next';
+export const metadata: Metadata = {
     title: "Remove Background for Passport Size Photo Online: Fast & Free Guide",
     description: "Learn how to remove backgrounds from your photos to create perfect passport-size photos for NEET, JEE, and Visa applications. 100% free and private.",
+    alternates: {
+        canonical: '/blog/remove-background-for-passport-size-photo-online',
+    },
     keywords: ["remove background for passport photo", "passport size photo maker online", "white background for photo free", "neet photo background change", "visa photo background remover"]
 };
 
 import { Section } from "@/components/shared/Section";
+import { BlogSchema } from "@/components/shared/BlogSchema";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export default function BackgroundRemoverGuide() {
     return (
         <Section className="py-20 max-w-4xl mx-auto prose prose-slate lg:prose-lg prose-headings:font-black prose-headings:text-slate-900 prose-p:text-slate-600 prose-strong:text-slate-900 prose-ul:text-slate-600">
+            <BlogSchema
+                title="Remove Background for Passport Size Photo Online"
+                description="Learn how to remove backgrounds from your photos to create perfect passport-size photos for NEET, JEE, and Visa applications."
+                url="/blog/remove-background-for-passport-size-photo-online"
+            />
+            <Breadcrumbs />
             <h1>Remove Background for Passport Size Photo Online: A Fast & Free Guide</h1>
 
             <p>

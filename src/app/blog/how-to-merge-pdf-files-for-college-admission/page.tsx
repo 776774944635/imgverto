@@ -1,14 +1,26 @@
-export const metadata = {
+import { Metadata } from 'next';
+export const metadata: Metadata = {
     title: "How to Merge PDF Files for College Admission: Step-by-Step Guide",
     description: "Learn how to merge marksheets, certificates, and ID proofs into a single PDF for college admissions (DU, BHU, IPU). Simple guide for students.",
+    alternates: {
+        canonical: '/blog/how-to-merge-pdf-files-for-college-admission',
+    },
     keywords: ["merge pdf for college admission", "combine marksheets into one pdf", "du admission document upload", "how to merge pdf online free", "compile academic certificates"]
 };
 
 import { Section } from "@/components/shared/Section";
+import { BlogSchema } from "@/components/shared/BlogSchema";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export default function MergePdfGuide() {
     return (
         <Section className="py-20 max-w-4xl mx-auto prose prose-slate lg:prose-lg prose-headings:font-black prose-headings:text-slate-900 prose-p:text-slate-600 prose-strong:text-slate-900 prose-ul:text-slate-600">
+            <BlogSchema
+                title="How to Merge PDF Files for College Admission"
+                description="Learn how to merge marksheets, certificates, and ID proofs into a single PDF for college admissions."
+                url="/blog/how-to-merge-pdf-files-for-college-admission"
+            />
+            <Breadcrumbs />
             <h1>How to Merge PDF Files for College Admission: A Step-by-Step Guide</h1>
 
             <p>

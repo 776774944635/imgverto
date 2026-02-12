@@ -19,9 +19,18 @@ export const metadata: Metadata = {
     },
 };
 
+import { BlogSchema } from '@/components/shared/BlogSchema';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+
 export default function CoverLetterBlog() {
     return (
         <Section className="min-h-screen py-20">
+            <BlogSchema
+                title="How to Write a Cover Letter for Any Job (2026 Guide)"
+                description="Learn how to write a compelling cover letter that lands interviews. Expert tips for freshers and experienced professionals."
+                url="/blog/how-to-write-a-cover-letter-for-any-job"
+            />
+            <Breadcrumbs />
             <article className="max-w-4xl mx-auto px-4">
                 <header className="mb-16 text-center">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-black uppercase tracking-widest mb-8 border border-emerald-200">

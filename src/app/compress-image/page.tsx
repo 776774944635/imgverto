@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { CompressImageClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata: Metadata = {
     title: "Compress Image Online - Reduce Photo Size for Exam Forms",
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
 
 export default function CompressImagePage() {
     return (
-        <>
+        <div className="container mx-auto px-4 py-8">
+            <Breadcrumbs />
             <SchemaMarkup
                 type="SoftwareApplication"
                 name="Free Online Image Compressor"
@@ -22,6 +24,6 @@ export default function CompressImagePage() {
                 operatingSystem="Universal"
             />
             <CompressImageClient />
-        </>
+        </div>
     );
 }

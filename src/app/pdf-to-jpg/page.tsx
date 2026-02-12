@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PdfToJpgClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata: Metadata = {
     title: 'PDF to JPG Converter | Convert PDF Pages to Images for Free | Imgverto',
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
 
 export default function PdfToJpgPage() {
     return (
-        <>
+        <div className="container mx-auto px-4 py-8">
+            <Breadcrumbs />
             <SchemaMarkup
                 type="SoftwareApplication"
                 name="PDF to JPG Converter Online"
@@ -22,6 +24,6 @@ export default function PdfToJpgPage() {
                 operatingSystem="Universal"
             />
             <PdfToJpgClient />
-        </>
+        </div>
     );
 }

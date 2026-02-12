@@ -18,9 +18,18 @@ export const metadata: Metadata = {
     },
 };
 
+import { BlogSchema } from '@/components/shared/BlogSchema';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+
 export default function BlogPost() {
     return (
         <Section className="min-h-screen py-20">
+            <BlogSchema
+                title="How to Compress Images for Web Without Losing Quality"
+                description="Learn how to reduce image file sizes by up to 80% to speed up your website and improve SEO. Free online compression guide."
+                url="/blog/how-to-compress-images-for-web"
+            />
+            <Breadcrumbs />
             <article className="max-w-3xl mx-auto">
                 <header className="mb-12 text-center">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">

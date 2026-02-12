@@ -19,9 +19,18 @@ export const metadata: Metadata = {
     },
 };
 
+import { BlogSchema } from '@/components/shared/BlogSchema';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+
 export default function ResumeBlog() {
     return (
         <Section className="min-h-screen py-20">
+            <BlogSchema
+                title="How to Create a Professional Resume Online (2026 Guide)"
+                description="Master the art of resume building with our comprehensive 2026 guide. Learn how to create ATS-friendly resumes that get you hired."
+                url="/blog/how-to-create-a-professional-resume-online"
+            />
+            <Breadcrumbs />
             <article className="max-w-4xl mx-auto px-4">
                 <header className="mb-16 text-center">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-100 text-violet-700 text-sm font-black uppercase tracking-widest mb-8 border border-violet-200">

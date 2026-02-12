@@ -18,9 +18,18 @@ export const metadata: Metadata = {
     },
 };
 
+import { BlogSchema } from '@/components/shared/BlogSchema';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+
 export default function BlogPost() {
     return (
         <Section className="min-h-screen py-20">
+            <BlogSchema
+                title="How to Reduce PDF File Size Online (Compress PDF)"
+                description="Shrink your large PDF documents to make them easier to email and store. Free online PDF compressor that maintains text clarity."
+                url="/blog/how-to-reduce-pdf-file-size"
+            />
+            <Breadcrumbs />
             <article className="max-w-3xl mx-auto">
                 <header className="mb-12 text-center">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold mb-6">

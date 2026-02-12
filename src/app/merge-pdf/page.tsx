@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { MergePdfClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export const metadata: Metadata = {
     title: "Merge PDF Online - Combine Multiple PDF Files for Admissions",
@@ -13,7 +14,8 @@ export const metadata: Metadata = {
 
 export default function MergePdfPage() {
     return (
-        <>
+        <div className="container mx-auto px-4 py-8">
+            <Breadcrumbs />
             <SchemaMarkup
                 type="SoftwareApplication"
                 name="Merge PDF Files Online Free"
@@ -22,6 +24,6 @@ export default function MergePdfPage() {
                 operatingSystem="Universal"
             />
             <MergePdfClient />
-        </>
+        </div>
     );
 }

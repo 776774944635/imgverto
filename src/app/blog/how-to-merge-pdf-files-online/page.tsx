@@ -18,9 +18,18 @@ export const metadata: Metadata = {
     },
 };
 
+import { BlogSchema } from '@/components/shared/BlogSchema';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+
 export default function BlogPost() {
     return (
         <Section className="min-h-screen py-20">
+            <BlogSchema
+                title="How to Merge PDF Files Online (Free Utility)"
+                description="Combine multiple PDF documents into one single file. Easy, secure, and fast PDF merger tool for organizing your digital paperwork."
+                url="/blog/how-to-merge-pdf-files-online"
+            />
+            <Breadcrumbs />
             <article className="max-w-3xl mx-auto">
                 <header className="mb-12 text-center">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-6">

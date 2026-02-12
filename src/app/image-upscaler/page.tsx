@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { ImageUpscalerClient } from './client';
-import { siteConfig } from '@/lib/site-config';
+import { SchemaMarkup } from '@/components/shared/SchemaMarkup';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 
 export const metadata: Metadata = {
     title: "AI Image Upscaler Online - Increase Resolution for Exam Photos",
@@ -12,5 +13,17 @@ export const metadata: Metadata = {
 };
 
 export default function ImageUpscalerPage() {
-    return <ImageUpscalerClient />;
+    return (
+        <div className="container mx-auto px-4 py-8">
+            <Breadcrumbs />
+            <SchemaMarkup
+                type="SoftwareApplication"
+                name="AI Image Upscaler Online"
+                description="Increase image resolution and quality using AI reconstruction."
+                applicationCategory="MultimediaApplication"
+                operatingSystem="Universal"
+            />
+            <ImageUpscalerClient />
+        </div>
+    );
 }

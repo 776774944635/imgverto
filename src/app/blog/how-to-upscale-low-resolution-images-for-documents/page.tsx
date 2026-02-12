@@ -1,14 +1,26 @@
-export const metadata = {
+import { Metadata } from 'next';
+export const metadata: Metadata = {
     title: "How to Upscale Low Resolution Images for Documents: Free Online Tool",
     description: "Got a blurry scan of a marksheet or a small photo? Learn how to upscale and sharpen low-res images for official document uploads for free.",
+    alternates: {
+        canonical: '/blog/how-to-upscale-low-resolution-images-for-documents',
+    },
     keywords: ["upscale low resolution image online", "fix blurry document photo", "sharpen photo for exam form", "increase image quality online", "document photo restoration"]
 };
 
 import { Section } from "@/components/shared/Section";
+import { BlogSchema } from "@/components/shared/BlogSchema";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export default function UpscaleGuide() {
     return (
         <Section className="py-20 max-w-4xl mx-auto prose prose-slate lg:prose-lg prose-headings:font-black prose-headings:text-slate-900 prose-p:text-slate-600 prose-strong:text-slate-900 prose-ul:text-slate-600">
+            <BlogSchema
+                title="How to Upscale Low Resolution Images for Documents"
+                description="Learn how to upscale and sharpen low-res images for official document uploads for free."
+                url="/blog/how-to-upscale-low-resolution-images-for-documents"
+            />
+            <Breadcrumbs />
             <h1>How to Upscale Low Resolution Images for Documents: A Complete Guide</h1>
 
             <p>

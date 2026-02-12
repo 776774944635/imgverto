@@ -18,9 +18,18 @@ export const metadata: Metadata = {
     },
 };
 
+import { BlogSchema } from '@/components/shared/BlogSchema';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+
 export default function BlogPost() {
     return (
         <Section className="min-h-screen py-20">
+            <BlogSchema
+                title="How to Remove Background from Images Online (Free & Fast)"
+                description="Learn how to easily remove backgrounds from photos for e-commerce, logos, and marketing materials. Detailed guide using Imgverto's advanced algorithmic tool."
+                url="/blog/how-to-remove-background-from-images-online"
+            />
+            <Breadcrumbs />
             <article className="max-w-3xl mx-auto">
                 <header className="mb-12 text-center">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-sm font-semibold mb-6">

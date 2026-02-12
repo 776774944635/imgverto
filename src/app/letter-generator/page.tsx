@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { LetterGeneratorClient } from './client';
 import { siteConfig } from '@/lib/site-config';
+import { SchemaMarkup } from '@/components/shared/SchemaMarkup';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 
 export const metadata: Metadata = {
     title: 'Free Letter Generator Online – Formal & Informal | Imgverto',
@@ -16,5 +18,17 @@ export const metadata: Metadata = {
 };
 
 export default function LetterGeneratorPage() {
-    return <LetterGeneratorClient />;
+    return (
+        <div className="container mx-auto px-4 py-8">
+            <Breadcrumbs />
+            <SchemaMarkup
+                type="SoftwareApplication"
+                name="Free Letter Generator Online"
+                description="Build formal and informal letters effortlessly with our online generator and templates."
+                applicationCategory="BusinessApplication"
+                operatingSystem="Universal"
+            />
+            <LetterGeneratorClient />
+        </div>
+    );
 }

@@ -19,9 +19,18 @@ export const metadata: Metadata = {
     },
 };
 
+import { BlogSchema } from '@/components/shared/BlogSchema';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
+
 export default function LetterBlog() {
     return (
         <Section className="min-h-screen py-20">
+            <BlogSchema
+                title="Formal vs Informal Letter: Key Differences & Examples"
+                description="Understand the critical differences between formal and informal letters. Master the formats for home, office, and business."
+                url="/blog/formal-vs-informal-letter-differences"
+            />
+            <Breadcrumbs />
             <article className="max-w-4xl mx-auto px-4">
                 <header className="mb-16 text-center">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 text-amber-700 text-sm font-black uppercase tracking-widest mb-8 border border-amber-200">

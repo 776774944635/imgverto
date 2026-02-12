@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { JpgToPngClient } from './client';
-import { siteConfig } from '@/lib/site-config';
+import { SchemaMarkup } from '@/components/shared/SchemaMarkup';
+import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 
 export const metadata: Metadata = {
     title: "Convert JPG to PNG Online - Change Format for Medical & College Forms",
@@ -12,5 +13,17 @@ export const metadata: Metadata = {
 };
 
 export default function JpgToPngPage() {
-    return <JpgToPngClient />;
+    return (
+        <div className="container mx-auto px-4 py-8">
+            <Breadcrumbs />
+            <SchemaMarkup
+                type="SoftwareApplication"
+                name="JPG to PNG Converter Online"
+                description="Convert JPG images to PNG format with perfect clarity."
+                applicationCategory="MultimediaApplication"
+                operatingSystem="Universal"
+            />
+            <JpgToPngClient />
+        </div>
+    );
 }
