@@ -3,16 +3,12 @@ import { PngToJpgClient } from './client';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-    title: 'PNG to JPG Converter | Convert PNG to JPG Online Free | Imgverto',
-    description: 'Convert PNG to JPG online for free with Imgverto. Reduce file size and ensure 100% compatibility with our fast, browser-based converter. Privacy guaranteed.',
+    title: "Convert PNG to JPG Online - Change Image Format for Exam Forms",
+    description: "Convert PNG to JPG online for free. Essential for NEET, JEE, and government job forms that require JPG format. Fast, secure, and preserves high quality.",
     alternates: {
         canonical: '/png-to-jpg',
     },
-    openGraph: {
-        title: 'PNG to JPG Converter | Convert PNG to JPG Online Free | Imgverto',
-        description: 'Convert PNG to JPG format online. Adjustable compression for smaller file sizes.',
-        url: `${siteConfig.url}/png-to-jpg`,
-    },
+    keywords: ["convert png to jpg", "png to jpg converter free", "change image format online", "neet photo format", "jee main photo jpg", "government job image format", "imgverto"]
 };
 
 export default function PngToJpgPage() {

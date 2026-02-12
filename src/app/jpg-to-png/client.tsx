@@ -197,9 +197,9 @@ Beyond simple quality preservation, this converter serves as the first step for 
                 }}
                 whoIsItFor={{
                     title: "Who Should Use This Tool",
-                    content: `This tool is an essential part of the toolkit for web developers, UI/UX designers, and digital artists. If you have a logo or a high-contrast graphic that was unfortunately saved as a JPG, converting it to PNG is crucial before integrating it into a website, as PNGs handle the sharp lines and text of UI elements much better than JPEGs. It's also vital for anyone who plans to perform multi-stage editing on a photo; by switching to PNG early in the process, you prevent the 'generational loss' that occurs when saving a JPG multiple times.
+                    content: `This tool is primarily used by candidates who need to upload high-fidelity scans of academic records. Many government and private university portals recommend PNG for documents containing text to ensure they are readable by the evaluators.
 
-Marketing professionals and social media managers also find this tool useful for ensuring their brand assets remain crisp across different platforms. Many modern apps and CMS platforms prefer PNG for thumbnails and profile pictures because of their superior clarity. Whether you're a professional designer preparing assets for a high-end application or a student wanting to make sure your presentation graphics look their best, Imgverto's converter provides the stability and quality you need without the overhead of heavy software.`
+Web designers also use this tool to take standard JPG photos and convert them into the PNG format before removing backgrounds or adding transparent layers. If you want your images to look sharp and avoid the 'fuzzy' look that JPGs can sometimes have around sharp edges, Imgverto is the perfect solution for you.`
                 }}
                 howToUse={{
                     title: "How to Use the Free JPG to PNG Converter",
@@ -225,28 +225,36 @@ Marketing professionals and social media managers also find this tool useful for
                 }}
                 faqs={[
                     {
-                        question: "Will converting a JPG to PNG improve the image quality?",
-                        answer: "No, converting to PNG cannot 'add' detail that was already lost in the original JPG. However, it prevents any *further* quality loss if you plan to edit the image or save it multiple times in the future."
+                        question: "Why should I convert my JPG to PNG for university admissions?",
+                        answer: "Many university portals (like Delhi University or BHU) prefer PNG for academic certificates. PNG is 'lossless,' meaning it keeps the text in your documents sharp and legible, unlike JPG which can make it blurry."
                     },
                     {
-                        question: "Does the output PNG support transparency?",
-                        answer: "Yes. While the source JPG lacks transparency, the file we generate is a true PNG-24 with alpha channel support. You can then use background removal tools on this file to create transparent areas."
+                        question: "Will converting to PNG make my image clearer?",
+                        answer: "It won't fix an already blurry JPG, but it will prevent the image from losing any more quality. It's the best format for documents you plan to use multiple times."
                     },
                     {
-                        question: "Is there a limit to the resolution of the converter?",
-                        answer: "Imgverto's converter can handle high-resolution photos up to standard DSLR qualities. For extremely large files (above 10-15MB), performance may depend on your device's available memory, as processing happens locally."
+                        question: "Does this PNG converter support transparency?",
+                        answer: "Yes, the output is a standard PNG which supports transparency. Once converted, you can use background removal tools to make parts of the image transparent."
                     },
                     {
-                        question: "How does Imgverto protect my privacy?",
-                        answer: "We use a 'client-side' processing model. This means the heavy lifting of converting pixels happens in your own browser's memory. Your image is never sent across the internet to our servers, keeping your data 100% private."
+                        question: "Is it safe to upload my marksheets here?",
+                        answer: "Yes, 100%. Imgverto processes your files directly in your browser. Your sensitive documents never leave your computer and are never uploaded to any server."
                     },
                     {
-                        question: "Can I use the converted PNGs for professional printing?",
-                        answer: "Absolutely. PNG is an excellent format for high-quality printing because of its lossless nature. Since we preserve the original resolution, your converted files are perfect for brochures, business cards, and more."
+                        question: "Which is better for photos, JPG or PNG?",
+                        answer: "For photos, JPG is usually better because the file size is much smaller. However, for documents with text (like certificates or ID cards), PNG is the superior choice for clarity."
                     },
                     {
-                        question: "Why do PNG files often have a larger file size than JPGs?",
-                        answer: "PNG is a lossless format, so it stores every single bit of information for every pixel. JPGs are smaller because they use 'smart' math to throw away data. For logos and text, the size difference is worth the quality gain."
+                        question: "Can I convert high-quality scans to PNG?",
+                        answer: "Absolutely. Our converter handles high-resolution scans and DSLR photos easily, ensuring you have a professional-grade PNG asset for any portal."
+                    },
+                    {
+                        question: "Is there a limit on how many JPGs I can convert?",
+                        answer: "No, you can convert an unlimited number of images for free. We don't have any daily caps or registration requirements."
+                    },
+                    {
+                        question: "Why is my PNG file larger than the original JPG?",
+                        answer: "PNG is a lossless format, so it stores much more data than a JPG to ensure perfect quality. This is normal and is the trade-off for having a clearer, uncompressed image."
                     }
                 ]}
             />

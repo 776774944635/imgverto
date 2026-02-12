@@ -130,28 +130,36 @@ Students and researchers also benefit greatly; it enables them to combine variou
                 }}
                 faqs={[
                     {
-                        question: "Can I merge different sized PDF pages together?",
-                        answer: "Yes. Our tool is designed to handle varying page dimensions. If you merge an A4 document with a Letter-sized one, each page will maintain its original intended size within the final composite PDF."
+                        question: "Can I merge different sized PDF pages together using Imgverto?",
+                        answer: "Yes. Our tool is designed to handle varying page dimensions. If you merge an A4 marksheet with a Letter-sized certificates, each page will maintain its original intended size within the final composite PDF."
                     },
                     {
-                        question: "Is there a limit to how many PDFs I can merge at once?",
-                        answer: "You can merge up to 20 PDF files in a single operation. This ensures that the processing remains efficient and that the final file size stays within reasonable limits for standard email systems."
+                        question: "Is there a limit to how many PDFs I can merge for my admission form?",
+                        answer: "You can merge up to 20 PDF files in a single operation. This is usually more than enough for combining 10th marksheet, 12th marksheet, caste certificate, and other admission documents into one file."
                     },
                     {
                         question: "Will the hyperlinks inside my PDFs still work after merging?",
-                        answer: "In most cases, yes. Our merger attempts to preserve the internal document metadata and link structures. However, links that point to other external files might need to be verified in the final merged document."
+                        answer: "In most cases, yes. Our merger attempts to preserve the internal document metadata and link structures. This is helpful if you are merging digital portfolios with clickable links."
                     },
                     {
-                        question: "Do you compress the files during the merge process?",
-                        answer: "The merger focuses on joining the files without altering the internal compression. If you find the final merged file is too large, you can run it through our specialized PDF Compressor tool afterwards."
+                        question: "Does this tool work for NEET and JEE Main document compilation?",
+                        answer: "Absolutely! Many students use Imgverto to merge their various certificates into a single PDF as requested by the NTA or other counselling portals during the admission process."
                     },
                     {
-                        question: "Is it safe to merge sensitive legal documents here?",
-                        answer: "Absolutely. Imgverto prioritizes your privacy. We use secure HTTPS for all transfers, and unlike other services, we do not keep copies of your documents on our servers once the processing is finished."
+                        question: "Is it safe to merge sensitive certificates here?",
+                        answer: "Yes, security is our top priority. We use secure HTTPS for all transfers, and unlike other services, we do not keep copies of your documents on our servers once the processing is finished."
                     },
                     {
-                        question: "Can I merge password-protected PDFs?",
-                        answer: "For security reasons, our tool cannot process encrypted or password-protected files. You will need to remove the password protection from your source files before attempting to merge them."
+                        question: "Can I merge PDF files on my mobile phone?",
+                        answer: "Yes, Imgverto is fully mobile-responsive. You can select PDF files directly from your phone's storage and combine them on the go without needing a computer."
+                    },
+                    {
+                        question: "Do I need to sign up to use the PDF merger?",
+                        answer: "No sign-up or email is required. You can start merging your documents immediately. We believe in providing a fast, hassle-free experience for students and professionals."
+                    },
+                    {
+                        question: "What should I do if my merged PDF is too large for upload?",
+                        answer: "If your final merged file exceeds the limit of an exam portal (e.g., 1MB), you can download it and then use our 'Compress PDF' tool to reduce its size without losing clarity."
                     }
                 ]}
             />

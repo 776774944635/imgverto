@@ -118,13 +118,13 @@ export function PdfCompressorClient() {
                     title: "What this PDF Compressor Tool Does",
                     content: `Imgverto's PDF Compressor is a sophisticated optimization engine designed to shrink the digital footprint of your documents without sacrificing their professional appearance. PDF files often become 'bloated' due to high-resolution embedded images, redundant font information, and excess metadata that isn't necessary for viewing or printing. Our tool performs a deep audit of the PDF's internal structure to identify these inefficiencies.
 
-Specifically, the compressor uses intelligent downsampling to reduce the DPI (dots per inch) of large images to a web-standard resolution (typically 150-720 DPI). It also streamlines the document's resource dictionary—consolidating duplicate font data and removing non-essential document history. The result is a 'lean' version of your file that looks almost identical to the original but occupies significantly less storage space, making it perfect for rapid sharing and archival.`
+Especially for government portals like SSC (Staff Selection Commission), UPSC, and State PSCs, file size limits are often as low as 200KB or 500KB. Simply saving a Word file as PDF often results in a file larger than 1MB. Our tool uses intelligent downsampling to reduce the DPI of large images to a web-standard resolution (typically 150-720 DPI) while consolidating duplicate font data. The result is a 'lean' version of your file that looks almost identical to the original but meets all official upload requirements.`
                 }}
                 whoIsItFor={{
                     title: "Who Should Use This Tool",
-                    content: `This tool is a lifesaver for job seekers and college applicants who are frequently faced with strict 2MB or 5MB file size limits on upload portals. If your beautifully designed resume or portfolio is just a few megabytes too large, Imgverto can bring it under the limit in seconds. Business professionals also use the compressor to prepare large slide decks and reports for email distribution, ensuring that their messages don't bounce back due to 'attachment size' restrictions.
+                    content: `This tool is a lifesaver for students, job seekers, and professionals. Competitive exam candidates for NEET, JEE Main, and BPSC often face strict size limits for uploading certificates and category documents. If your scanned 10th-grade marksheet or caste certificate is 1MB, it won't be accepted by the portal. Imgverto brings it under the 200KB limit in seconds.
 
-Public sector workers and legal clerks use the tool to optimize massive case files for digital filing systems, saving gigabytes of server space over time. Even for individual users, compressing a library of PDF ebooks or scanned manuals can free up valuable space on tablets and e-readers. If you've ever been frustrated by slow document loading times or storage limits, our compressor is the remedy.`
+Business professionals also use the compressor to prepare large reports and presentations for email, ensuring that messages don't bounce back due to 'attachment size' limits. Whether you are filing your taxes on the Income Tax portal or submitting a project report at college, this tool ensures your PDFs are small and fast.`
                 }}
                 howToUse={{
                     title: "How to Use the Free Online PDF Compressor",
@@ -150,28 +150,32 @@ Public sector workers and legal clerks use the tool to optimize massive case fil
                 }}
                 faqs={[
                     {
-                        question: "How much will my PDF be reduced in size?",
-                        answer: "The reduction depends on the original content. Documents with many high-res images can often be shrunken by 70-90%. Files that are primarily text will see a smaller reduction, typically around 10-30%, as text is already highly efficient."
+                        question: "Is this online PDF compressor free to use?",
+                        answer: "Yes, Imgverto's PDF compressor is 100% free. You can compress multiple files without any subscription or hidden fees. It is perfect for candidates applying for government exams who need to resize documents quickly."
                     },
                     {
-                        question: "Will the text in my PDF become blurry?",
-                        answer: "No. Our compression algorithms are designed to protect text and vector elements (like logos). We primarily focus on optimizing the heavy image data, so your document remains perfectly readable."
+                        question: "How much can I reduce my PDF size?",
+                        answer: "The reduction depends on the original file. PDFs with many images can often be reduced by 70-90%. For Indian exam forms like SSC or UPSC, where limits are often 200KB, our tool helps you reach that target while keeping text legible."
                     },
                     {
-                        question: "Can I choose the level of compression?",
-                        answer: "To keep the experience fast and simple, we apply a 'Universal Optimization' profile that balances size and quality perfectly for 99% of users. This eliminates the guesswork of choosing complex technical settings."
+                        question: "Will the quality of my certificates decrease?",
+                        answer: "Our tool uses smart compression that preserves text and signature clarity. While it reduces the file size, it ensures that your educational certificates and identity proofs remain clear enough for official verification."
                     },
                     {
-                        question: "Is there a limit to the size of the PDF I can upload?",
-                        answer: "You can upload PDFs up to 50MB for free. For files larger than this, we recommend merging or splitting files first to maintain optimal processing speed."
+                        question: "Can I compress PDF for NEET and JEE application forms?",
+                        answer: "Absolutely. Many NTA and state-level entrance exam portals have strict PDF size limits (e.g., between 10KB to 300KB). Our tool is specifically optimized to help students meet these exact requirements."
                     },
                     {
-                        question: "Does the PDF Compressor work on scanned documents?",
-                        answer: "Yes! Scanned documents are often the largest files because they are essentially just large images in a PDF wrapper. Imgverto is extremely effective at reducing the size of these types of files."
+                        question: "Is it safe to upload my Aadhar or PAN card PDF?",
+                        answer: "Security is our top priority. All files are processed through an encrypted connection and are automatically deleted from our servers after processing. We do not store or view your personal documents."
                     },
                     {
-                        question: "Will my PDF's layout or fonts change?",
-                        answer: "No. The structural integrity of the pages, the layout of the text, and the font embedding remain exactly as they were. We only optimize how the data is stored, not the document's visual design."
+                        question: "Does this work on mobile for quick uploads?",
+                        answer: "Yes, Imgverto is fully mobile-optimized. You can scan a document using your phone, compress the PDF on our site, and upload it directly to the recruitment portal from your mobile browser."
+                    },
+                    {
+                        question: "What is the maximum file size I can upload?",
+                        answer: "You can upload files up to 50MB for compression. This is usually more than enough for any academic or professional document that needs optimization for web submission."
                     }
                 ]}
             />

@@ -216,28 +216,36 @@ Additionally, job seekers and students frequently use our resizer for official d
                 }}
                 faqs={[
                     {
+                        question: "What pixel size should I use for SSC application photo?",
+                        answer: "The standard requirement for SSC is 3.5 cm (width) x 4.5 cm (height). In pixels, this is approximately 413 x 531 pixels at 300 DPI. You can input these values into our resizer to prepare your photo."
+                    },
+                    {
+                        question: "How do I resize my signature for JEE Main?",
+                        answer: "JEE Main usually requires a signature dimension of 3.5 cm x 1.5 cm. This translates to roughly 413 x 177 pixels. Use our tool to set these dimensions while keeping the aspect ratio locked to prevent distortion."
+                    },
+                    {
+                        question: "Can I resize photos for my passport application?",
+                        answer: "Yes, our tool is perfect for resizing photos to the official 2 x 2 inch (51 x 51 mm) or 35 x 45 mm standards required for passports and visas."
+                    },
+                    {
                         question: "What is aspect ratio, and why should I lock it?",
-                        answer: "Aspect ratio is the proportional relationship between width and height. Locking it ensures that when you change one dimension, the other adjusts automatically. This prevents your image from looking distorted or 'squeezed'."
+                        answer: "Aspect ratio is the proportional relationship between width and height. Locking it ensures that when you change one dimension, the other adjusts automatically. This prevents your photo from looking stretched or squeezed."
                     },
                     {
-                        question: "Will my image lose quality if I make it smaller?",
-                        answer: "No, making an image smaller actually tends to make it look sharper. However, making an image significantly *larger* than its original size can lead to blurriness. For enlarging, we recommend our specialized Image Upscaler tool."
+                        question: "Will my photo lose clarity after resizing?",
+                        answer: "Imgverto uses high-quality interpolation to ensure that when you make a photo smaller, it remains sharp and clear. However, enlarging a very small photo significantly might result in some blurriness."
                     },
                     {
-                        question: "What is the ideal image size for social media?",
-                        answer: "Platforms change their rules often, but 1080x1080 is safe for most posts. For landscape headers, 1200-1500px wide is common. Our tool allows you to input these specific numbers easily."
+                        question: "Can I resize images on my mobile?",
+                        answer: "Yes, Imgverto is fully mobile-optimized. You can take a selfie on your phone and resize it to the required dimensions directly in your mobile browser before uploading to an exam portal."
                     },
                     {
-                        question: "Is there a limit on the file size I can upload?",
-                        answer: "Imgverto supports large photos up to 10-15MB. Because resizing happens on your device, the limit is more about your browser's memory than our server's capacity."
+                        question: "Do I need to pay to use the image resizer?",
+                        answer: "No, the tool is 100% free to use. There are no watermarks or limits on the number of images you can resize."
                     },
                     {
-                        question: "Can I resize a transparent PNG with this tool?",
-                        answer: "Yes, our resizer fully supports PNG transparency. Your resized output will maintain its transparent background perfectly, making it ready for design work."
-                    },
-                    {
-                        question: "Why should I resize images before uploading to my website?",
-                        answer: "Oversized images are the #1 reason for slow websites. By resizing your image to the exact width needed for your layout, you can reduce file size by 70-80%, hugely improving your SEO and user experience."
+                        question: "Can I resize a transparent signature (PNG)?",
+                        answer: "Yes, our resizer supports transparent PNG files. Your signature will remain transparent even after resizing, making it look professional on any document."
                     }
                 ]}
             />

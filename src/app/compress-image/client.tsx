@@ -133,17 +133,15 @@ export function CompressImageClient() {
             <ToolExtraContent
                 whatDoesItDo={{
                     title: "What this Image Compressor Tool Does",
-                    content: `Imgverto's Image Compressor is a powerful tool designed to reduce the digital footprint of your photos without sacrificing their visual integrity. Every image file contains a vast amount of data, some of which is essential for what you see, and some of which is redundant or invisible to the naked eye. Our compressor uses advanced algorithms to perform both lossy and lossless compression. 
+                    content: `Imgverto's Image Compressor is a powerful tool designed to reduce the digital footprint of your photos without sacrificing their visual integrity. Every image file contains a vast amount of data, some of which is essential for what you see, and some of which is redundant or invisible to the naked eye.
 
-Lossless compression works by removing metadata and finding more efficient ways to store pixel data without losing a single bit of information. Lossy compression, on the other hand, strategically discards data that the human eye is less likely to notice, allowing for much more significant reductions in file size. By adjusting the quality slider, you can control this balance, finding the perfect 'sweet spot' for your specific needs. This process is essential for modern web development, where fast loading times are a critical factor in user experience and search engine optimization (SEO).
-
-The tool handles the three most popular web formats: JPEG, PNG, and WebP. For JPEG files, it optimizes the quantization tables; for PNG, it reduces the color palette and optimizes the compression blocks; and for WebP, it leverages Google's advanced predictive coding. Unlike many other services, Imgverto processes these files quickly and securely, providing you with a download link the moment the compression is finished.`
+For students applying for competitive exams like NEET, JEE, or SSC, the photo and signature upload requirements are very strict (often between 10KB to 50KB). A standard smartphone photo is usually 3MB to 5MB. Our tool uses advanced algorithms to strategically discard non-essential data, allowing you to reach those small kilobyte limits while keeping your face and signature perfectly clear for official identification.`
                 }}
                 whoIsItFor={{
                     title: "Who Should Use This Tool",
-                    content: `The Image Compressor is a must-have for web developers and designers who are obsessed with PageSpeed Insights scores and Core Web Vitals. Large images are the leading cause of slow websites, and this tool helps eliminate that bottleneck. Bloggers and content creators using platforms like WordPress or Shopify will find it invaluable for keeping their page weights down, ensuring that their readers have a smooth experience even on slow mobile connections.
+                    content: `This tool is specifically designed for candidates preparing for Indian competitive exams. Whether you are appearing for UPSC, IBPS Banking exams, or Railway Recruitment (RRB), you will always need to compress your passport-size photo and signature before uploading. Imgverto is the reliable partner for thousands of students who need to meet these technical requirements without visiting an internet cafe.
 
-Social media managers also benefit greatly from compression. Many platforms have strict file size limits for uploads, and our tool allows you to stay under those limits while maintaining professional-looking visuals. Even casual users who are running out of storage space on their cloud drives (like Google Drive or iCloud) or who want to send multiple photos via email can use Imgverto to shrink their files before sending or archiving. If you work with images in any professional or personal capacity, our compressor will save you bandwidth and storage space every single day.`
+Web developers and social media managers also use this tool to optimize graphics for faster loading. By reducing the weight of your images, you ensure that your website or social media profile remains snappy and accessible, even on slower 4G/5G connections in rural areas.`
                 }}
                 howToUse={{
                     title: "How to Use the Free Image Compressor",
@@ -169,28 +167,36 @@ Social media managers also benefit greatly from compression. Many platforms have
                 }}
                 faqs={[
                     {
-                        question: "Will my images look blurry after compression?",
-                        answer: "Not if you choose the right settings. At 80% quality, most users cannot distinguish between the original and the compressed version. If you go very low (below 30%), you might start to see 'artifacts', but for most web uses, a significant reduction is possible without visible loss."
+                        question: "How do I compress my photo to 20KB for an exam form?",
+                        answer: "Upload your photo to Imgverto, and pull the 'Quality' slider down to around 50-60%. Check the 'Compressed Size' preview. If it's still above 20KB, lower the quality further. Our tool maintains clarity even at lower sizes."
                     },
                     {
-                        question: "What is the difference between lossy and lossless compression?",
-                        answer: "Lossless compression reduces file size without losing any data (perfect for logos/text). Lossy compression discards some data to achieve much smaller sizes (perfect for photographs). Our tool uses a smart hybrid approach to give you the best results."
+                        question: "Will my signature be readable after compression?",
+                        answer: "Yes. Our algorithms are optimized to preserve contrast in images like signatures and thumbprints, which is crucial for exam portals like SSC and JEE Main."
                     },
                     {
-                        question: "Is there a maximum file size limit for uploads?",
-                        answer: "Currently, Imgverto supports files up to 10MB each. This covers 99% of standard digital photos and web graphics. If you have a larger file, we recommend resizing it first using our resize tool."
+                        question: "What is the best format for government job photos?",
+                        answer: "Most portals (UPSC, Banking, SSC) require photos in JPG or JPEG format. Our tool compresses these formats perfectly while ensuring the final output is accepted by the portal."
                     },
                     {
-                        question: "Does Imgverto keep a copy of my images?",
-                        answer: "No. Your privacy is a priority. Files are processed and held in a temporary secured folder only for as long as needed for you to download them. They are automatically cleared from our system regularly."
+                        question: "Can I use this for NEET application photo upload?",
+                        answer: "Absolutely! NEET has specific requirements for postcard size and passport size photos. You can use our compressor to bring them under the required kilobyte limit easily."
                     },
                     {
-                        question: "Can I compress PNG files with transparency?",
-                        answer: "Yes, our tool fully supports PNG transparency (alpha channels). The compression will reduce the file size while keeping the transparent background perfectly intact."
+                        question: "Is it safe to upload my personal photo to Imgverto?",
+                        answer: "Yes, we value your privacy. Your photos are processed in a secure environment and are automatically deleted from our system shortly after you finish."
                     },
                     {
-                        question: "Why should I compress WebP if it's already a modern format?",
-                        answer: "While WebP is very efficient, many export tools don't optimize it to the fullest. Our compressor can often find another 10-20% of savings even on WebP files by applying more aggressive compression blocks."
+                        question: "Does this work for signature and thumb impressions?",
+                        answer: "Yes, you can upload any image of your signature or thumb impression. The tool will reduce the file size, making it ready for any online registration form."
+                    },
+                    {
+                        question: "Can I compress multiple photos at once?",
+                        answer: "Currently, you can process one image at a time to ensure the highest quality and precision for your specific size requirements."
+                    },
+                    {
+                        question: "Why is the final file size slightly different than expected?",
+                        answer: "Image data varies across different colors and textures. If you need an exact size, simply re-adjust the quality slider and hit 'Compress' again until you hit your target."
                     }
                 ]}
             />

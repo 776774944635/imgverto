@@ -3,16 +3,12 @@ import { ImageUpscalerClient } from './client';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-    title: "High-Resolution Image Upscaler Online | Increase Resolution Free | Imgverto",
-    description: "Enlarge your images by 2x or 4x online for free with Imgverto Advanced Image Upscaler. Increase resolution and enhance quality without losing sharpness or clarity.",
+    title: "AI Image Upscaler Online - Increase Resolution for Exam Photos",
+    description: "Enhance and upscale images online for free. Increase resolution of blurry photos for NEET, JEE, and government job forms. 2x or 4x high-quality resolution boost.",
     alternates: {
         canonical: "/image-upscaler",
     },
-    openGraph: {
-        title: "High-Resolution Image Upscaler Online | Increase Resolution Free | Imgverto",
-        description: "Increase image resolution by 2x or 4x instantly using high-precision resampling. Enhance quality without blur.",
-        url: `${siteConfig.url}/image-upscaler`,
-    },
+    keywords: ["image upscaler online", "increase image resolution", "fix blurry photo for exam", "upscale neet photo", "jee main image enhancer", "restore old document photo", "imgverto"]
 };
 
 export default function ImageUpscalerPage() {

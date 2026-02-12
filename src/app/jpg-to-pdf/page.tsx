@@ -3,9 +3,9 @@ import { JpgToPdfClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
 
 export const metadata: Metadata = {
-    title: "JPG to PDF Online | Convert Images to PDF Free",
-    description: "Convert JPG to PDF online for free. Imgverto allows you to merge multiple JPG images into a single PDF document instantly.",
-    keywords: ["jpg to pdf online", "convert jpg to pdf", "jpeg to pdf", "image to pdf", "imgverto"]
+    title: "JPG to PDF Online - Convert Images to PDF for Exams",
+    description: "Convert JPG to PDF online for free. Perfect for NEET, JEE, and SSC application forms. Easy to use, secure, and high-quality image to PDF conversion.",
+    keywords: ["jpg to pdf online", "convert jpg to pdf", "neet photo resize", "jee main photo upload", "ssc chsl photo size", "government job form pdf", "imgverto"]
 };
 
 export default function JpgToPdfPage() {

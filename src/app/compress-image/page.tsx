@@ -3,9 +3,9 @@ import { CompressImageClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
 
 export const metadata: Metadata = {
-    title: 'Free Online Image Compressor | Reduce JPG, PNG, WebP Size | Imgverto',
-    description: 'Compress images online for free without losing quality. Reduce file size of JPG, PNG, and WebP images instantly to boost website speed and save storage.',
-    keywords: ["image compressor", "compress image online", "reduce image size", "shrink jpeg", "imgverto"],
+    title: "Compress Image Online - Reduce Photo Size for Exam Forms",
+    description: "Compress images online for free. Reduce photo size for NEET, JEE Main, SSC, and UPSC application forms. Fast, secure, and maintains high quality.",
+    keywords: ["compress image online", "reduce photo size", "neet photo compressor", "jee main image resize", "ssc chsl photo upload", "government job image size", "imgverto"],
     alternates: {
         canonical: '/compress-image',
     },

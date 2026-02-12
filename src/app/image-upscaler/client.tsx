@@ -196,17 +196,15 @@ export function ImageUpscalerClient() {
             <ToolExtraContent
                 whatDoesItDo={{
                     title: "What this Image Upscaler Tool Does",
-                    content: `Imgverto's Image Upscaler is an advanced digital laboratory for your low-resolution photos. Traditionally, enlarging an image meant stretching the existing pixels, which inevitably led to a blurry, pixelated, or 'blocky' mess. Our tool bypasses these limitations by using sophisticated interpolation and resampling algorithms, such as Lanczos3. Instead of simply making pixels bigger, it mathematically analyzes the relationship between neighboring pixels to calculate what the intermediate data should look like, effectively 'filling in the blanks' with high precision.
+                    content: `Imgverto's Image Upscaler is an advanced digital laboratory for your low-resolution photos. Traditionally, enlarging an image meant stretching it, leading to a blurry result.
 
-This process significantly increases the pixel density and overall resolution of your image. Whether you need to double the size (2x) or quadruple it (4x), the tool works to maintain sharp edges, preserve textures, and minimize the digital noise that often occurs during resizing. For photographers, this means being able to crop a small portion of a photo and upscaling it back to a usable size. For designers, it means taking small web assets and turning them into high-quality elements suitable for larger layouts or even physical printing.
-
-Every processed image is carefully handled by our backend servers to ensure the highest mathematical accuracy during the resampling process. The result is a crisp, clean version of your original file that looks like it was captured at a higher resolution from the start. We support the core web formats—JPEG, PNG, and WebP—ensuring that whatever your source material is, you can give it the resolution boost it deserves.`
+For students applying for competitive exams, sometimes the only photo they have is a low-quality selfie or a small crop from a group photo. Most official portals (like NTA for NEET/JEE) will reject these for lack of clarity. Our upscaler uses sophisticated mathematical analysis to double (2x) or quadruple (4x) the resolution. It effectively 'fills in the gaps' to ensure your face and documents look sharp and professional, meeting the clarity standards of high-stakes application forms.`
                 }}
                 whoIsItFor={{
                     title: "Who Should Use This Tool",
-                    content: `The Image Upscaler is a lifesaver for professional photographers and digital artists who need to prepare their work for large-format printing. If you have a beautiful shot that just doesn't have enough megapixels for a high-quality poster or canvas, this tool provides the necessary resolution boost. It's also an essential asset for e-commerce store owners who might receive low-quality product shots from suppliers and need to make them look sharp and professional on high-resolution Retina displays.
+                    content: `This tool is a lifesaver for candidates who need to restore old certificates or fix low-resolution identity proofs. If your scanned marksheet from 10 years ago is too small to read, our 4x upscaler can help bring out the details.
 
-History enthusiasts and families looking to digitize and restore old photographs will also find great value here. Often, older digital cameras or scanned physical photos lack the resolution needed for modern screen standards. By upscaling these memories, you give them a new life in the digital age. Furthermore, logo designers who need to extract a high-res version of a small icon or web developers who want to optimize their site for users with high-density screens will find this tool to be a permanent fixture in their workflow. It's built for anyone who refuses to settle for pixelated results.`
+Web developers also use this tool to optimize their graphics for high-density Retina displays. Whether you are a student preparing for UPSC or a blogger wanting clearer visuals, Imgverto's upscaler provides the precision resolution boost you need.`
                 }}
                 howToUse={{
                     title: "How to Use the Free Image Upscaler",
@@ -232,28 +230,36 @@ History enthusiasts and families looking to digitize and restore old photographs
                 }}
                 faqs={[
                     {
-                        question: "How is upscaling different from regular resizing?",
-                        answer: "Standard resizing simply stretches pixels, making the image look blurry. Upscaling with Imgverto uses mathematical resampling to calculate new pixel values, maintaining sharp edges and finer details for a more professional look."
+                        question: "How do I fix a blurry photo for my exam application?",
+                        answer: "Upload your photo to Imgverto and select the 2x or 4x upscale factor. Our tool will re-calculate the pixels to sharpen the image, making it suitable for portals like NEET, JEE, and SSC."
                     },
                     {
-                        question: "Can I upscale a very small thumbnail into a 4K image?",
-                        answer: "While you can, the results depend on the quality of the source. Our tool works wonders on average-sized photos, but upscaling a tiny 50px icon to 4K will still have limitations. It works best when the original has some discernible detail."
+                        question: "Can I increase the resolution of a scanned marksheet?",
+                        answer: "Yes! If your scanned document is low-res and hard to read, use our 4x upscaler. It will increase the pixel density, often making small text much clearer for official evaluators."
                     },
                     {
-                        question: "Does the tool add watermarks to my upscaled photos?",
-                        answer: "No. Imgverto believes in providing clean, professional tools. All upscaled images are your property and come with no watermarks or branding, making them ready for immediate commercial or personal use."
+                        question: "Is it safe to upscale my identity documents here?",
+                        answer: "Your privacy is our priority. While the files are processed on our secure servers, they are encrypted and automatically deleted shortly after you download the result."
                     },
                     {
-                        question: "Which file formats are best for upscaling?",
-                        answer: "PNG and WebP typically yield the best results because they are less 'noisy' than JPEGs. However, our tool handles JPEGs extremely well, helping to smooth out compression artifacts during the enlargement process."
+                        question: "Will the upscaled photo be accepted by NTA portals?",
+                        answer: "Yes, by increasing the resolution and sharpness, you ensure your photo meets the 'clear and visible' criteria required by NTA for NEET and JEE Main."
                     },
                     {
-                        question: "Is there a limit to how many images I can upscale per day?",
-                        answer: "There are no daily limits. You are free to upscale as many images as your project requires. We are committed to keeping this tool accessible to everyone without frustrating restrictions."
+                        question: "Does upscaling add fake details to my photo?",
+                        answer: "No, it uses advanced math (interpolation) to predict the missing pixels based on the surrounding area. It enhances what is already there without adding artificial elements."
                     },
                     {
-                        question: "Can I use the upscaled images for commercial purposes?",
-                        answer: "Absolutely. Since we don't add watermarks and you provide the original source, you are free to use the high-resolution output for ads, product listings, brochures, or any other commercial venture."
+                        question: "Why should I use 4x instead of 2x?",
+                        answer: "Use 4x if your starting photo is very small (like a thumbnail) or if you need a very high resolution for printing. For most exam forms, 2x is often sufficient to reach the required clarity."
+                    },
+                    {
+                        question: "Is there a charge for using the high-res upscaler?",
+                        answer: "No, Imgverto provides this advanced feature for free. We want to help students and professionals succeed without the burden of expensive software."
+                    },
+                    {
+                        question: "Can I upscale a PNG signature?",
+                        answer: "Yes, our tool supports PNG and JPG. Upscaling a signature can help make the thin lines more defined and easier to verify on official forms."
                     }
                 ]}
             />

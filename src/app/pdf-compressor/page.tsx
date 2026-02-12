@@ -3,12 +3,12 @@ import { PdfCompressorClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
 
 export const metadata: Metadata = {
-    title: 'Compress PDF Online | Reduce PDF Size for Free | Imgverto',
-    description: 'Shrink your PDF files without losing quality with Imgverto. Our free online PDF compressor optimizes your documents for faster sharing and easier uploads. Secure and private.',
+    title: "Compress PDF Online - Reduce PDF Size for Exam Forms",
+    description: "Compress PDF online for free. Reduce file size for NEET, JEE, SSC, and UPSC application forms. Fast, secure, and preserves quality.",
     alternates: {
         canonical: '/pdf-compressor',
     },
-    keywords: ["compress pdf online free", "reduce pdf size", "pdf compressor", "shrink pdf", "imgverto"]
+    keywords: ["compress pdf online", "reduce pdf size", "pdf compressor free", "ssc chsl pdf size", "upsc form pdf upload", "government job pdf resize", "imgverto"]
 };
 
 export default function PdfCompressorPage() {

@@ -166,19 +166,15 @@ export function BackgroundRemoverClient() {
             <ToolExtraContent
                 whatDoesItDo={{
                     title: "What this Background Remover Tool Does",
-                    content: `Imgverto's Background Remover is a sophisticated web-based application designed to strip the background from any image with surgical precision. Powered by advanced computational logic and pattern recognition models, our tool identifies the subject of your photo—whether it's a person, an animal, a product, or a logo—and separates it from the clutter behind it. This process, often called image segmentation, used to take hours of manual work in professional software like Adobe Photoshop. With Imgverto, it happens in seconds.
+                    content: `Imgverto's Background Remover is a sophisticated web-based application designed to strip the background from any photo with surgical precision. 
 
-The tool uses high-performance algorithms to analyze the pixels in your image. It looks for edges, contrast, and color variances to determine what part of the image is the foreground and what is the background. Once the analysis is complete, it applies an alpha channel mask to the background, making it completely transparent while preserving the sharp edges and fine details of your main subject. This results in a high-quality transparent PNG file that you can layer over any other background or design.
-
-What makes Imgverto unique is that all of this processing happens directly in your web browser. Most other online background removers upload your images to their servers, which can be slow and raises privacy concerns. By using WebAssembly and modern browser capabilities, Imgverto keeps your data on your device. This means faster processing, total privacy, and the ability to work even on slower internet connections once the initial processing engine is loaded.`
+For candidates of Indian exams like NEET, JEE, and SSC, the background of the passport photo must often be plain white or a very light color. Photos with dark or cluttered backgrounds are frequently rejected by NTA and other government portals. Our tool uses advanced AI-driven segmentation to isolate your face and shoulders, allowing you to create a professional transparent or white background photo from a simple home-taken selfie. This ensures your application is compliant and looks professional for official identification.`
                 }}
                 whoIsItFor={{
                     title: "Who Should Use This Tool",
-                    content: `This tool is designed for anyone who needs high-quality image cutouts without the complexity of professional design software. It is particularly valuable for e-commerce entrepreneurs who need to display their products on a clean, professional white background to meet the requirements of platforms like Amazon, eBay, and Etsy. By removing distracting backgrounds, products become the sole focus, which significantly increases conversion rates and gives your store a more polished look.
+                    content: `This tool is primarily designed for students, job seekers, and digital creators. If you need to fix your passport photo for an exam registration or a visa application, Imgverto is the fastest way to get it right.
 
-Graphic designers and social media managers will find this tool indispensable for creating marketing materials, posters, and social media posts. Instead of spending time clicking around edges with a pen tool, they can quickly generate transparent assets to layer into their designs. Content creators and YouTubers can use it to isolate themselves for eye-catching thumbnails. 
-
-Furthermore, casual users who want to create fun stickers for messaging apps, remove a photobomber from a great portrait, or prepare photos for personal projects like invitations or greeting cards will find the interface friendly and accessible. If you value your time and want professional results without a learning curve or a subscription fee, Imgverto's Background Remover is built for you.`
+Web developers and e-commerce owners also use this tool to isolate product images for their stores. By removing distracting backgrounds, products become the sole focus, leading to a much more professional and trustworthy appearance on your website.`
                 }}
                 howToUse={{
                     title: "How to Use the Free Background Remover",
@@ -204,28 +200,36 @@ Furthermore, casual users who want to create fun stickers for messaging apps, re
                 }}
                 faqs={[
                     {
-                        question: "Is there a limit to how many backgrounds I can remove?",
-                        answer: "Absolutely not. Imgverto is designed to be a truly free resource. You can remove backgrounds from as many images as you need, whether it's one photo for a personal project or hundreds for an e-commerce catalog."
+                        question: "How do I make my photo background white for NEET/JEE?",
+                        answer: "Upload your photo to Imgverto and use the Background Remover. It will create a transparent PNG. You can then easily put a white background behind it for any official exam application."
                     },
                     {
-                        question: "Why should I use Imgverto instead of Photoshop?",
-                        answer: "Photoshop is a powerful tool, but it is expensive and has a steep learning curve. Imgverto offers a specialized engine that does one thing—background removal—extremely well and fast. For most users, our system provides results that are indistinguishable from professional manual work but takes only a fraction of the time and costs nothing."
+                        question: "Does NTA accept photos with a colored background?",
+                        answer: "Most NTA exams (like NEET and JEE Main) prefer a white background. It's safer to use our tool to remove a colored background and replace it with white to avoid rejection."
                     },
                     {
-                        question: "Does the tool work with complex subjects like hair or transparent objects?",
-                        answer: "Yes, our processing engine is specifically tuned to handle difficult edge cases like messy hair, animal fur, and semi-transparent fabrics. While extremely fine details can occasionally be tricky, it provides a professional-grade starting point for almost any image."
+                        question: "Will my hair looks natural after background removal?",
+                        answer: "Yes, our high-precision model is trained to handle complex edges like hair and fur, ensuring a professional cutout that looks natural on official forms."
                     },
                     {
-                        question: "Can I save my image as a JPG after removing the background?",
-                        answer: "We recommend saving as a PNG. The JPG format does not support transparency, so if you save a result with no background as a JPG, the background will automatically be filled with white or black. PNG is the standard for images with transparent elements."
+                        question: "Is it safe to upload my personal photo for background removal?",
+                        answer: "Absolutely. Imgverto processes your images locally in your browser using WebAssembly. Your photos are never uploaded to our servers, ensuring 100% privacy."
                     },
                     {
-                        question: "Is my data safe when using Imgverto?",
-                        answer: "Your data is perfectly safe. Unlike most online tools, Imgverto performs all processing inside your browser. Your images are never uploaded to a cloud server, meaning nobody—not even us—ever sees your files. This makes it one of the most secure ways to edit photos online."
+                        question: "Can I use this for my passport photo background?",
+                        answer: "Yes, this tool is perfect for preparing passport and visa photos where a plain, clean background is mandatory."
                     },
                     {
-                        question: "Do I need to install any software or extensions?",
-                        answer: "No installation is required. Imgverto is a pure web application that runs in any modern browser like Chrome, Firefox, Safari, or Edge. Just visit the site and you are ready to go."
+                        question: "Does the tool reduce the quality of my face?",
+                        answer: "No, our background remover isolates the background while keeping the original resolution and clarity of your face and body intact."
+                    },
+                    {
+                        question: "Is there any charge for removing image backgrounds?",
+                        answer: "No, this tool is completely free. We do not place any watermarks on your professional photos."
+                    },
+                    {
+                        question: "What format is the output file?",
+                        answer: "The output is a high-quality PNG with a transparent background, which is the best format for layering onto white for exam forms."
                     }
                 ]}
             />

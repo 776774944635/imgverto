@@ -190,9 +190,9 @@ The conversion process involves complex mathematical transforms that prioritize 
                 }}
                 whoIsItFor={{
                     title: "Who Should Use This Tool",
-                    content: `This tool is a favorite among SEO specialists and web performance engineers who are focused on reducing page load times. Since JPGs are typically 5 to 10 times smaller than PNGs for photographic content, converting PNGs to JPGs can shave seconds off a website's render time. It is also an essential tool for digital marketers who need to adhere to strict file size limits for email attachments or display ads.
+                    content: `This tool is primarily for candidates preparing for UPSC, SSC, and Banking exams. Many application forms explicitly state 'Only JPG/JPEG files allowed.' If your mobile phone or scanner produced a PNG file, you can use Imgverto to format it correctly for the upload.
 
-Social media managers often use this converter to prepare photos for platforms like Instagram or LinkedIn, where the massive size of a PNG provides no visual benefit but can make uploads much slower. Additionally, amateur photographers who have saved their work in PNG format to preserve quality will find this tool useful for creating 'web-ready' versions of their portfolio. If you need a file that is small enough to share instantly but high-quality enough to look great on a screen, this converter is designed for you.`
+Web developers also use this tool to optimize their site speed. Since JPGs are typically 10 times smaller than PNGs for photographic content, converting helps in achieving better SEO scores. Whether you are a student or a digital marketer, this converter provides the simplest way to prepare 'web-ready' images.`
                 }}
                 howToUse={{
                     title: "How to Use the Free PNG to JPG Converter",
@@ -218,28 +218,36 @@ Social media managers often use this converter to prepare photos for platforms l
                 }}
                 faqs={[
                     {
-                        question: "Why should I convert my PNG to JPG?",
-                        answer: "The main reason is file size. PNGs are lossless and large, while JPGs use lossy compression to stay small. If your image doesn't need transparency and you want it to load fast on a website or in an email, JPG is the better choice."
+                        question: "Why should I convert PNG to JPG for an exam form?",
+                        answer: "Most Indian government and entrance exam portals (like NTA, SSC, UPSC) only accept JPG or JPEG formats. PNG files, while high quality, are often rejected because of their larger size and transparency support."
                     },
                     {
-                        question: "What happens to the transparent parts of my PNG?",
-                        answer: "Because the JPG format does not support transparency, we automatically fill those areas with white. This is the industry standard for format conversion and ensures your subject remains clearly visible."
+                        question: "What happens to the transparent background in my PNG?",
+                        answer: "Because the JPG format does not support transparency, Imgverto automatically fills those areas with solid white. This ensures your photo remains clear and compliant with official requirements."
                     },
                     {
-                        question: "Will I lose a lot of quality during the conversion?",
-                        answer: "If you keep the quality slider at 80% or higher, the visual difference is virtually unnoticeable on most screens. Quality only drops significantly if you choose a very low setting (under 50%) to achieve an extremely small file size."
+                        question: "How do I ensure my JPG meets the 50KB limit?",
+                        answer: "After the conversion, use our 'Quality' slider. Reducing quality to 80% or 90% can significantly drop the file size without any noticeable loss in clarity, helping you meet the strict limits of exam portals."
                     },
                     {
-                        question: "Is there a limit to how many files I can convert?",
-                        answer: "No. Imgverto is a community resource. You are free to convert one file, or one hundred files. We do not impose daily limits or 'premium' tiers for our conversion tools."
+                        question: "Can I use this for NEET and JEE Main photo upload?",
+                        answer: "Yes, this tool is perfect for converting your admission photos or signature scans into the JPG format required by NTA portals."
+                    },
+                    {
+                        question: "Is it safe to convert my identity documents here?",
+                        answer: "Absolutely. Imgverto processes your images locally in your browser. This means your files never leave your computer, providing the highest level of privacy for your sensitive documents."
+                    },
+                    {
+                        question: "Does converting PNG to JPG reduce quality?",
+                        answer: "JPG uses 'lossy' compression, so there is a minor loss of data. However, at a high quality setting (above 80%), the visual difference is virtually zero for the human eye."
+                    },
+                    {
+                        question: "Is this converter free and unlimited?",
+                        answer: "Yes, you can convert as many PNG files to JPG as you need. We do not require any sign-up or payments."
                     },
                     {
                         question: "Can I convert the JPG back to PNG later?",
-                        answer: "Yes, you can, but note that the quality lost during the initial conversion to JPG cannot be recovered. Converting back to PNG will simply stop further quality loss; it won't restore the original lossless data."
-                    },
-                    {
-                        question: "Do you keep a copy of my converted images?",
-                        answer: "Never. Because the conversion happens entirely within your web browser using JavaScript and Canvas API, your images never even reach our servers. You have total privacy throughout the process."
+                        answer: "Yes, but remember that the initial compression from the first conversion cannot be reversed. The new PNG will simply be a larger file of the current image."
                     }
                 ]}
             />

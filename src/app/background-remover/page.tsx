@@ -3,16 +3,12 @@ import { BackgroundRemoverClient } from './client';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-    title: "Free Advanced Background Remover | Remove Image Background Online | Imgverto",
-    description: "Instantly remove image backgrounds for free with Imgverto. Our high-precision segmentation tool creates high-quality transparent PNGs in seconds. No signup, 100% secure, and private.",
+    title: "Remove Background for Passport Size Photo Online Free - Imgverto",
+    description: "Remove background from your photo for NEET, JEE, and passport applications for free. Create high-quality transparent PNGs or white background photos instantly.",
     alternates: {
         canonical: "/background-remover",
     },
-    openGraph: {
-        title: "Free Advanced Background Remover | Remove Image Background Online | Imgverto",
-        description: "Instantly remove backgrounds from images online for free. Get transparent background instantly using Imgverto's algorithmic matting. No signup required.",
-        url: `${siteConfig.url}/background-remover`,
-    },
+    keywords: ["remove background for passport photo", "transparent background for exam photo", "neet photo background remover", "jee main photo background change", "white background for photo online", "imgverto"]
 };
 
 export default function BackgroundRemoverPage() {

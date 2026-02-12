@@ -3,12 +3,12 @@ import { MergePdfClient } from "./client";
 import { SchemaMarkup } from "@/components/shared/SchemaMarkup";
 
 export const metadata: Metadata = {
-    title: 'Merge PDF Online | Combine PDF Files Free | Imgverto',
-    description: 'Effortlessly merge multiple PDF files into one professional document with Imgverto. Our free online PDF merger is fast, secure, and preserves your formatting perfectly.',
+    title: "Merge PDF Online - Combine Multiple PDF Files for Admissions",
+    description: "Merge PDF files online for free. Combine academic certificates, marksheets, and documents for college admissions and government job applications instantly.",
     alternates: {
         canonical: '/merge-pdf',
     },
-    keywords: ["merge pdf files online free", "combine pdf", "pdf merger", "join pdf", "imgverto"]
+    keywords: ["merge pdf online", "combine pdf files free", "join pdf documents", "neet certificate merge", "jee main document combine", "college admission pdf merger", "imgverto"]
 };
 
 export default function MergePdfPage() {
