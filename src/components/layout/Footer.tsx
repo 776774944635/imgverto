@@ -39,26 +39,29 @@ export default function Footer() {
 
                     <div>
                         <h4 className="font-outfit font-black text-foreground uppercase tracking-widest text-[11px] mb-6">Tools</h4>
-                        <ul className="space-y-4 text-sm font-bold text-muted-foreground">
+                        <ul className="grid grid-cols-2 gap-x-4 gap-y-4 text-sm font-bold text-muted-foreground">
                             <li><Link href="/compress-image" className="hover:text-primary transition-colors">Compress Image</Link></li>
                             <li><Link href="/resize-image" className="hover:text-primary transition-colors">Resize Image</Link></li>
-                            <li><Link href="/image-to-pdf" className="hover:text-primary transition-colors">Image to PDF</Link></li>
+                            <li><Link href="/jpg-to-pdf" className="hover:text-primary transition-colors">JPG to PDF</Link></li>
+                            <li><Link href="/merge-pdf" className="hover:text-primary transition-colors">Merge PDF</Link></li>
                             <li><Link href="/image-upscaler" className="hover:text-primary transition-colors">Image Upscaler</Link></li>
                             <li><Link href="/background-remover" className="hover:text-primary transition-colors">Background Remover</Link></li>
                             <li><Link href="/jpg-to-png" className="hover:text-primary transition-colors">JPG to PNG</Link></li>
                             <li><Link href="/png-to-jpg" className="hover:text-primary transition-colors">PNG to JPG</Link></li>
                             <li><Link href="/pdf-compressor" className="hover:text-primary transition-colors">Compress PDF</Link></li>
+                            <li><Link href="/image-to-pdf" className="hover:text-primary transition-colors">Image to PDF</Link></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 className="font-outfit font-black text-foreground uppercase tracking-widest text-[11px] mb-6">Guides</h4>
                         <ul className="space-y-4 text-sm font-bold text-muted-foreground">
-                            <li><Link href="/blog/how-to-compress-images-for-web" className="hover:text-primary transition-colors">Compress Images</Link></li>
-                            <li><Link href="/blog/how-to-merge-pdf-files-online" className="hover:text-primary transition-colors">Merge PDFs</Link></li>
-                            <li><Link href="/blog/how-to-upscale-images-without-losing-quality" className="hover:text-primary transition-colors">Upscale Images</Link></li>
-                            <li><Link href="/blog/how-to-remove-background-from-images-online" className="hover:text-primary transition-colors">Remove Backgrounds</Link></li>
-                            <li><Link href="/blog/jpg-vs-png-which-is-better" className="hover:text-primary transition-colors">JPG vs PNG</Link></li>
+                            <li><Link href="/blog/how-to-resize-photo-for-neet-application-form" className="hover:text-primary transition-colors">NEET Photo Guide</Link></li>
+                            <li><Link href="/blog/how-to-compress-image-for-jee-main-form" className="hover:text-primary transition-colors">JEE Main Image Guide</Link></li>
+                            <li><Link href="/blog/ssc-photo-and-signature-size-requirements-guide" className="hover:text-primary transition-colors">SSC Upload Guide</Link></li>
+                            <li><Link href="/blog/how-to-reduce-pdf-size-for-government-job-forms" className="hover:text-primary transition-colors">Govt PDF Guide</Link></li>
+                            <li><Link href="/blog/how-to-merge-pdf-files-for-college-admission" className="hover:text-primary transition-colors">College Admission PDF</Link></li>
+                            <li><Link href="/blog/remove-background-for-passport-size-photo-online" className="hover:text-primary transition-colors">Passport Photo BG</Link></li>
                         </ul>
                     </div>
 
