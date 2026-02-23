@@ -2,10 +2,11 @@
 
 import React, { useCallback, useState } from "react";
 import { useDropzone, FileRejection } from "react-dropzone";
-import { UploadCloud, ShieldCheck, X } from "lucide-react";
+import { ImageIcon, ShieldCheck, Upload, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "@/lib/motion";
+import Link from "next/link";
 
 interface ImageUploaderProps {
     onUpload: (files: File[]) => void;
@@ -13,14 +14,23 @@ interface ImageUploaderProps {
     accept?: Record<string, string[]>;
     description?: string;
     className?: string;
+    toolType?: 'image' | 'pdf' | 'video' | 'general';
 }
+
+const FORMAT_NAV = [
+    { label: "JPG", path: "/compress-image", ext: ["jpg", "jpeg"], type: 'image' },
+    { label: "PNG", path: "/jpg-to-png", ext: ["png"], type: 'image' },
+    { label: "WEBP", path: "/compress-image", ext: ["webp"], type: 'image' },
+    { label: "PDF", path: "/pdf-compressor", ext: ["pdf"], type: 'pdf' },
+];
 
 export function ImageUploader({
     onUpload,
     maxFiles = 20,
     accept = { "image/*": [".jpg", ".jpeg", ".png", ".webp"] },
     description,
-    className
+    className,
+    toolType = 'general'
 }: ImageUploaderProps) {
     const [error, setError] = useState<string | null>(null);
 
@@ -48,48 +58,73 @@ export function ImageUploader({
         accept,
     });
 
+    const supportedExtensions = Object.values(accept).flat().map(ext => ext.replace(".", "").toLowerCase());
+
+    const filteredNav = FORMAT_NAV.filter(item => {
+        if (toolType === 'general') return true;
+        return item.type === toolType;
+    });
+
     return (
-        <div className={cn("w-full", className)}>
+        <div className={cn("w-full max-w-[500px] mx-auto", className)}>
+            {/* Format Quick Bar */}
+            {filteredNav.length > 0 && (
+                <div className="flex items-center gap-2 mb-4 overflow-x-auto no-scrollbar py-1 px-1 justify-center">
+                    {filteredNav.map((item) => {
+                        const isActive = item.ext.some(e => supportedExtensions.includes(e));
+                        return (
+                            <Link
+                                key={item.label}
+                                href={item.path}
+                                className={cn(
+                                    "flex-shrink-0 px-4 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider transition-all",
+                                    isActive
+                                        ? "bg-primary text-primary-foreground shadow-md scale-105"
+                                        : "bg-white border text-muted-foreground hover:border-primary/50 hover:text-primary shadow-sm hover:scale-105"
+                                )}
+                            >
+                                {item.label}
+                            </Link>
+                        );
+                    })}
+                </div>
+            )}
+
             <motion.div
                 initial="initial"
                 animate="animate"
                 variants={fadeIn}
-                className="w-full"
+                className="w-full flex flex-col items-center"
             >
                 <div
                     {...getRootProps()}
                     className={cn(
-                        "relative group cursor-pointer transition-all duration-300",
-                        "premium-card rounded-[2.5rem] bg-white border-2",
-                        isDragActive ? "border-primary bg-primary/5 ring-8 ring-primary/5" : "border-border hover:border-primary/20",
+                        "relative w-full max-w-[850px] aspect-[16/6] md:aspect-[16/5] bg-blue-50/40 border-2 border-dashed border-blue-200 rounded-[2rem] transition-all duration-300 flex flex-col items-center justify-center cursor-pointer group hover:bg-blue-50/60 hover:border-blue-400",
+                        isDragActive ? "scale-[1.02] border-blue-500 bg-blue-100/50" : ""
                     )}
                 >
                     <input {...getInputProps()} />
 
-                    <div className="relative z-10 p-12 md:p-24 flex flex-col items-center text-center">
-                        <div className={cn(
-                            "w-24 h-24 rounded-3xl flex items-center justify-center mb-10 transition-all duration-500",
-                            isDragActive ? "bg-primary text-white scale-110 shadow-2xl" : "bg-primary/5 text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white group-hover:shadow-xl group-hover:shadow-primary/20"
-                        )}>
-                            <UploadCloud className="w-12 h-12" />
-                        </div>
+                    <div className="flex flex-col items-center gap-4">
+                        <button
+                            type="button"
+                            className={cn(
+                                "flex items-center gap-2 px-8 py-3 bg-teal-600 text-white font-bold rounded-full shadow-md hover:bg-teal-700 active:scale-[0.97] transition-all text-base",
+                                isDragActive && "bg-teal-700"
+                            )}
+                        >
+                            <Upload className="w-5 h-5" />
+                            {toolType === 'pdf' ? 'Select PDF' : toolType === 'video' ? 'Select Video' : 'Select Files'}
+                        </button>
 
-                        <div className="space-y-4">
-                            <h3 className="font-outfit text-4xl font-black text-foreground tracking-tight">
-                                {isDragActive ? "Drop files now" : "Select Your Files"}
-                            </h3>
-                            <p className="text-muted-foreground font-medium text-xl max-w-sm mx-auto">
-                                {description || "Drag and drop or click to upload your documents securely."}
-                            </p>
-                        </div>
+                        <p className="text-muted-foreground text-sm">
+                            {isDragActive ? "Drop files now" : "or drag and drop here"}
+                        </p>
 
-                        <div className="mt-12 flex items-center gap-3 px-6 py-3 rounded-full bg-muted/50 border text-muted-foreground text-xs font-black uppercase tracking-widest">
-                            <ShieldCheck className="w-5 h-5 text-primary" /> 100% Client-Side & Secure
-                        </div>
+                        <p className="text-[11px] text-muted-foreground/60 font-medium uppercase tracking-widest">
+                            {toolType === 'pdf' ? 'PDF ONLY' : `Accepted: ${supportedExtensions.map(e => e.toUpperCase()).join(", ")}`}
+                        </p>
                     </div>
-
-                    {/* Subtle Pattern */}
-                    <div className="absolute inset-0 bg-checkers opacity-[0.03] pointer-events-none rounded-[2.5rem]" />
                 </div>
             </motion.div>
 
