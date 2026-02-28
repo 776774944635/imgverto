@@ -144,7 +144,7 @@ export function HomeClient() {
             </section>
 
             {/* Technical Process Section - AdSense Value */}
-            <section className="py-20 border-b">
+            <section className="py-16 border-b">
                 <div className="container mx-auto px-4 lg:px-8">
                     <div className="max-w-4xl mx-auto text-center space-y-8">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-primary text-[11px] font-black uppercase tracking-widest">
@@ -183,7 +183,7 @@ export function HomeClient() {
             </section>
 
             {/* Knowledge Base Section - AdSense Value */}
-            <section className="py-24 bg-white">
+            <section className="py-16 bg-white">
                 <div className="container mx-auto px-4 lg:px-8">
                     <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
                         <div className="space-y-4">
@@ -202,22 +202,22 @@ export function HomeClient() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
                             {
-                                title: "SSC Photo Size Requirements 2024",
-                                desc: "Learn the exact dimensions and KB limits for Staff Selection Commission uploads.",
-                                href: "/blog/ssc-photo-and-signature-size-requirements-guide",
-                                tag: "Exam Guide"
+                                title: "NEET UG 2025: Photo & Signature Requirements",
+                                desc: "Official guidelines for passport images, postcard photos, and digital signatures.",
+                                href: "/blog/neet-ug-photo-signature-requirements",
+                                tag: "Exam Preparation"
                             },
                             {
                                 title: "JPG vs PNG: Complete Comparison",
                                 desc: "When to use lossy vs lossless compression for your web projects.",
                                 href: "/blog/jpg-vs-png-which-is-better",
-                                tag: "Technical"
+                                tag: "Technical Guide"
                             },
                             {
-                                title: "How to Reduce PDF Size Safely",
-                                desc: "Master the art of document compression without losing text clarity.",
-                                href: "/blog/how-to-reduce-pdf-file-size",
-                                tag: "Tutorial"
+                                title: "UPSC CSE 2025: Photo & Signature Rules",
+                                desc: "Master the 350x350 pixel requirements and name/date stamp guidelines.",
+                                href: "/blog/upsc-cse-photo-signature-requirements",
+                                tag: "Exam Preparation"
                             }
                         ].map((post, i) => (
                             <Link key={i} href={post.href} className="flex flex-col p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:border-primary/20 hover:bg-white hover:shadow-2xl hover:shadow-primary/5 transition-all group">
