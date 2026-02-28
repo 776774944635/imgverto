@@ -13,7 +13,7 @@ export function Section({
     return (
         <section
             className={cn(
-                "py-10 md:py-16",
+                "py-6 md:py-8",
                 container && "container px-4 md:px-6",
                 className
             )}
