@@ -92,21 +92,21 @@ export function CropImageClient() {
     return (
         <Section className="min-h-[80vh] p-0">
             <div className="max-w-7xl mx-auto px-4 py-0">
-                <div className="mb-0 px-0 lg:px-[160px]">
+                <div className="mb-0 px-0 lg:px-[192px]">
                     <Breadcrumbs items={[{ label: "Crop Image", href: "/crop-image" }]} />
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_160px] gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_160px] gap-8">
                     {/* Left Ad */}
-                    <div className="hidden lg:block pt-4">
+                    <div className="hidden lg:block pt-12">
                         <AdPlaceholder className="w-[160px] h-[600px] sticky top-24" />
                     </div>
 
                     {/* Main Content */}
-                    <div className="flex flex-col items-center pt-4">
-                        <div className="w-full space-y-4 flex flex-col items-center mb-2">
+                    <div className="flex flex-col items-center pt-8">
+                        <div className="w-full space-y-8 flex flex-col items-center">
                             {/* Horizontal Ad & Header */}
-                            <div className="w-full text-center space-y-4">
+                            <div className="w-full text-center space-y-6">
                                 <div className="flex justify-center">
                                     <AdPlaceholder className="w-[728px] h-[90px]" />
                                 </div>
@@ -119,50 +119,50 @@ export function CropImageClient() {
                             {!file ? (
                                 <ImageUploader onUpload={handleUpload} maxFiles={1} toolType="image" />
                             ) : (
-                                <div className="w-full max-w-4xl premium-card rounded-[2.5rem] bg-white overflow-hidden min-h-[400px] p-6 mb-8 relative shadow-2xl transition-all mx-auto">
+                                <div className="w-full max-w-4xl premium-card rounded-[2.5rem] bg-white overflow-hidden min-h-[400px] p-8 relative shadow-2xl transition-all mx-auto mb-12">
                                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-teal-600" />
-                                    <div className="space-y-6">
+                                    <div className="space-y-8">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                                            <div className="space-y-4">
+                                            <div className="space-y-6">
                                                 <h3 className="font-bold text-lg flex items-center gap-2">
                                                     <CropIcon className="w-5 h-5 text-emerald-500" />
                                                     Crop Settings
                                                 </h3>
                                                 <div className="grid grid-cols-2 gap-4">
-                                                    <div className="space-y-1.5">
+                                                    <div className="space-y-2">
                                                         <label className="text-sm font-medium">X Position</label>
                                                         <input
                                                             type="number"
                                                             value={left}
                                                             onChange={(e) => setLeft(Math.max(0, parseInt(e.target.value) || 0))}
-                                                            className="w-full p-2.5 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                            className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                         />
                                                     </div>
-                                                    <div className="space-y-1.5">
+                                                    <div className="space-y-2">
                                                         <label className="text-sm font-medium">Y Position</label>
                                                         <input
                                                             type="number"
                                                             value={top}
                                                             onChange={(e) => setTop(Math.max(0, parseInt(e.target.value) || 0))}
-                                                            className="w-full p-2.5 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                            className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                         />
                                                     </div>
-                                                    <div className="space-y-1.5">
+                                                    <div className="space-y-2">
                                                         <label className="text-sm font-medium">Width (px)</label>
                                                         <input
                                                             type="number"
                                                             value={width}
                                                             onChange={(e) => setWidth(Math.max(1, parseInt(e.target.value) || 0))}
-                                                            className="w-full p-2.5 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                            className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                         />
                                                     </div>
-                                                    <div className="space-y-1.5">
+                                                    <div className="space-y-2">
                                                         <label className="text-sm font-medium">Height (px)</label>
                                                         <input
                                                             type="number"
                                                             value={height}
                                                             onChange={(e) => setHeight(Math.max(1, parseInt(e.target.value) || 0))}
-                                                            className="w-full p-2.5 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                            className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                         />
                                                     </div>
                                                 </div>
@@ -170,37 +170,38 @@ export function CropImageClient() {
                                                 <button
                                                     onClick={handleCrop}
                                                     disabled={isProcessing}
-                                                    className="w-full py-3 rounded-2xl bg-emerald-600 text-white font-extrabold text-base hover:bg-emerald-700 disabled:opacity-50 transition-all shadow-xl active:scale-95"
+                                                    className="w-full py-4 rounded-2xl bg-emerald-600 text-white font-extrabold text-lg hover:bg-emerald-700 disabled:opacity-50 transition-all shadow-xl active:scale-95"
                                                 >
                                                     {isProcessing ? "Cropping..." : "Crop Image Now"}
                                                 </button>
                                             </div>
 
-                                            <div className="space-y-3">
+                                            <div className="space-y-4">
                                                 <h3 className="font-bold text-lg">Preview</h3>
                                                 {previewUrl && (
-                                                    <div className="relative max-w-full max-h-[350px] border shadow-md bg-checkerboard rounded-xl overflow-hidden flex items-center justify-center">
+                                                    <div className="relative max-w-full max-h-[400px] border shadow-md bg-checkerboard rounded-xl overflow-hidden flex items-center justify-center">
                                                         {/* eslint-disable-next-line @next/next/no-img-element */}
                                                         <img
                                                             ref={imageRef}
                                                             src={previewUrl}
                                                             alt="Preview"
-                                                            className="max-w-full max-h-[350px] object-contain"
+                                                            className="max-w-full max-h-[400px] object-contain"
                                                         />
+                                                        {/* Simple visual overlay for crop area could be added here if needed */}
                                                     </div>
                                                 )}
-                                                <p className="text-center text-[10px] text-muted-foreground uppercase tracking-wider font-bold">Original: {originalWidth}x{originalHeight} | {formatBytes(file.size)}</p>
+                                                <p className="text-center text-xs text-muted-foreground">Original: {originalWidth}x{originalHeight} | Size: {formatBytes(file.size)}</p>
                                             </div>
                                         </div>
 
                                         {croppedUrl && (
-                                            <div className="flex justify-center pt-2 border-t border-border/10">
+                                            <div className="flex justify-center pt-8 border-t border-border/10">
                                                 <a
                                                     href={croppedUrl}
                                                     download={`cropped-${width}x${height}-${file.name}`}
-                                                    className="px-6 py-2.5 rounded-full bg-emerald-600 text-white font-extrabold text-base hover:bg-emerald-700 transition-all flex items-center gap-2 shadow-2xl active:scale-95"
+                                                    className="px-10 py-4 rounded-full bg-emerald-600 text-white font-extrabold text-lg hover:bg-emerald-700 transition-all flex items-center gap-2 shadow-2xl active:scale-95"
                                                 >
-                                                    <Download className="w-5 h-5" /> Download Cropped Image
+                                                    <Download className="w-6 h-6" /> Download Cropped Image
                                                 </a>
                                             </div>
                                         )}
@@ -215,15 +216,19 @@ export function CropImageClient() {
                             )}
 
                             {/* Extra Content Section */}
-                            <div className="w-full max-w-4xl mx-auto border-t pt-8 mt-4">
+                            <div className="w-full max-w-4xl mx-auto border-t pt-16 mt-8">
                                 <ToolExtraContent
                                     whatDoesItDo={{
                                         title: "What this Online Image Cropper Does",
-                                        content: `Imgverto's Image Cropper is a powerful utility designed to help you focus on the most important parts of your photos. Cropping is the process of removing unwanted outer areas from a digital image. This could be to discard a distracting element in the background, or to change the aspect ratio of a photo to fit a specific frame, like a passport photo box or a square Instagram post. Our tool allows you to define exact coordinates and dimensions, giving you professional-level control over the final composition. \n\n Unlike simple cropping tools that might re-compress your image and lose detail, Imgverto uses high-fidelity extraction algorithms. When you define a crop area, our engine precisely cuts that section from the original image data and preserves it as a new file. This ensures that the texture, colors, and sharp details of your subject remain untouched. Whether you're a photographer refining a shot or a student preparing documents, our cropper delivers pixel-perfect results instantly.`
+                                        content: `Imgverto's Image Cropper is a powerful utility designed to help you focus on the most important parts of your photos. Cropping is the process of removing unwanted outer areas from a digital image. This could be to discard a distracting element in the background, or to change the aspect ratio of a photo to fit a specific frame, like a passport photo box or a square Instagram post. Our tool allows you to define exact coordinates and dimensions, giving you professional-level control over the final composition.
+
+Unlike simple cropping tools that might re-compress your image and lose detail, Imgverto uses high-fidelity extraction algorithms. When you define a crop area, our engine precisely cuts that section from the original image data and preserves it as a new file. This ensures that the texture, colors, and sharp details of your subject remain untouched. Whether you're a photographer refining a shot or a student preparing documents, our cropper delivers pixel-perfect results instantly.`
                                     }}
                                     whoIsItFor={{
                                         title: "Who Should Use the Image Crop Tool",
-                                        content: `This tool is a necessity for job seekers and students in India applying for competitive exams like UPSC, SSC, or IBPS. These portals often have extremely strict requirements for photograph and signature dimensions. For example, you might need to crop a larger photo to an exact 3.5cm x 4.5cm area. Our tool lets you input the exact pixel coordinates to meet these standards without any guesswork. \n\n Social media managers and digital creators also find this tool indispensable for 'aspect ratio tuning.' If you have a beautiful landscape photo that needs to become a 16:9 cinematic header or a 4:5 portrait for a feed, our cropper makes it happen in seconds. It's also perfect for e-commerce sellers who need to remove border space around products for a cleaner look on Amazon or Flipkart. If you need to cut out the clutter and focus on the subject, this tool is built for you.`
+                                        content: `This tool is a necessity for job seekers and students in India applying for competitive exams like UPSC, SSC, or IBPS. These portals often have extremely strict requirements for photograph and signature dimensions. For example, you might need to crop a larger photo to an exact 3.5cm x 4.5cm area. Our tool lets you input the exact pixel coordinates to meet these standards without any guesswork.
+
+Social media managers and digital creators also find this tool indispensable for 'aspect ratio tuning.' If you have a beautiful landscape photo that needs to become a 16:9 cinematic header or a 4:5 portrait for a feed, our cropper makes it happen in seconds. It's also perfect for e-commerce sellers who need to remove border space around products for a cleaner look on Amazon or Flipkart. If you need to cut out the clutter and focus on the subject, this tool is built for you.`
                                     }}
                                     howToUse={{
                                         title: "How to Crop Images Online for Free",
@@ -278,8 +283,9 @@ export function CropImageClient() {
                             </div>
                         </div>
                     </div>
+
                     {/* Right Ad */}
-                    <div className="hidden lg:block pt-4">
+                    <div className="hidden lg:block pt-12">
                         <AdPlaceholder className="w-[160px] h-[600px] sticky top-24" />
                     </div>
                 </div>

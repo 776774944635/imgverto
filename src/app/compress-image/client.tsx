@@ -66,16 +66,16 @@ export function CompressImageClient() {
                     <Breadcrumbs items={[{ label: "Compress Image", href: "/compress-image" }]} />
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_160px] gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_160px] gap-6">
                     {/* Left Ad */}
-                    <div className="hidden lg:block pt-12">
+                    <div className="hidden lg:block pt-4">
                         <AdPlaceholder className="w-[160px] h-[600px] sticky top-24" />
                     </div>
 
                     {/* Main Content */}
-                    <div className="flex flex-col items-center pt-8">
-                        <div className="w-full text-center mb-1">
-                            <div className="flex justify-center mb-1">
+                    <div className="flex flex-col items-center pt-4">
+                        <div className="w-full text-center space-y-4 mb-2">
+                            <div className="flex justify-center">
                                 <AdPlaceholder className="w-[728px] h-[90px]" />
                             </div>
                             <ToolHeader
@@ -88,9 +88,9 @@ export function CompressImageClient() {
                             {!file ? (
                                 <ImageUploader onUpload={handleUpload} maxFiles={1} toolType="image" />
                             ) : (
-                                <div className="w-full max-w-4xl premium-card rounded-[2.5rem] bg-white overflow-hidden min-h-[400px] p-8 mb-12 relative shadow-2xl">
+                                <div className="w-full max-w-4xl mx-auto premium-card rounded-[2.5rem] bg-white overflow-hidden min-h-[400px] p-6 mb-8 relative shadow-2xl">
                                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-600" />
-                                    <div className="space-y-8">
+                                    <div className="space-y-6">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                                             <div className="space-y-4">
                                                 <h3 className="font-bold text-lg">Compression Settings</h3>
@@ -111,7 +111,7 @@ export function CompressImageClient() {
                                                 <button
                                                     onClick={handleCompress}
                                                     disabled={isProcessing}
-                                                    className="w-full py-4 rounded-2xl bg-primary text-primary-foreground font-extrabold text-lg hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2 shadow-xl active:scale-95"
+                                                    className="w-full py-3 rounded-2xl bg-primary text-primary-foreground font-extrabold text-base hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2 shadow-xl active:scale-95"
                                                 >
                                                     {isProcessing ? "Processing..." : "Compress Image Now"}
                                                     {!isProcessing && <RefreshCw className="w-5 h-5" />}
@@ -134,11 +134,11 @@ export function CompressImageClient() {
                                         </div>
 
                                         {compressedUrl && (
-                                            <div className="flex justify-center pt-4">
+                                            <div className="flex justify-center pt-2">
                                                 <a
                                                     href={compressedUrl}
                                                     download={`compressed-${file.name}`}
-                                                    className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-bold hover:opacity-90 transition-all flex items-center gap-2 shadow-2xl active:scale-95"
+                                                    className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-bold hover:opacity-90 transition-all flex items-center gap-2 shadow-2xl active:scale-95"
                                                 >
                                                     <Download className="w-5 h-5" /> Download Compressed Image
                                                 </a>
@@ -153,7 +153,7 @@ export function CompressImageClient() {
                             )}
                         </div>
 
-                        <div className="w-full border-t pt-16 mt-8">
+                        <div className="w-full max-w-4xl mx-auto border-t pt-8 mt-4">
                             <ToolExtraContent
                                 whatDoesItDo={{
                                     title: "What this Image Compressor Tool Does",
