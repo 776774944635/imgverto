@@ -105,14 +105,14 @@ export function ResizeImageClient() {
 
                     {/* Main Content */}
                     <div className="flex flex-col items-center pt-4">
-                        <div className="w-full text-center space-y-4 mb-2">
-                            <div className="flex justify-center">
+                        <div className="w-full text-center mb-1">
+                            <ToolHeader
+                                title="Resize IMAGE"
+                                description="Define your dimensions, by percent or pixel, and resize your JPG, PNG, SVG, and GIF images."
+                            />
+                            <div className="flex justify-center mt-2">
                                 <AdPlaceholder className="w-[728px] h-[90px]" />
                             </div>
-                            <ToolHeader
-                                title="Resize Image"
-                                description="Quickly resize image files online for free!"
-                            />
                         </div>
 
                         <div className="w-full">

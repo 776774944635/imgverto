@@ -71,7 +71,7 @@ function SortableItem({ id, file, onRemove }: SortableItemProps) {
 
             <div className="flex-1 min-w-0">
                 <p className="text-sm font-bold text-foreground truncate">{file.name}</p>
-                <p className="text-[10px] text-muted-foreground font-black uppercase tracking-widest">{(file.size / 1024).toFixed(1)} KB</p>
+                <p className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-widest">{(file.size / 1024).toFixed(1)} KB</p>
             </div>
 
             <button

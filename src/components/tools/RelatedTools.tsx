@@ -128,8 +128,8 @@ export function RelatedTools({ currentPath }: RelatedToolsProps) {
     const related = allTools.filter(t => t.path !== currentPath).slice(0, 3);
 
     return (
-        <div className="w-full max-w-5xl mt-24 pt-24 border-t">
-            <h2 className="font-outfit text-3xl font-black text-foreground tracking-tight mb-12 text-center">
+        <div className="w-full max-w-5xl mt-24 pt-24 border-t mx-auto">
+            <h2 className="font-outfit text-3xl font-extrabold text-foreground tracking-tight mb-12 text-center">
                 Explore More Tools
             </h2>
 
@@ -145,10 +145,10 @@ export function RelatedTools({ currentPath }: RelatedToolsProps) {
                                 <tool.icon className="w-6 h-6 text-white" />
                             </div>
                             <div className="space-y-1">
-                                <h4 className="font-outfit text-xl font-black text-foreground">{tool.title}</h4>
+                                <h4 className="font-outfit text-xl font-extrabold text-foreground">{tool.title}</h4>
                                 <p className="text-muted-foreground text-sm font-medium">{tool.description}</p>
                             </div>
-                            <div className="flex items-center text-[11px] font-black uppercase tracking-widest text-primary opacity-0 group-hover:opacity-100 transition-all">
+                            <div className="flex items-center text-[11px] font-extrabold uppercase tracking-widest text-primary opacity-0 group-hover:opacity-100 transition-all">
                                 Open Tool <ArrowRight className="w-3 h-3 ml-2" />
                             </div>
                         </div>

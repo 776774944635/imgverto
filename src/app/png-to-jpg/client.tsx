@@ -100,14 +100,14 @@ export function PngToJpgClient() {
 
                     {/* Main Content */}
                     <div className="flex flex-col items-center pt-4">
-                        <div className="w-full text-center space-y-4 mb-2">
-                            <div className="flex justify-center">
+                        <div className="w-full text-center mb-1">
+                            <ToolHeader
+                                title="Convert PNG to JPG Online"
+                                description="Turn PNG, GIF, TIF, PSD, SVG, WEBP, HEIC, or RAW format images to JPG in bulk with ease."
+                            />
+                            <div className="flex justify-center mt-2">
                                 <AdPlaceholder className="w-[728px] h-[90px]" />
                             </div>
-                            <ToolHeader
-                                title="PNG to JPG Converter"
-                                description="Convert transparent PNGs to JPG online instantly!"
-                            />
                         </div>
 
                         <div className="w-full">

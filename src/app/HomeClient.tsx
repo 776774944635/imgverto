@@ -31,10 +31,10 @@ export function HomeClient() {
             {/* Hero Section */}
             <section className="relative pt-8 md:pt-12 pb-8 md:pb-12">
                 <div className="container mx-auto px-4 lg:px-8 text-center">
-                    <h1 className="font-outfit text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground mb-3 md:mb-4 leading-tight md:leading-[1.2]">
+                    <h1 className="font-outfit text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-foreground mb-2 md:mb-3 leading-tight">
                         Complete Toolkit for Unified Image Processing
                     </h1>
-                    <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-muted-foreground font-medium mb-6 md:mb-8 px-4 sm:px-0">
+                    <p className="max-w-xl mx-auto text-sm sm:text-base md:text-lg text-muted-foreground font-medium mb-4 md:mb-6 px-4 sm:px-0">
                         Professional-grade utilities for effortless media management.
                     </p>
 

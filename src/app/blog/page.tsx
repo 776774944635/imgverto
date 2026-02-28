@@ -156,7 +156,7 @@ const blogPosts = [
 
 export default function BlogIndex() {
     return (
-        <Section className="min-h-screen pt-32 pb-20">
+        <Section className="min-h-screen pt-12 pb-20">
             <div className="max-w-6xl mx-auto px-4">
                 <header className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">

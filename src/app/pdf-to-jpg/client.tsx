@@ -49,7 +49,7 @@ export function PdfToJpgClient() {
         <Section className="min-h-[80vh] p-0">
             <div className="max-w-7xl mx-auto px-4 py-0">
                 <div className="mb-0">
-                    <Breadcrumbs items={[                        { label: "PDF to JPG", href: "/pdf-to-jpg" }
+                    <Breadcrumbs items={[{ label: "PDF to JPG", href: "/pdf-to-jpg" }
                     ]} />
                 </div>
 
@@ -62,13 +62,13 @@ export function PdfToJpgClient() {
                     {/* Main Content */}
                     <div className="flex flex-col items-center">
                         <div className="w-full text-center mb-1">
-                            <div className="flex justify-center mb-1">
-                                <AdPlaceholder className="w-[728px] h-[90px]" />
-                            </div>
                             <ToolHeader
                                 title="PDF to JPG Converter Online"
                                 description="Extract images from your PDF pages for free as high-quality JPEG files."
                             />
+                            <div className="flex justify-center mt-2">
+                                <AdPlaceholder className="w-[728px] h-[90px]" />
+                            </div>
                         </div>
 
                         {!file ? (

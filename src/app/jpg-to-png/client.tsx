@@ -91,14 +91,14 @@ export function JpgToPngClient() {
 
                     {/* Main Content */}
                     <div className="flex flex-col items-center pt-4">
-                        <div className="w-full text-center space-y-4 mb-2">
-                            <div className="flex justify-center">
+                        <div className="w-full text-center mb-1">
+                            <ToolHeader
+                                title="Convert JPG to PNG"
+                                description="Turn JPG images to PNG and GIF. Choose several JPGs to create an animated GIF in seconds!"
+                            />
+                            <div className="flex justify-center mt-2">
                                 <AdPlaceholder className="w-[728px] h-[90px]" />
                             </div>
-                            <ToolHeader
-                                title="JPG to PNG Converter"
-                                description="Convert JPG images to high-quality PNG format instantly!"
-                            />
                         </div>
 
                         <div className="w-full">

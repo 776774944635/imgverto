@@ -20,7 +20,7 @@ export default function Footer() {
                                     className="object-contain"
                                 />
                             </div>
-                            <span className="font-outfit text-xl font-black italic tracking-tighter text-foreground uppercase">
+                            <span className="font-outfit text-xl font-extrabold italic tracking-tighter text-foreground uppercase">
                                 {siteConfig.name}
                             </span>
                         </Link>
@@ -38,7 +38,7 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="font-outfit font-black text-foreground uppercase tracking-widest text-[11px] mb-6">Tools</h4>
+                        <h4 className="font-outfit font-extrabold text-foreground uppercase tracking-widest text-[11px] mb-6">Tools</h4>
                         <ul className="grid grid-cols-2 gap-x-4 gap-y-4 text-sm font-bold text-muted-foreground">
                             <li><Link href="/compress-image" className="hover:text-primary transition-colors">Compress Image</Link></li>
                             <li><Link href="/resize-image" className="hover:text-primary transition-colors">Resize Image</Link></li>
@@ -54,7 +54,7 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="font-outfit font-black text-foreground uppercase tracking-widest text-[11px] mb-6">Guides</h4>
+                        <h4 className="font-outfit font-extrabold text-foreground uppercase tracking-widest text-[11px] mb-6">Guides</h4>
                         <ul className="space-y-4 text-sm font-bold text-muted-foreground">
                             <li><Link href="/blog/how-to-resize-photo-for-neet-application-form" className="hover:text-primary transition-colors">NEET Photo Guide</Link></li>
                             <li><Link href="/blog/how-to-compress-image-for-jee-main-form" className="hover:text-primary transition-colors">JEE Main Image Guide</Link></li>
@@ -66,7 +66,7 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h4 className="font-outfit font-black text-foreground uppercase tracking-widest text-[11px] mb-6">Company</h4>
+                        <h4 className="font-outfit font-extrabold text-foreground uppercase tracking-widest text-[11px] mb-6">Company</h4>
                         <ul className="space-y-4 text-sm font-bold text-muted-foreground">
                             <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
                             <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
@@ -76,7 +76,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-black uppercase tracking-[0.2em] text-muted-foreground/50">
+                <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-extrabold uppercase tracking-[0.2em] text-muted-foreground/50">
                     <p>&copy; {currentYear} {siteConfig.name}. All rights reserved.</p>
                     <div className="flex items-center gap-6">
                         <Link href="#" className="hover:text-primary transition-colors uppercase tracking-widest">Status</Link>

@@ -106,14 +106,14 @@ export function CropImageClient() {
                     <div className="flex flex-col items-center pt-4">
                         <div className="w-full space-y-4 flex flex-col items-center mb-2">
                             {/* Horizontal Ad & Header */}
-                            <div className="w-full text-center space-y-4">
-                                <div className="flex justify-center">
+                            <div className="w-full text-center mb-1">
+                                <ToolHeader
+                                    title="Crop IMAGE"
+                                    description="Crop JPG, PNG, or GIFs with ease; Choose pixels to define your rectangle or use our visual editor."
+                                />
+                                <div className="flex justify-center mt-2">
                                     <AdPlaceholder className="w-[728px] h-[90px]" />
                                 </div>
-                                <ToolHeader
-                                    title="Crop Image"
-                                    description="Crop your images precisely and for free online!"
-                                />
                             </div>
 
                             {!file ? (

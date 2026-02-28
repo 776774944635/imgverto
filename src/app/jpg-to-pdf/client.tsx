@@ -76,13 +76,13 @@ export function JpgToPdfClient() {
                     {/* Main Content */}
                     <div className="flex flex-col items-center">
                         <div className="w-full text-center mb-1">
-                            <div className="flex justify-center mb-1">
+                            <ToolHeader
+                                title="JPG to PDF Converter Free"
+                                description="Convert JPG images to a PDF document instantly for free."
+                            />
+                            <div className="flex justify-center mt-2">
                                 <AdPlaceholder className="w-[728px] h-[90px]" />
                             </div>
-                            <ToolHeader
-                                title="Convert JPG to PDF Online"
-                                description="Convert your JPG images into a high-quality PDF document instantly for free."
-                            />
                         </div>
 
                         {items.length === 0 ? (

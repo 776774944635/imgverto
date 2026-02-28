@@ -3,11 +3,14 @@
 import { useState, useEffect } from "react";
 import { ToolHeader } from "@/components/tools/ToolHeader";
 import { FAQSection } from "@/components/tools/FAQSection";
+import { ToolExtraContent } from "@/components/tools/ToolExtraContent";
 import { Section } from "@/components/shared/Section";
 import { RelatedTools } from "@/components/tools/RelatedTools";
 import { Copy, Download, RefreshCw, PenTool, CheckCircle, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
+import { AdPlaceholder } from "@/components/shared/AdPlaceholder";
 
 interface CoverLetterData {
     applicantName: string;
@@ -219,288 +222,228 @@ export function CoverLetterClient() {
     };
 
     return (
-        <Section className="min-h-screen flex flex-col items-center">
-            <ToolHeader
-                title="Cover Letter Generator"
-                description="Instantly generate a tailored, professional cover letter for your job application."
-            />
-
-            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Visual - Left Panel (Input) */}
-                <div className="space-y-6">
-                    <div className="bg-white rounded-[2rem] p-8 shadow-xl border border-border/50">
-                        <div className="flex items-center gap-3 mb-6">
-                            <PenTool className="w-6 h-6 text-primary" />
-                            <h2 className="text-2xl font-black text-foreground">Your Details</h2>
-                        </div>
-
-                        <div className="space-y-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-muted-foreground">Your Name</label>
-                                    <input
-                                        type="text"
-                                        value={data.applicantName}
-                                        onChange={(e) => handleChange('applicantName', e.target.value)}
-                                        className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none"
-                                        placeholder="John Doe"
-                                    />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-muted-foreground">Target Job Title</label>
-                                    <input
-                                        type="text"
-                                        value={data.jobTitle}
-                                        onChange={(e) => handleChange('jobTitle', e.target.value)}
-                                        className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none"
-                                        placeholder="Software Engineer"
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="space-y-2">
-                                <label className="text-sm font-bold text-muted-foreground">Target Company</label>
-                                <input
-                                    type="text"
-                                    value={data.companyName}
-                                    onChange={(e) => handleChange('companyName', e.target.value)}
-                                    className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none"
-                                    placeholder="Google, Microsoft, etc."
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <label className="text-sm font-bold text-muted-foreground">Key Skills (comma separated)</label>
-                                <textarea
-                                    value={data.skills}
-                                    onChange={(e) => handleChange('skills', e.target.value)}
-                                    className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none h-24"
-                                    placeholder="Python, React, Project Management, Communication..."
-                                />
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-muted-foreground">Experience Level</label>
-                                    <select
-                                        value={data.experienceLevel}
-                                        onChange={(e) => handleChange('experienceLevel', e.target.value as any)}
-                                        className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none cursor-pointer"
-                                    >
-                                        <option value="Fresher">Fresher / Intern</option>
-                                        <option value="Junior">Junior (1-3 years)</option>
-                                        <option value="Senior">Senior (5+ years)</option>
-                                        <option value="Manager">Manager / Lead</option>
-                                    </select>
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-muted-foreground">Tone</label>
-                                    <select
-                                        value={data.tone}
-                                        onChange={(e) => handleChange('tone', e.target.value as any)}
-                                        className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none cursor-pointer"
-                                    >
-                                        <option value="Professional">Professional (Standard)</option>
-                                        <option value="Enthusiastic">Enthusiastic (Startup friendly)</option>
-                                        <option value="Confident">Confident (Direct)</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-muted-foreground">Email (Optional)</label>
-                                    <input
-                                        type="text"
-                                        value={data.email}
-                                        onChange={(e) => handleChange('email', e.target.value)}
-                                        className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none small"
-                                        placeholder="email@example.com"
-                                    />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-bold text-muted-foreground">Phone (Optional)</label>
-                                    <input
-                                        type="text"
-                                        value={data.phone}
-                                        onChange={(e) => handleChange('phone', e.target.value)}
-                                        className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none small"
-                                        placeholder="+1 234..."
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <Section className="min-h-screen p-0">
+            <div className="max-w-7xl mx-auto px-4 py-0">
+                <div className="mb-0">
+                    <Breadcrumbs items={[{ label: "Cover Letter Generator", href: "/cover-letter-generator" }
+                    ]} />
                 </div>
 
-                {/* Visual - Right Panel (Output) */}
-                <div className="space-y-6 flex flex-col h-full">
-                    <div className="bg-slate-50 rounded-[2rem] p-8 shadow-inner border border-border/50 flex-1 flex flex-col relative group">
-                        <div className="absolute top-4 right-4 flex gap-2">
-                            <button
-                                onClick={handleCopy}
-                                className="p-2 bg-white rounded-lg shadow-sm border hover:bg-muted transition-colors text-muted-foreground hover:text-primary"
-                                title="Copy to Clipboard"
-                            >
-                                {isCopied ? <CheckCircle className="w-5 h-5 text-green-500" /> : <Copy className="w-5 h-5" />}
-                            </button>
-                            <button
-                                onClick={handleDownload}
-                                className="p-2 bg-white rounded-lg shadow-sm border hover:bg-muted transition-colors text-muted-foreground hover:text-primary"
-                                title="Download Text"
-                            >
-                                <Download className="w-5 h-5" />
-                            </button>
+                <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr_160px] gap-8">
+                    {/* Left Ad */}
+                    <div className="hidden lg:block">
+                        <AdPlaceholder className="w-[160px] h-[600px] sticky top-24" />
+                    </div>
+
+                    {/* Main Content */}
+                    <div className="flex flex-col items-center">
+                        <div className="w-full text-center mb-1">
+                            <ToolHeader
+                                title="Cover Letter Generator"
+                                description="Instantly generate a tailored, professional cover letter for your job application."
+                            />
+                            <div className="flex justify-center mt-2">
+                                <AdPlaceholder className="w-[728px] h-[90px]" />
+                            </div>
                         </div>
 
-                        <div className="flex items-center gap-2 mb-4 text-muted-foreground">
-                            <Sparkles className="w-4 h-4" />
-                            <span className="text-xs font-bold uppercase tracking-widest">Live Preview</span>
+                        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {/* Visual - Left Panel (Input) */}
+                            <div className="space-y-6">
+                                <div className="bg-white rounded-[2rem] p-8 shadow-xl border border-border/50">
+                                    <div className="flex items-center gap-3 mb-6">
+                                        <PenTool className="w-6 h-6 text-primary" />
+                                        <h2 className="text-2xl font-extrabold text-foreground">Your Details</h2>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div className="space-y-2">
+                                                <label className="text-sm font-bold text-muted-foreground">Your Name</label>
+                                                <input
+                                                    type="text"
+                                                    value={data.applicantName}
+                                                    onChange={(e) => handleChange('applicantName', e.target.value)}
+                                                    className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none"
+                                                    placeholder="John Doe"
+                                                />
+                                            </div>
+                                            <div className="space-y-2">
+                                                <label className="text-sm font-bold text-muted-foreground">Target Job Title</label>
+                                                <input
+                                                    type="text"
+                                                    value={data.jobTitle}
+                                                    onChange={(e) => handleChange('jobTitle', e.target.value)}
+                                                    className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none"
+                                                    placeholder="Software Engineer"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-bold text-muted-foreground">Target Company</label>
+                                            <input
+                                                type="text"
+                                                value={data.companyName}
+                                                onChange={(e) => handleChange('companyName', e.target.value)}
+                                                className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none"
+                                                placeholder="Google, Microsoft, etc."
+                                            />
+                                        </div>
+
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-bold text-muted-foreground">Key Skills (comma separated)</label>
+                                            <textarea
+                                                value={data.skills}
+                                                onChange={(e) => handleChange('skills', e.target.value)}
+                                                className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none h-24"
+                                                placeholder="Python, React, Project Management, Communication..."
+                                            />
+                                        </div>
+
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div className="space-y-2">
+                                                <label className="text-sm font-bold text-muted-foreground">Experience Level</label>
+                                                <select
+                                                    value={data.experienceLevel}
+                                                    onChange={(e) => handleChange('experienceLevel', e.target.value as any)}
+                                                    className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none cursor-pointer"
+                                                >
+                                                    <option value="Fresher">Fresher / Intern</option>
+                                                    <option value="Junior">Junior (1-3 years)</option>
+                                                    <option value="Senior">Senior (5+ years)</option>
+                                                    <option value="Manager">Manager / Lead</option>
+                                                </select>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <label className="text-sm font-bold text-muted-foreground">Tone</label>
+                                                <select
+                                                    value={data.tone}
+                                                    onChange={(e) => handleChange('tone', e.target.value as any)}
+                                                    className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none cursor-pointer"
+                                                >
+                                                    <option value="Professional">Professional (Standard)</option>
+                                                    <option value="Enthusiastic">Enthusiastic (Startup friendly)</option>
+                                                    <option value="Confident">Confident (Direct)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t">
+                                            <div className="space-y-2">
+                                                <label className="text-sm font-bold text-muted-foreground">Email (Optional)</label>
+                                                <input
+                                                    type="text"
+                                                    value={data.email}
+                                                    onChange={(e) => handleChange('email', e.target.value)}
+                                                    className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none small"
+                                                    placeholder="email@example.com"
+                                                />
+                                            </div>
+                                            <div className="space-y-2">
+                                                <label className="text-sm font-bold text-muted-foreground">Phone (Optional)</label>
+                                                <input
+                                                    type="text"
+                                                    value={data.phone}
+                                                    onChange={(e) => handleChange('phone', e.target.value)}
+                                                    className="w-full p-3 rounded-xl border bg-background focus:ring-2 focus:ring-primary/20 outline-none small"
+                                                    placeholder="+1 234..."
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Visual - Right Panel (Output) */}
+                            <div className="space-y-6 flex flex-col h-full">
+                                <div className="bg-slate-50 rounded-[2rem] p-8 shadow-inner border border-border/50 flex-1 flex flex-col relative group min-h-[500px]">
+                                    <div className="absolute top-4 right-4 flex gap-2">
+                                        <button
+                                            onClick={handleCopy}
+                                            className="p-2 bg-white rounded-lg shadow-sm border hover:bg-muted transition-colors text-muted-foreground hover:text-primary"
+                                            title="Copy to Clipboard"
+                                        >
+                                            {isCopied ? <CheckCircle className="w-5 h-5 text-green-500" /> : <Copy className="w-5 h-5" />}
+                                        </button>
+                                        <button
+                                            onClick={handleDownload}
+                                            className="p-2 bg-white rounded-lg shadow-sm border hover:bg-muted transition-colors text-muted-foreground hover:text-primary"
+                                            title="Download Text"
+                                        >
+                                            <Download className="w-5 h-5" />
+                                        </button>
+                                    </div>
+
+                                    <div className="flex items-center gap-2 mb-4 text-muted-foreground">
+                                        <Sparkles className="w-4 h-4" />
+                                        <span className="text-xs font-bold uppercase tracking-widest">Live Preview</span>
+                                    </div>
+
+                                    <textarea
+                                        value={generatedLetter}
+                                        onChange={(e) => setGeneratedLetter(e.target.value)}
+                                        className="flex-1 w-full bg-transparent border-none resize-none focus:ring-0 outline-none font-serif text-slate-700 leading-relaxed text-lg"
+                                        spellCheck={false}
+                                    />
+
+                                    <div className="pt-4 text-center">
+                                        <p className="text-xs text-muted-foreground font-medium">
+                                            Start typing in the form to see updates automatically. You can also edit this text directly.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <textarea
-                            value={generatedLetter}
-                            onChange={(e) => setGeneratedLetter(e.target.value)}
-                            className="flex-1 w-full bg-transparent border-none resize-none focus:ring-0 outline-none font-serif text-slate-700 leading-relaxed text-lg"
-                            spellCheck={false}
-                        />
-
-                        <div className="pt-4 text-center">
-                            <p className="text-xs text-muted-foreground font-medium">
-                                Start typing in the form to see updates automatically. You can also edit this text directly.
-                            </p>
+                        <div className="w-full max-w-4xl mx-auto mt-16 px-4">
+                            <ToolExtraContent
+                                whatDoesItDo={{
+                                    title: "What this Cover Letter Generator Does",
+                                    content: `Our AI-powered tool creates high-quality, professional cover letters tailored to your specific job application. It maps your skills to the requirements of the job, helping you make a great first impression.`
+                                }}
+                                whoIsItFor={{
+                                    title: "Who Should Use This Tool",
+                                    content: "Ideal for anyone applying for jobs—whether you are a student looking for an internship, a professional switching careers, or a senior executive aiming for a leadership role. It's the perfect way to draft a compelling introduction in seconds."
+                                }}
+                                howToUse={{
+                                    title: "How to Generate Your Winning Cover Letter",
+                                    steps: [
+                                        "Fill in your name, contact details, and the company you are applying to.",
+                                        "List the core skills and achievements you want to highlight.",
+                                        "Select your experience level and the desired tone (e.g., Professional or Enthusiastic).",
+                                        "Review the generated draft, make any final edits, and download your letter instantly."
+                                    ]
+                                }}
+                                benefits={{
+                                    title: "Benefits of Using Imgverto",
+                                    items: [
+                                        "Tailored Content: Specifically context-aware drafts for your target role.",
+                                        "Tone Control: Match the company culture with Professional or Bold tones.",
+                                        "ATS Optimized: Strategic keyword placement to pass automated filters.",
+                                        "100% Private: Your details are never stored on our servers. Total privacy.",
+                                        "Instant Results: Go from a blank page to a full draft in under 30 seconds.",
+                                        "Always Free: No hidden fees or limits on how many letters you can create."
+                                    ]
+                                }}
+                                faqs={[
+                                    { question: "Is this cover letter generator truly free?", answer: "Yes, it is 100% free with no daily limits or credit systems." },
+                                    { question: "Can I use these letters for LinkedIn?", answer: "Absolutely. The generated text is perfect for LinkedIn 'About' sections or direct recruiter messages." },
+                                    { question: "Is my data stored during generation?", answer: "No. The entire process happens in your browser session. Once you close the tab, your data is cleared." },
+                                    { question: "Can I edit the generated draft?", answer: "Yes, you can edit the text directly in the preview box before downloading." },
+                                    { question: "How many letters can I create?", answer: "You can generate as many tailored letters as you need for different job applications." }
+                                ]}
+                            />
+                            <RelatedTools currentPath="/cover-letter-generator" />
                         </div>
+                    </div>
+
+                    {/* Right Ad */}
+                    <div className="hidden lg:block">
+                        <AdPlaceholder className="w-[160px] h-[600px] sticky top-24" />
                     </div>
                 </div>
             </div>
-
-            {/* SEO Content */}
-            <div className="w-full max-w-4xl prose prose-slate prose-lg dark:prose-invert my-16 border-t pt-16">
-                <h2 className="text-4xl font-black text-center mb-12">The Ultimate Guide to Writing a Winning Cover Letter</h2>
-
-                <p>
-                    A cover letter is more than just a formality; it's your personal introduction to a potential employer. While your resume provides a factual summary of your history, your cover letter allows you to inject personality, explain context, and demonstrate enthusiasm. Using Imgverto's <strong>Free Cover Letter Generator</strong>, you can create a high-quality draft in seconds, but understanding the principles of a great letter will help you customize it for maximum impact.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12 not-prose">
-                    <div className="p-8 rounded-[2rem] bg-indigo-50 border border-indigo-100">
-                        <h4 className="text-xl font-bold text-indigo-900 mb-4">Why it Matters</h4>
-                        <p className="text-indigo-800 text-base">70% of hiring managers say they prefer candidates who include a cover letter, even when it's optional. it shows effort and intent.</p>
-                    </div>
-                    <div className="p-8 rounded-[2rem] bg-emerald-50 border border-emerald-100">
-                        <h4 className="text-xl font-bold text-emerald-900 mb-4">The Goal</h4>
-                        <p className="text-emerald-800 text-base">The primary goal isn't to get the job—it's to get the reader to look at your resume with interest and move you to the interview pile.</p>
-                    </div>
-                </div>
-
-                <h3>How to Write a Perfect Cover Letter</h3>
-                <p>
-                    A perfect cover letter follows a specific structure that balances professionalism with a personal touch. Here is the breakdown:
-                </p>
-                <ul>
-                    <li><strong>The Header:</strong> Include your contact information and the date. If possible, include the recipient's name and company address.</li>
-                    <li><strong>The Greeting:</strong> Always try to find a specific name. Use "Dear [Name]," instead of "To Whom It May Concern."</li>
-                    <li><strong>The Hook:</strong> Your opening sentence should be strong. Mention the specific role and why you are excited about it.</li>
-                    <li><strong>The Body:</strong> focus on two or three key achievements. Don't just list what you did; explain the <em>impact</em> you had. Use data and numbers whenever possible.</li>
-                    <li><strong>The Closing:</strong> Reiterate your interest, thank the reader for their time, and include a call to action, such as "I look forward to discussing how I can contribute to your team."</li>
-                </ul>
-
-                <h3>Common Mistakes to Avoid</h3>
-                <p>
-                    Even with a generator, you should be mindful of these common pitfalls:
-                </p>
-                <ol>
-                    <li><strong>Typos and Grammatical Errors:</strong> Nothing kills credibility faster than a spelling mistake in your first paragraph.</li>
-                    <li><strong>Being Too Generic:</strong> If you don't mention the company name or specific role requirements, it looks like a mass-produced letter.</li>
-                    <li><strong>Talking Only About Yourself:</strong> The letter should focus on how you can solve the <em>employer's</em> problems, not just what the job will do for you.</li>
-                    <li><strong>Rehashing Your Resume:</strong> If you're just listing your jobs again, you're wasting the reader's time. Use this space to add color to your experiences.</li>
-                </ol>
-
-                <div className="my-16 p-8 bg-slate-900 text-white rounded-[2.5rem] shadow-2xl">
-                    <h3 className="text-white mt-0">Cover Letter Formats: Choosing the Right Style</h3>
-                    <p className="text-slate-300">
-                        Depending on your industry, you might choose different formats:
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                        <div>
-                            <h4 className="text-primary font-bold mb-2">Standard</h4>
-                            <p className="text-sm text-slate-400">Best for corporate, legal, or finance roles. Focuses on formality and hierarchy.</p>
-                        </div>
-                        <div>
-                            <h4 className="text-primary font-bold mb-2">Modern</h4>
-                            <p className="text-sm text-slate-400">Great for tech, marketing, and startups. Clean, direct, and slightly more conversational.</p>
-                        </div>
-                        <div>
-                            <h4 className="text-primary font-bold mb-2">Creative</h4>
-                            <p className="text-sm text-slate-400">Used for design or creative writing roles. Allows for more storytelling and visual flair.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <h3>Tips for Freshers vs. Experienced Professionals</h3>
-                <p>
-                    Your approach should change depending on where you are in your career path:
-                </p>
-                <h4>For Freshers and Interns</h4>
-                <p>
-                    Without a long work history, focus on your education, relevant coursework, and soft skills. Mention any internships, volunteer work, or university projects where you demonstrated leadership or technical proficiency in <strong>{data.skills || "your field"}</strong>. Demonstrate that you are a fast learner who is eager to contribute.
-                </p>
-                <h4>For Experienced Professionals</h4>
-                <p>
-                    Focus heavily on your track record. Mention specific instances where you saved money, made money, or improved processes for your previous employers. Use your cover letter to explain <em>why</em> you're looking for a change and how your background in <strong>{data.skills || "your expertise"}</strong> makes you the perfect fit for the <strong>{data.jobTitle || "new role"}</strong>.
-                </p>
-
-                <div className="bg-primary/5 border border-primary/10 p-8 rounded-[2rem] my-12">
-                    <h4 className="text-primary mt-0">Explore More Professional Tools</h4>
-                    <p className="text-foreground/80">
-                        Maximize your job search success by using our full suite of career tools:
-                    </p>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0">
-                        <li className="m-0">
-                            <Link href="/resume-builder" className="flex items-center gap-2 p-3 bg-white rounded-xl border hover:border-primary transition-colors no-underline">
-                                <CheckCircle className="w-4 h-4 text-primary" />
-                                <span className="font-bold text-sm">Professional Resume Builder</span>
-                            </Link>
-                        </li>
-                        <li className="m-0">
-                            <Link href="/formal-letter-generator" className="flex items-center gap-2 p-3 bg-white rounded-xl border hover:border-primary transition-colors no-underline">
-                                <CheckCircle className="w-4 h-4 text-primary" />
-                                <span className="font-bold text-sm">Formal Letter Generator</span>
-                            </Link>
-                        </li>
-                        <li className="m-0">
-                            <Link href="/blog" className="flex items-center gap-2 p-3 bg-white rounded-xl border hover:border-primary transition-colors no-underline">
-                                <CheckCircle className="w-4 h-4 text-primary" />
-                                <span className="font-bold text-sm">Career & Tech Blog</span>
-                            </Link>
-                        </li>
-                        <li className="m-0">
-                            <Link href="/" className="flex items-center gap-2 p-3 bg-white rounded-xl border hover:border-primary transition-colors no-underline">
-                                <CheckCircle className="w-4 h-4 text-primary" />
-                                <span className="font-bold text-sm">Back to Tools Homepage</span>
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-
-                <h3>Why Imgverto's Generator is Better</h3>
-                <p>
-                    Unlike other tools that force you to create an account or pay a fee just to download your text, Imgverto is 100% free and private. We don't store your data, and we provide multiple templates—Professional, Enthusiastic, and Confident—so you can match the exact vibe of the company you're applying to.
-                </p>
-                <p>
-                    Our templates are built based on real-world hiring data, ensuring that the structure and language used are what recruiters actually want to see in 2026. Whether you need a cover letter for a remote software job at <strong>{data.companyName || "a top tech firm"}</strong> or a local retail position, we have you covered.
-                </p>
-            </div>
-
-            <FAQSection items={[
-                { question: "Is this cover letter generator truly free?", answer: "Yes, 100%. We believe professional tools should be accessible to everyone. There are no hidden fees or 'pro' versions." },
-                { question: "Can I use the generated text for LinkedIn?", answer: "Absolutely! You can use the generated text as a base for your LinkedIn 'About' section or for direct messages to recruiters." },
-                { question: "How many cover letters can I generate?", answer: "As many as you want. There are no daily limits. We encourage you to generate a new tailored letter for every single job you apply for." },
-                { question: "What should I do if the template is too long?", answer: "You can edit the text directly in our preview box. We recommend keeping most cover letters under 400 words." },
-                { question: "Is the generator ATS friendly?", answer: "ATS systems primarily scan resumes, but many also scan cover letters for keywords. Our generator ensures that your key skills are mentioned naturally throughout the text." }
-            ]} />
-
-            <RelatedTools currentPath="/cover-letter-generator" />
         </Section>
     );
 }

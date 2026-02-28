@@ -74,14 +74,14 @@ export function PdfCompressorClient() {
 
                     {/* Main Content */}
                     <div className="flex flex-col items-center pt-4">
-                        <div className="w-full text-center space-y-4 mb-2">
-                            <div className="flex justify-center">
+                        <div className="w-full text-center mb-1">
+                            <ToolHeader
+                                title="Compress PDF Online"
+                                description="Reduce PDF file size for easy sharing and storage without losing quality."
+                            />
+                            <div className="flex justify-center mt-2">
                                 <AdPlaceholder className="w-[728px] h-[90px]" />
                             </div>
-                            <ToolHeader
-                                title="Compress PDF Online Free"
-                                description="Reduce PDF file size online without losing quality for fast and secure optimization."
-                            />
                         </div>
 
                         {!file ? (

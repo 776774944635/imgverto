@@ -73,15 +73,15 @@ export function CompressImageClient() {
                     </div>
 
                     {/* Main Content */}
-                    <div className="flex flex-col items-center pt-4">
-                        <div className="w-full text-center space-y-4 mb-2">
-                            <div className="flex justify-center">
+                    <div className="flex flex-col items-center pt-2">
+                        <div className="w-full text-center mb-0">
+                            <ToolHeader
+                                title="Compress IMAGE"
+                                description="Compress JPG, PNG, SVG, and GIFs while saving space and maintaining quality."
+                            />
+                            <div className="flex justify-center mt-1">
                                 <AdPlaceholder className="w-[728px] h-[90px]" />
                             </div>
-                            <ToolHeader
-                                title="Compress Image"
-                                description="Quickly compress image files online for free!"
-                            />
                         </div>
 
                         <div className="w-full">

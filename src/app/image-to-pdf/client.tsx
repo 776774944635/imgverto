@@ -74,14 +74,14 @@ export function ImageToPdfClient() {
 
                     {/* Main Content */}
                     <div className="flex flex-col items-center pt-4">
-                        <div className="w-full text-center space-y-4 mb-2">
-                            <div className="flex justify-center">
-                                <AdPlaceholder className="w-[728px] h-[90px]" />
-                            </div>
+                        <div className="w-full text-center mb-1">
                             <ToolHeader
                                 title="Free Image to PDF Converter"
                                 description="Convert JPG, PNG, and other images to a PDF instantly for free."
                             />
+                            <div className="flex justify-center mt-2">
+                                <AdPlaceholder className="w-[728px] h-[90px]" />
+                            </div>
                         </div>
 
                         {items.length === 0 ? (

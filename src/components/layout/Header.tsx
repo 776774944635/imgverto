@@ -45,6 +45,7 @@ export function Header() {
                         </Link>
                         <nav className="hidden lg:flex items-center space-x-8 text-[13px] font-extrabold uppercase tracking-widest text-muted-foreground/70">
                             <Link href="/#tools" className="transition-all hover:text-primary hover:tracking-[0.2em]">All Tools</Link>
+                            <Link href="/blog" className="transition-all hover:text-primary hover:tracking-[0.2em]">Guides</Link>
                             <Link href="/about" className="transition-all hover:text-primary hover:tracking-[0.2em]">About</Link>
                         </nav>
                     </div>
@@ -106,6 +107,22 @@ export function Header() {
                                                 className="flex items-center justify-between p-4 rounded-2xl hover:bg-muted transition-all group"
                                             >
                                                 <span className="font-bold">Home</span>
+                                                <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                            </Link>
+                                            <Link
+                                                href="/blog"
+                                                onClick={() => setIsOpen(false)}
+                                                className="flex items-center justify-between p-4 rounded-2xl hover:bg-muted transition-all group"
+                                            >
+                                                <span className="font-bold">Guides</span>
+                                                <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                            </Link>
+                                            <Link
+                                                href="/about"
+                                                onClick={() => setIsOpen(false)}
+                                                className="flex items-center justify-between p-4 rounded-2xl hover:bg-muted transition-all group"
+                                            >
+                                                <span className="font-bold">About</span>
                                                 <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                                             </Link>
                                             <Link

@@ -28,9 +28,9 @@ export function FAQSection({ items }: FAQSectionProps) {
     };
 
     return (
-        <section className="py-12 max-w-3xl mx-auto w-full">
+        <section className="py-8 max-w-2xl mx-auto w-full">
             <SchemaMarkup type="FAQPage" data={faqSchemaData} />
-            <h2 className="text-3xl font-bold text-center mb-8">
+            <h2 className="text-2xl font-extrabold text-center mb-6 tracking-tight text-slate-900">
                 Frequently Asked Questions
             </h2>
             <Accordion type="single" collapsible className="w-full">

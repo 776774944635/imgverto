@@ -5,7 +5,7 @@ import { Zap as ZapIcon } from "lucide-react";
 
 export default function AboutPage() {
     return (
-        <Section className="prose dark:prose-invert max-w-4xl mx-auto text-center pb-8 pt-4">
+        <Section className="max-w-4xl mx-auto text-center pb-8 pt-4">
             <ToolHeader
                 title="About Imgverto"
                 description="Redefining file management through transparency, speed, and absolute privacy."
@@ -17,7 +17,7 @@ export default function AboutPage() {
                         <Sparkles className="w-16 h-16 text-primary" />
                     </div>
                     <p className="text-base md:text-lg font-medium text-slate-800 dark:text-slate-200 leading-relaxed text-center max-w-3xl mx-auto">
-                        Imgverto was born from a simple frustration: why are most online document tools so cluttered, limited, or expensive? We set out to build a platform that puts the user back in control—no ads popping over your content, no forced subscriptions, and no hidden data harvesting.
+                        Imgverto was born from a simple goal: to create professional document tools that are fast, free, and absolutely private. We've eliminated the clutter, forced subscriptions, and hidden data harvesting that plague modern utilities.
                     </p>
                 </section>
 

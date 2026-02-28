@@ -461,13 +461,13 @@ export function ResumeBuilderClient() {
                     {/* Main Content Area */}
                     <div className="flex flex-col items-center">
                         <div className="w-full text-center mb-1">
-                            <div className="flex justify-center mb-1">
-                                <AdPlaceholder className="w-[728px] h-[90px]" />
-                            </div>
                             <ToolHeader
                                 title="Professional Resume Builder"
                                 description="Create a stunning, ATS-friendly resume in minutes with our premium templates."
                             />
+                            <div className="flex justify-center mt-2">
+                                <AdPlaceholder className="w-[728px] h-[90px]" />
+                            </div>
                         </div>
 
                         <div className="w-full">
