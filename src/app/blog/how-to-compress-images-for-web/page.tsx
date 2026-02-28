@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
                         <FileText className="w-4 h-4" /> Web Optimization
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
                         How to Compress Images for the Web
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed">
@@ -74,7 +74,7 @@ export default function BlogPost() {
                     </p>
 
                     <div className="my-10 p-8 bg-slate-50 border-2 border-slate-200 rounded-[2.5rem] shadow-sm">
-                        <h3 className="text-2xl font-black mb-6 text-slate-900">Imgverto's Optimization Edge</h3>
+                        <h3 className="text-2xl font-extrabold mb-6 text-slate-900">Imgverto's Optimization Edge</h3>
                         <p className="text-slate-600 mb-6">Our platform isn't just another basic conversion tool. We use a multi-stage optimization pipeline:</p>
                         <ul className="space-y-4 not-prose">
                             <li className="flex gap-4 items-start">
@@ -152,13 +152,13 @@ export default function BlogPost() {
                 <div className="mt-16 p-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[3rem] text-center text-white shadow-2xl relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2" />
                     <Minimize2 className="w-16 h-16 mx-auto mb-6 text-blue-200 animate-pulse" />
-                    <h3 className="text-3xl font-black mb-6">Ready to Boost Your SEO?</h3>
+                    <h3 className="text-3xl font-extrabold mb-6">Ready to Boost Your SEO?</h3>
                     <p className="text-blue-100 mb-10 max-w-xl mx-auto text-lg">
                         Don't let heavy images hold your website back. Compress your first batch for free in just seconds.
                     </p>
                     <Link
                         href="/compress-image"
-                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-blue-700 font-black text-xl rounded-full hover:bg-blue-50 transition-all hover:scale-105 active:scale-95 shadow-xl"
+                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-blue-700 font-extrabold text-xl rounded-full hover:bg-blue-50 transition-all hover:scale-105 active:scale-95 shadow-xl"
                     >
                         Optimize My Images <ArrowRight className="w-6 h-6" />
                     </Link>

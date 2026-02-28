@@ -14,7 +14,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export default function NeetPhotoGuide() {
     return (
-        <Section className="py-20 max-w-4xl mx-auto prose prose-slate lg:prose-lg prose-headings:font-black prose-headings:text-slate-900 prose-p:text-slate-600 prose-strong:text-slate-900 prose-ul:text-slate-600">
+        <Section className="py-20 max-w-4xl mx-auto prose prose-slate lg:prose-lg prose-headings:font-extrabold prose-headings:text-slate-900 prose-p:text-slate-600 prose-strong:text-slate-900 prose-ul:text-slate-600">
             <BlogSchema
                 title="How to Resize Photo for NEET Application Form 2024-25"
                 description="Learn how to resize your photo for NEET application form online. Get the exact dimensions, file size, and background requirements for NTA NEET 2025."

@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100 text-teal-700 text-sm font-semibold mb-6">
                         <FileText className="w-4 h-4" /> Social Media Tips
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
                         How to Resize Images for Social Media
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed">
@@ -66,7 +66,7 @@ export default function BlogPost() {
                         <div className="flex items-start gap-6 p-8 bg-pink-50 rounded-[2.5rem] border-2 border-pink-100 shadow-sm transition-transform hover:scale-[1.02]">
                             <Instagram className="w-12 h-12 text-pink-600 shrink-0" />
                             <div>
-                                <h3 className="font-black text-2xl text-slate-900 mb-2">Instagram Masterclass</h3>
+                                <h3 className="font-extrabold text-2xl text-slate-900 mb-2">Instagram Masterclass</h3>
                                 <p className="text-slate-600 mb-4">Instagram is the most visually demanding platform. Use these specs for maximum impact:</p>
                                 <ul className="text-slate-700 space-y-2">
                                     <li><strong>Square Feed:</strong> 1080 x 1080 px (1:1)</li>
@@ -80,7 +80,7 @@ export default function BlogPost() {
                         <div className="flex items-start gap-6 p-8 bg-blue-50 rounded-[2.5rem] border-2 border-blue-100 shadow-sm transition-transform hover:scale-[1.02]">
                             <Facebook className="w-12 h-12 text-blue-600 shrink-0" />
                             <div>
-                                <h3 className="font-black text-2xl text-slate-900 mb-2">Facebook Business Standards</h3>
+                                <h3 className="font-extrabold text-2xl text-slate-900 mb-2">Facebook Business Standards</h3>
                                 <p className="text-slate-600 mb-4">Facebook compresses images aggressively. Starting with the correct size is vital:</p>
                                 <ul className="text-slate-700 space-y-2">
                                     <li><strong>Feed Posts:</strong> 1200 x 630 px (1.91:1)</li>
@@ -94,7 +94,7 @@ export default function BlogPost() {
                         <div className="flex items-start gap-6 p-8 bg-sky-50 rounded-[2.5rem] border-2 border-sky-100 shadow-sm transition-transform hover:scale-[1.02]">
                             <Linkedin className="w-12 h-12 text-sky-700 shrink-0" />
                             <div>
-                                <h3 className="font-black text-2xl text-slate-900 mb-2">LinkedIn Professional Specs</h3>
+                                <h3 className="font-extrabold text-2xl text-slate-900 mb-2">LinkedIn Professional Specs</h3>
                                 <p className="text-slate-600 mb-4">For B2B marketing and personal branding, clarity is key:</p>
                                 <ul className="text-slate-700 space-y-2">
                                     <li><strong>Personal Feed:</strong> 1200 x 1200 px (Square) or 1200 x 627 px (Landscape)</li>
@@ -149,13 +149,13 @@ export default function BlogPost() {
                 <div className="mt-16 p-12 bg-gradient-to-br from-teal-600 to-emerald-700 rounded-[3rem] text-center text-white shadow-2xl relative overflow-hidden group">
                     <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/diagonal-stripes.png')] opacity-10" />
                     <ImageIcon className="w-16 h-16 mx-auto mb-6 text-teal-200 group-hover:scale-110 transition-transform" />
-                    <h3 className="text-3xl font-black mb-4">Go Viral with Perfect Pixels</h3>
+                    <h3 className="text-3xl font-extrabold mb-4">Go Viral with Perfect Pixels</h3>
                     <p className="text-teal-50 mb-10 text-lg max-w-lg mx-auto">
                         Resize your photos for every platform in one place. Fast, free, and always at the highest quality.
                     </p>
                     <Link
                         href="/resize-image"
-                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-teal-700 font-black text-xl rounded-full hover:bg-teal-50 transition-all shadow-xl active:scale-95"
+                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-teal-700 font-extrabold text-xl rounded-full hover:bg-teal-50 transition-all shadow-xl active:scale-95"
                     >
                         Start My Sizing Guide <ArrowRight className="w-6 h-6" />
                     </Link>

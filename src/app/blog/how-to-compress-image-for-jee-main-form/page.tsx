@@ -13,7 +13,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export default function JeePhotoGuide() {
     return (
-        <Section className="py-20 max-w-4xl mx-auto prose prose-slate lg:prose-lg prose-headings:font-black prose-headings:text-slate-900 prose-p:text-slate-600 prose-strong:text-slate-900 prose-ul:text-slate-600">
+        <Section className="py-20 max-w-4xl mx-auto prose prose-slate lg:prose-lg prose-headings:font-extrabold prose-headings:text-slate-900 prose-p:text-slate-600 prose-strong:text-slate-900 prose-ul:text-slate-600">
             <BlogSchema
                 title="How to Compress Image for JEE Main 2025: NTA Size Requirements Guide"
                 description="Learn how to compress your photo and signature for JEE Main 2025 online. Get the exact 10KB to 200KB compression guide for NTA portals."

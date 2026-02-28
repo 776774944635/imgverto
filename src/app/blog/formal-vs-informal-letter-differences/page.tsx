@@ -33,10 +33,10 @@ export default function LetterBlog() {
             <Breadcrumbs />
             <article className="max-w-4xl mx-auto px-4">
                 <header className="mb-16 text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 text-amber-700 text-sm font-black uppercase tracking-widest mb-8 border border-amber-200">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 text-amber-700 text-sm font-extrabold uppercase tracking-widest mb-8 border border-amber-200">
                         <Send className="w-4 h-4" /> Writing Etiquette
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tight mb-8 leading-[1.1]">
+                    <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-[1.1]">
                         Formal vs Informal Letter: Differences & Examples
                     </h1>
                     <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-3xl mx-auto">
@@ -44,7 +44,7 @@ export default function LetterBlog() {
                     </p>
                 </header>
 
-                <div className="prose prose-lg prose-slate md:prose-xl mx-auto prose-headings:font-black prose-headings:tracking-tight prose-a:text-amber-600 prose-strong:text-slate-900">
+                <div className="prose prose-lg prose-slate md:prose-xl mx-auto prose-headings:font-extrabold prose-headings:tracking-tight prose-a:text-amber-600 prose-strong:text-slate-900">
                     <p>
                         Communication is the bedrock of professional and personal relationships, but the *way* we communicate depends entirely on the situational context. Writing a letter to a close friend requires a completely different vocabulary, structural logic, and emotional frequency than writing reaching out to a government official or a prospective business partner.
                     </p>
@@ -160,13 +160,13 @@ export default function LetterBlog() {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32" />
                     <div className="relative z-10">
                         <Send className="w-16 h-16 mx-auto mb-8 text-amber-200" />
-                        <h2 className="text-3xl md:text-5xl font-black mb-6">Master Your Written Voice</h2>
+                        <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Master Your Written Voice</h2>
                         <p className="text-xl md:text-2xl text-amber-100 mb-10 max-w-2xl mx-auto font-medium">
                             Whether it's an official complaint or a heart-felt note, get the register right every time.
                         </p>
                         <Link
                             href="/letter-generator"
-                            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-amber-700 font-black text-xl rounded-full hover:bg-amber-50 transition-all shadow-xl active:scale-95"
+                            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-amber-700 font-extrabold text-xl rounded-full hover:bg-amber-50 transition-all shadow-xl active:scale-95"
                         >
                             Open the Builder <ArrowRight className="w-6 h-6" />
                         </Link>
@@ -182,7 +182,7 @@ export default function LetterBlog() {
                 ]} />
 
                 <div className="mt-20 pt-16 border-t border-slate-100 text-center">
-                    <h3 className="text-2xl font-black text-slate-900 mb-8">Career & Writing Resources</h3>
+                    <h3 className="text-2xl font-extrabold text-slate-900 mb-8">Career & Writing Resources</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <Link href="/blog/how-to-create-a-professional-resume-online" className="p-6 rounded-2xl bg-white border hover:border-amber-500 transition-colors group">
                             <h4 className="font-bold text-slate-900 group-hover:text-amber-600 transition-colors">How to build a resume &rarr;</h4>

@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-100 text-violet-700 text-sm font-semibold mb-6">
                         <FileText className="w-4 h-4" /> Imgverto Professional Series
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
                         How to Upscale Images Without Losing Quality
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed">
@@ -76,7 +76,7 @@ export default function BlogPost() {
                     </ul>
 
                     <div className="my-10 p-10 bg-violet-50 border-2 border-violet-100 rounded-[3rem] shadow-sm not-prose">
-                        <h3 className="text-2xl font-black mb-6 text-slate-900 text-center">Technical Feature Comparison</h3>
+                        <h3 className="text-2xl font-extrabold mb-6 text-slate-900 text-center">Technical Feature Comparison</h3>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="p-6 bg-white rounded-2xl shadow-sm border border-violet-200">
                                 <strong className="text-violet-700 block mb-2 text-lg">Lanczos3 Filtering:</strong>
@@ -133,13 +133,13 @@ export default function BlogPost() {
                 <div className="mt-16 p-12 bg-gradient-to-br from-violet-600 to-fuchsia-700 rounded-[3rem] text-center text-white shadow-2xl relative overflow-hidden group">
                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
                     <Zap className="w-16 h-16 mx-auto mb-6 text-violet-200 group-hover:scale-110 transition-transform" />
-                    <h3 className="text-3xl font-black mb-4">Experience Crystal Clarity</h3>
+                    <h3 className="text-3xl font-extrabold mb-4">Experience Crystal Clarity</h3>
                     <p className="text-violet-50 mb-10 text-lg max-w-lg mx-auto">
                         Upgrade your visual assets to 4K resolution using professional-grade reconstruction algorithms.
                     </p>
                     <Link
                         href="/image-upscaler"
-                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-violet-700 font-black text-xl rounded-full hover:bg-violet-50 transition-all shadow-xl active:scale-95"
+                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-violet-700 font-extrabold text-xl rounded-full hover:bg-violet-50 transition-all shadow-xl active:scale-95"
                     >
                         Enhance My Image Now <ArrowRight className="w-6 h-6" />
                     </Link>

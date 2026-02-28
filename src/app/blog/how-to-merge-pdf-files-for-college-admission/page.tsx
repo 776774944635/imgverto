@@ -14,7 +14,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 
 export default function MergePdfGuide() {
     return (
-        <Section className="py-20 max-w-4xl mx-auto prose prose-slate lg:prose-lg prose-headings:font-black prose-headings:text-slate-900 prose-p:text-slate-600 prose-strong:text-slate-900 prose-ul:text-slate-600">
+        <Section className="py-20 max-w-4xl mx-auto prose prose-slate lg:prose-lg prose-headings:font-extrabold prose-headings:text-slate-900 prose-p:text-slate-600 prose-strong:text-slate-900 prose-ul:text-slate-600">
             <BlogSchema
                 title="How to Merge PDF Files for College Admission"
                 description="Learn how to merge marksheets, certificates, and ID proofs into a single PDF for college admissions."

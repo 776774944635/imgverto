@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-sm font-semibold mb-6">
                         <FileType className="w-4 h-4" /> Format Conversion
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
                         How to Convert PDF to Image (JPG)
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed">
@@ -63,7 +63,7 @@ export default function BlogPost() {
                     </p>
 
                     <div className="my-10 p-10 bg-amber-50 border-2 border-amber-100 rounded-[3rem] shadow-sm not-prose">
-                        <h3 className="text-2xl font-black text-amber-900 mb-6 text-center">Extraction vs. Rasterization</h3>
+                        <h3 className="text-2xl font-extrabold text-amber-900 mb-6 text-center">Extraction vs. Rasterization</h3>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="p-6 bg-white rounded-2xl shadow-sm border border-amber-200">
                                 <strong className="text-amber-700 block mb-2 text-lg">Full-Page Rasterization:</strong>
@@ -119,13 +119,13 @@ export default function BlogPost() {
                 <div className="mt-16 p-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-[3rem] text-center text-white shadow-2xl relative overflow-hidden group">
                     <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity" />
                     <FileType className="w-16 h-16 mx-auto mb-6 text-amber-100" />
-                    <h3 className="text-3xl font-black mb-4">Unleash Your Document's Visuals</h3>
+                    <h3 className="text-3xl font-extrabold mb-4">Unleash Your Document's Visuals</h3>
                     <p className="text-amber-50 mb-10 text-lg max-w-lg mx-auto font-medium">
                         Convert entire PDF pages into crystal-clear images ready for social media and presentations.
                     </p>
                     <Link
                         href="/pdf-to-jpg"
-                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-amber-600 font-black text-xl rounded-full hover:bg-amber-50 transition-all shadow-xl active:scale-95"
+                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-amber-600 font-extrabold text-xl rounded-full hover:bg-amber-50 transition-all shadow-xl active:scale-95"
                     >
                         Convert PDF to JPG Free <ArrowRight className="w-6 h-6" />
                     </Link>

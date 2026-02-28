@@ -33,10 +33,10 @@ export default function CoverLetterBlog() {
             <Breadcrumbs />
             <article className="max-w-4xl mx-auto px-4">
                 <header className="mb-16 text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-black uppercase tracking-widest mb-8 border border-emerald-200">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-extrabold uppercase tracking-widest mb-8 border border-emerald-200">
                         <PenTool className="w-4 h-4" /> Persuasive Writing
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tight mb-8 leading-[1.1]">
+                    <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-[1.1]">
                         How to Write a Cover Letter for Any Job
                     </h1>
                     <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-3xl mx-auto">
@@ -44,7 +44,7 @@ export default function CoverLetterBlog() {
                     </p>
                 </header>
 
-                <div className="prose prose-lg prose-slate md:prose-xl mx-auto prose-headings:font-black prose-headings:tracking-tight prose-a:text-emerald-600 prose-strong:text-slate-900">
+                <div className="prose prose-lg prose-slate md:prose-xl mx-auto prose-headings:font-extrabold prose-headings:tracking-tight prose-a:text-emerald-600 prose-strong:text-slate-900">
                     <p>
                         In an era of high-volume digital applications, a well-crafted cover letter is your primary vehicle for humanizing your professional journey. It serves as the critical bridge between a sterile list of technical qualifications and the unique professional personality you bring to a team. As the workplace becomes increasingly saturated with generic, low-effort submissions, a **meticulously tailored and authentic cover letter** has become a powerful differentiator for serious candidates.
                     </p>
@@ -146,13 +146,13 @@ export default function CoverLetterBlog() {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32" />
                     <div className="relative z-10">
                         <PenTool className="w-16 h-16 mx-auto mb-8 text-emerald-200" />
-                        <h2 className="text-3xl md:text-5xl font-black mb-6">Build Your Career Foundation</h2>
+                        <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Build Your Career Foundation</h2>
                         <p className="text-xl md:text-2xl text-emerald-100 mb-10 max-w-2xl mx-auto font-medium">
                             Don't let a blank page stop your progress. Generate a professional, structured draft in seconds.
                         </p>
                         <Link
                             href="/cover-letter-generator"
-                            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-emerald-700 font-black text-xl rounded-full hover:bg-emerald-50 transition-all shadow-xl active:scale-95"
+                            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-emerald-700 font-extrabold text-xl rounded-full hover:bg-emerald-50 transition-all shadow-xl active:scale-95"
                         >
                             Open the Generator <ArrowRight className="w-6 h-6" />
                         </Link>
@@ -168,7 +168,7 @@ export default function CoverLetterBlog() {
                 ]} />
 
                 <div className="mt-20 pt-16 border-t border-slate-100 text-center">
-                    <h3 className="text-2xl font-black text-slate-900 mb-8">Related Career Guides</h3>
+                    <h3 className="text-2xl font-extrabold text-slate-900 mb-8">Related Career Guides</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <Link href="/blog/how-to-create-a-professional-resume-online" className="p-6 rounded-2xl bg-white border hover:border-emerald-500 transition-colors group">
                             <h4 className="font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">Resume Writing Guide &rarr;</h4>

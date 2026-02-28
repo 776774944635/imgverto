@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold mb-6">
                         <Zap className="w-4 h-4" /> File Optimization
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
                         How to Reduce PDF File Size
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed">
@@ -69,7 +69,7 @@ export default function BlogPost() {
                     </p>
 
                     <div className="my-10 p-10 bg-indigo-50 border-2 border-indigo-100 rounded-[3rem] shadow-sm not-prose">
-                        <h3 className="text-2xl font-black text-indigo-900 mb-6 text-center">The Optimization Pipeline</h3>
+                        <h3 className="text-2xl font-extrabold text-indigo-900 mb-6 text-center">The Optimization Pipeline</h3>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="p-6 bg-white rounded-2xl shadow-sm border border-indigo-200">
                                 <strong className="text-indigo-700 block mb-2 text-lg">Image Downsampling:</strong>
@@ -130,13 +130,13 @@ export default function BlogPost() {
                 <div className="mt-16 p-12 bg-gradient-to-br from-indigo-600 to-blue-700 rounded-[3rem] text-center text-white shadow-2xl relative overflow-hidden group">
                     <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity" />
                     <Zap className="w-16 h-16 mx-auto mb-6 text-indigo-200 animate-pulse" />
-                    <h3 className="text-3xl font-black mb-4">Master Your Document Weight</h3>
+                    <h3 className="text-3xl font-extrabold mb-4">Master Your Document Weight</h3>
                     <p className="text-indigo-50 mb-10 text-lg max-w-lg mx-auto">
                         Shrink large PDFs instantly without losing text clarity. Safe, private, and always free.
                     </p>
                     <Link
                         href="/pdf-compressor"
-                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-indigo-700 font-black text-xl rounded-full hover:bg-indigo-50 transition-all shadow-xl active:scale-95"
+                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-indigo-700 font-extrabold text-xl rounded-full hover:bg-indigo-50 transition-all shadow-xl active:scale-95"
                     >
                         Compress My PDF Now <ArrowRight className="w-6 h-6" />
                     </Link>

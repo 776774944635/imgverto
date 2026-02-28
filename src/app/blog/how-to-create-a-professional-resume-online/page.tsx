@@ -33,10 +33,10 @@ export default function ResumeBlog() {
             <Breadcrumbs />
             <article className="max-w-4xl mx-auto px-4">
                 <header className="mb-16 text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-100 text-violet-700 text-sm font-black uppercase tracking-widest mb-8 border border-violet-200">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-100 text-violet-700 text-sm font-extrabold uppercase tracking-widest mb-8 border border-violet-200">
                         <Sparkles className="w-4 h-4" /> Career Strategy 2026
                     </div>
-                    <h1 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tight mb-8 leading-[1.1]">
+                    <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-[1.1]">
                         How to Create a Professional Resume Online
                     </h1>
                     <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium max-w-3xl mx-auto">
@@ -44,7 +44,7 @@ export default function ResumeBlog() {
                     </p>
                 </header>
 
-                <div className="prose prose-lg prose-slate md:prose-xl mx-auto prose-headings:font-black prose-headings:tracking-tight prose-a:text-violet-600 prose-strong:text-slate-900">
+                <div className="prose prose-lg prose-slate md:prose-xl mx-auto prose-headings:font-extrabold prose-headings:tracking-tight prose-a:text-violet-600 prose-strong:text-slate-900">
                     <p>
                         Searching for a career in 2026 requires more than just a list of your previous employers; it requires a strategic understanding of **algorithmic recruitment**. With the proliferation of high-speed Applicant Tracking Systems (ATS) and the sheer volume of global applications per opening, your resume must be engineered to survive both a digital scan and a human critique.
                     </p>
@@ -65,7 +65,7 @@ export default function ResumeBlog() {
                     </p>
 
                     <div className="my-12 p-10 bg-violet-50 border-2 border-violet-100 rounded-[3rem] shadow-sm not-prose">
-                        <h3 className="text-2xl font-black text-violet-900 mb-6 text-center">The "F-Pattern" of Human Review</h3>
+                        <h3 className="text-2xl font-extrabold text-violet-900 mb-6 text-center">The "F-Pattern" of Human Review</h3>
                         <p className="text-slate-600 mb-6 text-center font-medium">
                             Once you pass the algorithm, you have approximately 6 seconds to capture a human's attention. Eye-tracking studies show that recruiters read in a "F-Pattern."
                         </p>
@@ -137,13 +137,13 @@ export default function ResumeBlog() {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32" />
                     <div className="relative z-10">
                         <FileText className="w-16 h-16 mx-auto mb-8 text-violet-200" />
-                        <h2 className="text-3xl md:text-5xl font-black mb-6">Build a Top-Tier Resume Online</h2>
+                        <h2 className="text-3xl md:text-5xl font-extrabold mb-6">Build a Top-Tier Resume Online</h2>
                         <p className="text-xl md:text-2xl text-violet-100 mb-10 max-w-2xl mx-auto font-medium">
                             Engineering for Applicant Tracking Systems and Human Recruiters alike.
                         </p>
                         <Link
                             href="/resume-builder"
-                            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-violet-700 font-black text-xl rounded-full hover:bg-violet-50 transition-all shadow-xl active:scale-95"
+                            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-violet-700 font-extrabold text-xl rounded-full hover:bg-violet-50 transition-all shadow-xl active:scale-95"
                         >
                             Open the Builder Free <ArrowRight className="w-6 h-6" />
                         </Link>
@@ -159,7 +159,7 @@ export default function ResumeBlog() {
                 ]} />
 
                 <div className="mt-20 pt-16 border-t border-slate-100 text-center">
-                    <h3 className="text-2xl font-black text-slate-900 mb-8">Continue Reading</h3>
+                    <h3 className="text-2xl font-extrabold text-slate-900 mb-8">Continue Reading</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <Link href="/blog/how-to-write-a-cover-letter-for-any-job" className="p-6 rounded-2xl bg-white border hover:border-violet-500 transition-colors group">
                             <h4 className="font-bold text-slate-900 group-hover:text-violet-600 transition-colors">Mastering the Cover Letter &rarr;</h4>

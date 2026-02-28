@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-sm font-semibold mb-6">
                         <FileText className="w-4 h-4" /> Productivity Hacks
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
                         How to Convert JPG Images to PDF
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed">
@@ -60,7 +60,7 @@ export default function BlogPost() {
                     </p>
 
                     <div className="my-10 p-10 bg-orange-50 border-2 border-orange-100 rounded-[3rem] shadow-sm not-prose">
-                        <h3 className="text-2xl font-black text-orange-900 mb-6 text-center">Why PDF Trumps JPG for Sharing</h3>
+                        <h3 className="text-2xl font-extrabold text-orange-900 mb-6 text-center">Why PDF Trumps JPG for Sharing</h3>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="p-6 bg-white rounded-2xl shadow-sm border border-orange-200">
                                 <strong className="text-orange-700 block mb-2 text-lg">Predictable Rendering:</strong>
@@ -120,13 +120,13 @@ export default function BlogPost() {
                 <div className="mt-16 p-12 bg-gradient-to-br from-orange-600 to-red-700 rounded-[3rem] text-center text-white shadow-2xl relative overflow-hidden group">
                     <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity" />
                     <ImageIcon className="w-16 h-16 mx-auto mb-6 text-orange-200" />
-                    <h3 className="text-3xl font-black mb-4">Ready to Professionalize Your Files?</h3>
+                    <h3 className="text-3xl font-extrabold mb-4">Ready to Professionalize Your Files?</h3>
                     <p className="text-orange-50 mb-10 text-lg max-w-lg mx-auto font-medium">
                         Stitch multiple images into one clean, sharing-ready PDF document instantly.
                     </p>
                     <Link
                         href="/image-to-pdf"
-                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-orange-700 font-black text-xl rounded-full hover:bg-orange-50 transition-all shadow-xl active:scale-95"
+                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-orange-700 font-extrabold text-xl rounded-full hover:bg-orange-50 transition-all shadow-xl active:scale-95"
                     >
                         Convert My Images Now <ArrowRight className="w-6 h-6" />
                     </Link>

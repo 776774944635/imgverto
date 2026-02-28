@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-6">
                         <Combine className="w-4 h-4" /> PDF Tools
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
                         How to Merge Multiple PDF Files
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed">
@@ -43,7 +43,7 @@ export default function BlogPost() {
                     </p>
                 </header>
 
-                <div className="prose prose-lg prose-slate md:prose-xl mx-auto prose-headings:font-black prose-headings:tracking-tight prose-a:text-emerald-600 prose-strong:text-slate-900">
+                <div className="prose prose-lg prose-slate md:prose-xl mx-auto prose-headings:font-extrabold prose-headings:tracking-tight prose-a:text-emerald-600 prose-strong:text-slate-900">
                     <p>
                         In our increasingly document-driven digital landscape, file management has shifted from a convenience to a critical professional skill. Have you ever encountered the friction of sending an email with half a dozen disjointed attachments? "Resume.pdf", "Cover_Letter.pdf", "Project_Portfolio.pdf", "References.pdf"—sending a scattered set of files not only projects a lack of organization to the recipient but also increases the risk of critical documents being overlooked or lost in the digital shuffle.
                     </p>
@@ -63,7 +63,7 @@ export default function BlogPost() {
                     </p>
 
                     <div className="my-10 p-10 bg-emerald-50 border-2 border-emerald-100 rounded-[3rem] shadow-sm not-prose">
-                        <h3 className="text-2xl font-black text-emerald-900 mb-6 text-center">Engineering Stability in Merged Files</h3>
+                        <h3 className="text-2xl font-extrabold text-emerald-900 mb-6 text-center">Engineering Stability in Merged Files</h3>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="p-6 bg-white rounded-2xl shadow-sm border border-emerald-200">
                                 <strong className="text-emerald-700 block mb-2 text-lg">Namespace Preservation:</strong>
@@ -123,13 +123,13 @@ export default function BlogPost() {
                 <div className="mt-16 p-12 bg-gradient-to-br from-emerald-600 to-teal-700 rounded-[3rem] text-center text-white shadow-2xl relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32" />
                     <Combine className="w-16 h-16 mx-auto mb-6 text-emerald-200 group-hover:scale-110 transition-transform" />
-                    <h3 className="text-3xl font-black mb-4">Engineer a Professional Document</h3>
+                    <h3 className="text-3xl font-extrabold mb-4">Engineer a Professional Document</h3>
                     <p className="text-emerald-50 mb-10 text-lg max-w-lg mx-auto">
                         Join multiple files into a single high-fidelity PDF instantly. No watermarks, no registration, no limits.
                     </p>
                     <Link
                         href="/merge-pdf"
-                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-emerald-700 font-black text-xl rounded-full hover:bg-emerald-50 transition-all shadow-xl active:scale-95"
+                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-emerald-700 font-extrabold text-xl rounded-full hover:bg-emerald-50 transition-all shadow-xl active:scale-95"
                     >
                         Merge My PDFs Now <ArrowRight className="w-6 h-6" />
                     </Link>

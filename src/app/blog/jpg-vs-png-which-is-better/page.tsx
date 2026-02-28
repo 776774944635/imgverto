@@ -35,7 +35,7 @@ export default function BlogPost() {
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
                         <FileText className="w-4 h-4" /> Imgverto Guides
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-6">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
                         JPG vs PNG: Which is Better?
                     </h1>
                     <p className="text-xl text-slate-600 leading-relaxed">
@@ -63,7 +63,7 @@ export default function BlogPost() {
                     </p>
 
                     <div className="my-10 p-8 bg-orange-50 border-2 border-orange-100 rounded-[2.5rem] shadow-sm not-prose">
-                        <h3 className="text-2xl font-black text-orange-900 mb-6 flex items-center gap-3">
+                        <h3 className="text-2xl font-extrabold text-orange-900 mb-6 flex items-center gap-3">
                             <ImageIcon className="w-8 h-8 text-orange-600" /> The JPG Profile
                         </h3>
                         <div className="grid md:grid-cols-2 gap-8">
@@ -96,7 +96,7 @@ export default function BlogPost() {
                     </p>
 
                     <div className="my-10 p-8 bg-blue-50 border-2 border-blue-100 rounded-[2.5rem] shadow-sm not-prose">
-                        <h3 className="text-2xl font-black text-blue-900 mb-6 flex items-center gap-3">
+                        <h3 className="text-2xl font-extrabold text-blue-900 mb-6 flex items-center gap-3">
                             <FileType className="w-8 h-8 text-blue-600" /> The PNG Profile
                         </h3>
                         <div className="grid md:grid-cols-2 gap-8">
@@ -150,17 +150,17 @@ export default function BlogPost() {
                 </div>
 
                 <div className="mt-16 p-12 bg-slate-900 rounded-[3rem] text-center text-white shadow-2xl relative overflow-hidden group">
-                    <h3 className="text-3xl font-black mb-8">Ready to Optimize Your Formats?</h3>
+                    <h3 className="text-3xl font-extrabold mb-8">Ready to Optimize Your Formats?</h3>
                     <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
                         <Link
                             href="/jpg-to-png"
-                            className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-blue-600 text-white font-black text-xl rounded-2xl hover:bg-blue-700 transition-all hover:-translate-y-1 shadow-lg active:scale-95"
+                            className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-blue-600 text-white font-extrabold text-xl rounded-2xl hover:bg-blue-700 transition-all hover:-translate-y-1 shadow-lg active:scale-95"
                         >
                             <FileType className="w-6 h-6" /> JPG to PNG
                         </Link>
                         <Link
                             href="/png-to-jpg"
-                            className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-orange-600 text-white font-black text-xl rounded-2xl hover:bg-orange-700 transition-all hover:-translate-y-1 shadow-lg active:scale-95"
+                            className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-orange-600 text-white font-extrabold text-xl rounded-2xl hover:bg-orange-700 transition-all hover:-translate-y-1 shadow-lg active:scale-95"
                         >
                             <ImageIcon className="w-6 h-6" /> PNG to JPG
                         </Link>
