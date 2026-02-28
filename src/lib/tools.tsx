@@ -3,9 +3,12 @@ import {
     ImageIcon,
     Eraser,
     FileType,
+    Zap,
     Sparkles,
     Combine,
-    Zap
+    FileText,
+    FileJson,
+    Layout
 } from "lucide-react";
 import React from 'react';
 
@@ -105,5 +108,62 @@ export const tools: Tool[] = [
         category: "Optimize",
         color: "text-blue-600",
         lightColor: "bg-blue-50"
+    },
+    {
+        title: "Image to PDF",
+        description: "Convert your JPG, PNG, and HEIC images into a single high-quality PDF document.",
+        href: "/image-to-pdf",
+        icon: <FileType className="w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8" />,
+        category: "Convert",
+        color: "text-rose-500",
+        lightColor: "bg-rose-50"
+    },
+    {
+        title: "JPG to PDF",
+        description: "Specifically optimized JPG to PDF conversion for professional document standards.",
+        href: "/jpg-to-pdf",
+        icon: <FileType className="w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8" />,
+        category: "Convert",
+        color: "text-red-500",
+        lightColor: "bg-red-50"
+    },
+    {
+        title: "PDF to JPG",
+        description: "Extract pages from your PDF as high-quality JPG or PNG images instantly.",
+        href: "/pdf-to-jpg",
+        icon: <ImageIcon className="w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8" />,
+        category: "Convert",
+        color: "text-amber-600",
+        lightColor: "bg-amber-50"
+    },
+    {
+        title: "Resume Builder",
+        description: "Create a professional, ATS-friendly resume in minutes with our premium templates.",
+        href: "/resume-builder",
+        icon: <Layout className="w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8" />,
+        category: "Create",
+        isNew: true,
+        color: "text-indigo-600",
+        lightColor: "bg-indigo-50"
+    },
+    {
+        title: "Cover Letter",
+        description: "Generate tailored, professional cover letters for any job application in seconds.",
+        href: "/cover-letter-generator",
+        icon: <FileText className="w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8" />,
+        category: "Create",
+        isNew: true,
+        color: "text-blue-700",
+        lightColor: "bg-blue-50"
+    },
+    {
+        title: "Letter Generator",
+        description: "Instantly create professional formal and informal letters for any purpose.",
+        href: "/letter-generator",
+        icon: <FileJson className="w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8" />,
+        category: "Create",
+        isNew: true,
+        color: "text-emerald-700",
+        lightColor: "bg-emerald-50"
     }
 ];
